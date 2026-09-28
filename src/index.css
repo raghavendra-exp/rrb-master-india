@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --railway-blue: #0f2b5c;
+  --railway-dark: #091a38;
+  --railway-gold: #f59e0b;
+  --railway-emerald: #059669;
+  --railway-maroon: #881337;
+  --railway-sky: #0284c7;
+  --font-hindi: 'Noto Sans Devanagari', 'Mangal', 'Segoe UI', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Question Palette in CBT mode */
+.cbt-answered {
+  background-color: #16a34a !important;
+  color: white !important;
+}
+
+.cbt-not-answered {
+  background-color: #dc2626 !important;
+  color: white !important;
+}
+
+.cbt-review {
+  background-color: #7c3aed !important;
+  color: white !important;
+}
+
+.cbt-review-answered {
+  background-color: #7c3aed !important;
+  color: white !important;
+  position: relative;
+}
+
+.cbt-review-answered::after {
+  content: "✔";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #22c55e;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.cbt-not-visited {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+/* Flashcard 3D flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Hindi typography support */
+[lang="hi"] {
+  font-family: var(--font-hindi);
+}
+
+/* Print styling for admit cards / checklists */
+@media print {
+  header, nav, footer, .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

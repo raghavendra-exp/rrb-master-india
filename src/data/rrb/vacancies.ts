@@ -1,0 +1,178 @@
+export interface VacancyRecord {
+  id: string;
+  exam: string;
+  cenNumber: string;
+  rrbName: string;
+  postName: string;
+  payLevel: string;
+  ur: number;
+  sc: number;
+  st: number;
+  obc: number;
+  ews: number;
+  total: number;
+  esm: number;
+  status: 'Tentative / Revised' | 'Officially Notified';
+  sourceNotification: string;
+}
+
+export const VACANCIES_DATA: VacancyRecord[] = [
+  // NTPC Graduate & Undergraduate
+  {
+    id: 'VAC-NTPC-01',
+    exam: 'RRB NTPC (Graduate)',
+    cenNumber: 'CEN 05/2024',
+    rrbName: 'RRB Chandigarh',
+    postName: 'Station Master',
+    payLevel: 'Level 6',
+    ur: 160,
+    sc: 58,
+    st: 29,
+    obc: 104,
+    ews: 39,
+    total: 390,
+    esm: 39,
+    status: 'Officially Notified',
+    sourceNotification: 'CEN 05/2024 Annexure B',
+  },
+  {
+    id: 'VAC-NTPC-02',
+    exam: 'RRB NTPC (Graduate)',
+    cenNumber: 'CEN 05/2024',
+    rrbName: 'RRB Mumbai',
+    postName: 'Goods Train Manager',
+    payLevel: 'Level 5',
+    ur: 245,
+    sc: 91,
+    st: 45,
+    obc: 162,
+    ews: 60,
+    total: 603,
+    esm: 60,
+    status: 'Officially Notified',
+    sourceNotification: 'CEN 05/2024 Annexure B',
+  },
+  {
+    id: 'VAC-NTPC-03',
+    exam: 'RRB NTPC (Graduate)',
+    cenNumber: 'CEN 05/2024',
+    rrbName: 'RRB Secunderabad',
+    postName: 'Senior Commercial cum Ticket Supervisor',
+    payLevel: 'Level 5',
+    ur: 185,
+    sc: 68,
+    st: 34,
+    obc: 122,
+    ews: 45,
+    total: 454,
+    esm: 45,
+    status: 'Officially Notified',
+    sourceNotification: 'CEN 05/2024 Annexure B',
+  },
+  {
+    id: 'VAC-NTPC-04',
+    exam: 'RRB NTPC (Undergraduate)',
+    cenNumber: 'CEN 06/2024',
+    rrbName: 'RRB Prayagraj',
+    postName: 'Commercial cum Ticket Clerk',
+    payLevel: 'Level 3',
+    ur: 210,
+    sc: 78,
+    st: 39,
+    obc: 140,
+    ews: 52,
+    total: 519,
+    esm: 52,
+    status: 'Officially Notified',
+    sourceNotification: 'CEN 06/2024 Annexure B',
+  },
+  {
+    id: 'VAC-NTPC-05',
+    exam: 'RRB NTPC (Undergraduate)',
+    cenNumber: 'CEN 06/2024',
+    rrbName: 'RRB Kolkata',
+    postName: 'Junior Clerk cum Typist',
+    payLevel: 'Level 2',
+    ur: 175,
+    sc: 65,
+    st: 32,
+    obc: 116,
+    ews: 43,
+    total: 431,
+    esm: 43,
+    status: 'Officially Notified',
+    sourceNotification: 'CEN 06/2024 Annexure B',
+  },
+
+  // Group D Level 1
+  {
+    id: 'VAC-GRPD-01',
+    exam: 'RRB Group D',
+    cenNumber: 'CEN 08/2024 / Level-1',
+    rrbName: 'Northern Railway (RRB Chandigarh)',
+    postName: 'Track Maintainer Grade IV & Pointsman',
+    payLevel: 'Level 1',
+    ur: 5144,
+    sc: 1917,
+    st: 958,
+    obc: 3450,
+    ews: 1276,
+    total: 12745,
+    esm: 2549,
+    status: 'Officially Notified',
+    sourceNotification: 'Official Railway Recruitment Cell Summary',
+  },
+  {
+    id: 'VAC-GRPD-02',
+    exam: 'RRB Group D',
+    cenNumber: 'CEN 08/2024 / Level-1',
+    rrbName: 'Western Railway (RRB Ahmedabad)',
+    postName: 'Level-1 Technical & Operational Posts',
+    payLevel: 'Level 1',
+    ur: 4287,
+    sc: 1647,
+    st: 812,
+    obc: 2914,
+    ews: 1074,
+    total: 10734,
+    esm: 2146,
+    status: 'Officially Notified',
+    sourceNotification: 'Official Railway Recruitment Cell Summary',
+  },
+
+  // RRB JE
+  {
+    id: 'VAC-JE-01',
+    exam: 'RRB JE',
+    cenNumber: 'CEN 03/2024',
+    rrbName: 'RRB Chennai',
+    postName: 'Junior Engineer (Civil / Track & Bridge)',
+    payLevel: 'Level 6',
+    ur: 135,
+    sc: 50,
+    st: 25,
+    obc: 90,
+    ews: 33,
+    total: 333,
+    esm: 33,
+    status: 'Officially Notified',
+    sourceNotification: 'CEN 03/2024 Annexure B',
+  },
+  {
+    id: 'VAC-JE-02',
+    exam: 'RRB JE',
+    cenNumber: 'CEN 03/2024',
+    rrbName: 'RRB Secunderabad',
+    postName: 'Junior Engineer (Mechanical & Electrical)',
+    payLevel: 'Level 6',
+    ur: 198,
+    sc: 74,
+    st: 37,
+    obc: 132,
+    ews: 49,
+    total: 490,
+    esm: 49,
+    status: 'Officially Notified',
+    sourceNotification: 'CEN 03/2024 Annexure B',
+  },
+];
