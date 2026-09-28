@@ -61,7 +61,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
 
         {/* Ambient Decorative background glow */}
-        <div className="absolute right-0 bottom-0 translate-x-12 translate-y-12 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-0 bottom-0 w-64 sm:w-96 h-64 sm:h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none overflow-hidden" />
       </section>
 
       {/* Live Cyclic Calendar Highlight */}
