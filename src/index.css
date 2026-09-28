@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --railway-blue: #0f2b5c;
   --railway-dark: #091a38;
@@ -11,13 +13,18 @@
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-sans);
-  background-color: #f8fafc;
-  color: #1e293b;
-  min-height: 100vh;
+html.dark,
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
 }
 
 /* Custom scrollbars */
@@ -30,13 +37,25 @@ body {
   background: #f1f5f9;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #94a3b8;
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
 
 /* Question Palette in CBT mode */

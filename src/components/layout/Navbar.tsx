@@ -16,7 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigate,
 }) => {
   const { language, toggleLanguage } = useLanguage();
-  const { setTheme, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors shadow-xs">
@@ -122,9 +122,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Dark / Light Mode Switcher */}
           <button
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
+            onClick={toggleTheme}
             aria-label="Toggle Theme"
-            className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all shadow-2xs"
+            className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all shadow-2xs cursor-pointer"
           >
             {isDark ? (
               <Sun className="w-4 h-4 text-amber-400" />
