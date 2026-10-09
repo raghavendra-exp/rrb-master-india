@@ -55,30 +55,59 @@ export const RRB_POSTS: PostDetails[] = [
     selectionStages: ['CBT-1', 'CBT-2 (Level 5)', 'Document Verification', 'Medical Exam (A-2)'],
   },
   {
-    id: 'ntpc-sr-commercial-ticket-supervisor',
-    postName: { en: 'Senior Commercial cum Ticket Supervisor', hi: 'वरिष्ठ वाणिज्यिक सह टिकट पर्यवेक्षक' },
+    id: 'ntpc-chief-commercial-ticket-supervisor',
+    postName: {
+      en: 'Chief Commercial Cum Ticket Supervisor (CCCTS)',
+      hi: 'मुख्य वाणिज्यिक सह टिकट पर्यवेक्षक (CCCTS)',
+    },
+    examId: 'rrb-ntpc',
+    level: 'Graduate',
+    payLevel: 'Level 6',
+    initialPay: '₹35,400',
+    department: { en: 'Commercial Department', hi: 'वाणिज्य विभाग' },
+    qualification: {
+      en: 'Degree from a recognized University or its equivalent (CEN 06/2026 Cat No. 1 - 127 Vacancies)',
+      hi: 'किसी मान्यता प्राप्त विश्वविद्यालय से स्नातक उपाधि या समकक्ष (सीईएन 06/2026 पद सं. 1 - 127 रिक्तियां)',
+    },
+    ageLimit: '18 - 33 Years (as on 01.01.2027; OBC-NCL: 36, SC/ST: 38)',
+    medicalStandard: 'B-2 (Distant Vision: 6/9, 6/12 with or without glasses; LASIK allowed subject to Annexure VII(A))',
+    typingRequired: false,
+    cbatRequired: false,
+    jobDuties: {
+      en: 'Overall managerial supervision of commercial functions, major station passenger reservation systems (PRS), parcel leasing, freight loading, and commercial staff coordination.',
+      hi: 'वाणिज्यिक कार्यों, बड़े स्टेशनों की यात्री आरक्षण प्रणाली (PRS), पार्सल लीजिंग, माल लदान एवं वाणिज्यिक कर्मचारियों का समग्र प्रशासनिक पर्यवेक्षण।',
+    },
+    careerProgression: {
+      en: 'Chief Commercial Supervisor → Commercial Inspector (CI) → Assistant Commercial Manager (ACM) → Divisional Commercial Manager (DCM)',
+      hi: 'चीफ कमर्शियल सुपरवाइजर → वाणिज्यिक निरीक्षक (CI) → सहायक वाणिज्य प्रबंधक (ACM) → मंडल वाणिज्य प्रबंधक (DCM)',
+    },
+    selectionStages: ['CBT-1 (100 Qs)', 'CBT-2 (120 Qs, Level 6)', 'Document Verification (1:1 Ratio)', 'Medical Exam (B-2)'],
+  },
+  {
+    id: 'ntpc-goods-train-manager',
+    postName: { en: 'Goods Train Manager (formerly Goods Guard)', hi: 'गुड्स ट्रेन मैनेजर (पूर्व नाम: मालगाड़ी गार्ड)' },
     examId: 'rrb-ntpc',
     level: 'Graduate',
     payLevel: 'Level 5',
     initialPay: '₹29,200',
-    department: { en: 'Commercial Department', hi: 'वाणिज्य विभाग' },
+    department: { en: 'Operating Department', hi: 'परिचालन विभाग' },
     qualification: {
-      en: 'Degree from a recognized University or equivalent',
-      hi: 'मान्यता प्राप्त विश्वविद्यालय से स्नातक उपाधि',
+      en: 'Degree from a recognized University or its equivalent (CEN 06/2026 Cat No. 2 - 2,750 Vacancies)',
+      hi: 'किसी मान्यता प्राप्त विश्वविद्यालय से स्नातक उपाधि (सीईएन 06/2026 पद सं. 2 - 2,750 रिक्तियां)',
     },
-    ageLimit: '18 - 36 Years',
-    medicalStandard: 'B-2 (Distant Vision: 6/9, 6/12 with or without glasses)',
+    ageLimit: '18 - 33 Years (as on 01.01.2027; OBC-NCL: 36, SC/ST: 38)',
+    medicalStandard: 'A-2 (Strict Vision: 6/9, 6/9 without glasses, no fogging; LASIK candidate UNFIT per Annexure VII(A))',
     typingRequired: false,
     cbatRequired: false,
     jobDuties: {
-      en: 'Supervision of passenger reservation systems (PRS), unreserved ticketing (UTS), luggage and parcel booking, ticket checking on trains and stations.',
-      hi: 'यात्री आरक्षण प्रणाली (PRS), अनारक्षित टिकटिंग (UTS), पार्सल व लगेज बुकिंग और ट्रेनों तथा स्टेशनों पर टिकट चेकिंग कार्य का पर्यवेक्षण।',
+      en: 'In charge of freight train operations, train integrity verification, brake continuity check (BPC), safety tail lamp/LV board, and real-time coordination with Loco Pilot & Station Masters.',
+      hi: 'मालगाड़ी का प्रभारी, ट्रेन की संरक्षा, टेल लैंप/एलवी बोर्ड, ब्रेक पावर प्रमाण पत्र (BPC), शंटिंग पर्यवेक्षण और लोको पायलट व स्टेशन मास्टर से निरंतर समन्वय।',
     },
     careerProgression: {
-      en: 'Sr Commercial Supervisor → Chief Commercial Inspector (CCI) → Assistant Commercial Manager (ACM) → Divisional Commercial Manager (DCM)',
-      hi: 'सीनियर कमर्शियल सुपरवाइजर → चीफ कमर्शियल इंस्पेक्टर (CCI) → सहायक वाणिज्य प्रबंधक (ACM) → मंडल वाणिज्य प्रबंधक (DCM)',
+      en: 'Goods Train Manager → Passenger Train Manager → Mail/Express Train Manager → Chief Train Manager / Yard Master',
+      hi: 'गुड्स ट्रेन मैनेजर → पैसेंजर ट्रेन मैनेजर → मेल/एक्सप्रेस ट्रेन मैनेजर → चीफ ट्रेन मैनेजर / यार्ड मास्टर',
     },
-    selectionStages: ['CBT-1', 'CBT-2 (Level 5)', 'Document Verification', 'Medical Exam (B-2)'],
+    selectionStages: ['CBT-1 (100 Qs)', 'CBT-2 (120 Qs, Level 5)', 'Document Verification (1:1 Ratio)', 'Medical Exam (A-2)'],
   },
   {
     id: 'ntpc-sr-clerk-typist',
@@ -89,12 +118,12 @@ export const RRB_POSTS: PostDetails[] = [
     initialPay: '₹29,200',
     department: { en: 'Personnel / General Administration', hi: 'कार्मिक / सामान्य प्रशासन विभाग' },
     qualification: {
-      en: 'Degree from a recognized University with typing proficiency in English (30 wpm) or Hindi (25 wpm) on Computer',
-      hi: 'स्नातक डिग्री एवं कंप्यूटर पर अंग्रेजी में 30 शब्द/मिनट अथवा हिंदी में 25 शब्द/मिनट टाइपिंग दक्षता',
+      en: 'Degree from a recognized University or equivalent (CEN 06/2026 Cat No. 4 - 371 Vacancies). NOTE: Typing Test (CBTST) DISPENSED WITH for CEN 06/2026 (Para 13.0(c)); proficiency assessed after joining.',
+      hi: 'स्नातक उपाधि या समकक्ष (सीईएन 06/2026 पद सं. 4 - 371 रिक्तियां)। विशेष नियम: सीईएन 06/2026 में टाइपिंग परीक्षा (CBTST) समाप्त (पैरा 13.0(c)); दक्षता कार्यभार ग्रहण करने के बाद जांची जाएगी।',
     },
-    ageLimit: '18 - 36 Years',
+    ageLimit: '18 - 33 Years (as on 01.01.2027; OBC-NCL: 36, SC/ST: 38)',
     medicalStandard: 'C-2 (Distant Vision: 6/12 with or without glasses; Normal eyesight)',
-    typingRequired: true,
+    typingRequired: false, // Dispensed with for CEN 06/2026
     cbatRequired: false,
     jobDuties: {
       en: 'Administrative documentation, service record maintenance, employee promotions, leave records, drafting official correspondence and policy files.',
@@ -104,7 +133,7 @@ export const RRB_POSTS: PostDetails[] = [
       en: 'Senior Clerk → Chief Clerk → Office Superintendent (OS) → Assistant Personnel Officer (APO)',
       hi: 'सीनियर क्लर्क → चीफ क्लर्क → ऑफिस सुपरिंटेंडेंट (OS) → सहायक कार्मिक अधिकारी (APO)',
     },
-    selectionStages: ['CBT-1', 'CBT-2 (Level 5)', 'Typing Skill Test (Qualifying)', 'Document Verification', 'Medical Exam (C-2)'],
+    selectionStages: ['CBT-1 (100 Qs)', 'CBT-2 (120 Qs, Level 5)', 'Document Verification (1:1 Ratio)', 'Medical Exam (C-2) [Typing Test Dispensed With]'],
   },
   {
     id: 'ntpc-jr-account-assistant',
@@ -115,12 +144,12 @@ export const RRB_POSTS: PostDetails[] = [
     initialPay: '₹29,200',
     department: { en: 'Accounts Department', hi: 'लेखा विभाग' },
     qualification: {
-      en: 'Degree in any discipline (Commerce preferred) with typing proficiency in English (30 wpm) or Hindi (25 wpm)',
-      hi: 'स्नातक उपाधि एवं कंप्यूटर पर अंग्रेजी (30 शब्द/मिनट) या हिंदी (25 शब्द/मिनट) टाइपिंग दक्षता',
+      en: 'Degree from a recognized University or equivalent (CEN 06/2026 Cat No. 3 - 300 Vacancies). NOTE: Typing Test (CBTST) DISPENSED WITH for CEN 06/2026 (Para 13.0(c)); proficiency assessed after joining.',
+      hi: 'स्नातक उपाधि या समकक्ष (सीईएन 06/2026 पद सं. 3 - 300 रिक्तियां)। विशेष नियम: सीईएन 06/2026 में टाइपिंग परीक्षा समाप्त (पैरा 13.0(c)); कार्यभार ग्रहण करने के बाद कंप्यूटर दक्षता का मूल्यांकन।',
     },
-    ageLimit: '18 - 36 Years',
+    ageLimit: '18 - 33 Years (as on 01.01.2027; OBC-NCL: 36, SC/ST: 38)',
     medicalStandard: 'C-2 (Distant Vision: 6/12 with or without glasses)',
-    typingRequired: true,
+    typingRequired: false, // Dispensed with for CEN 06/2026
     cbatRequired: false,
     jobDuties: {
       en: 'Auditing bills, passing railway contractor payments, salary bill generation, internal accounting audits, financial reconciliations.',
@@ -130,7 +159,7 @@ export const RRB_POSTS: PostDetails[] = [
       en: 'Junior Account Assistant → Accounts Assistant → Senior Section Officer (Accounts) → Assistant Financial Advisor (AFA)',
       hi: 'जूनियर अकाउंट असिस्टेंट → अकाउंट असिस्टेंट → सीनियर सेक्शन ऑफिसर (लेखा) → सहायक वित्त सलाहकार (AFA)',
     },
-    selectionStages: ['CBT-1', 'CBT-2 (Level 5)', 'Typing Skill Test (Qualifying)', 'Document Verification', 'Medical Exam (C-2)'],
+    selectionStages: ['CBT-1 (100 Qs)', 'CBT-2 (120 Qs, Level 5)', 'Document Verification (1:1 Ratio)', 'Medical Exam (C-2) [Typing Test Dispensed With]'],
   },
 
   // NTPC Undergraduate Posts

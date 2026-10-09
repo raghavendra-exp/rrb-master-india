@@ -3,36 +3,36 @@ import type { ExamConfig } from '../../types';
 export const EXAMS_DATA: Record<string, ExamConfig> = {
   'rrb-ntpc': {
     id: 'rrb-ntpc',
-    code: 'CEN 05/2024 & CEN 06/2024',
+    code: 'CEN 06/2026 (Graduate) & CEN 05/2024 / 06/2024',
     title: {
       en: 'RRB NTPC (Non-Technical Popular Categories)',
       hi: 'आरआरबी एनटीपीसी (गैर-तकनीकी लोकप्रिय श्रेणियां)',
     },
     subtitle: {
-      en: 'Undergraduate (Level 2 & 3) & Graduate (Level 5 & 6) Centralized Employment Notification',
-      hi: 'स्नातक (लेवल 5 एवं 6) एवं 12वीं उत्तीर्ण (लेवल 2 एवं 3) केंद्रीकृत रोजगार अधिसूचना',
+      en: 'Graduate (CEN 06/2026 - 3,548 Posts) & Undergraduate Centralized Employment Notifications',
+      hi: 'स्नातक (सीईएन 06/2026 - 3,548 पद) एवं 12वीं उत्तीर्ण केंद्रीकृत रोजगार अधिसूचनाएं',
     },
-    currentCEN: 'CEN 05/2024 (Graduate) & CEN 06/2024 (Undergraduate)',
-    officialNotificationUrl: 'https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,4,1244',
+    currentCEN: 'CEN 06/2026 (Graduate: 3,548 Vacancies Notified on 08.10.2026) & CEN 05/2024',
+    officialNotificationUrl: 'https://rrbapply.gov.in',
     eligibility: {
-      ageRange: '18-33 Years (Undergraduate) / 18-36 Years (Graduate) with applicable OBC/SC/ST/ESM relaxations',
+      ageRange: '18-33 Years (Reckoned as on 01.01.2027 for CEN 06/2026; DOB between 02.01.1994 & 01.01.2009 for UR, with 3 yrs OBC-NCL and 5 yrs SC/ST relaxation)',
       qualifications: [
+        {
+          en: 'Graduate Posts (CEN 06/2026): Degree from a recognized University or its equivalent for Goods Train Manager, Chief Commercial Cum Ticket Supervisor, Senior Clerk Cum Typist, and Junior Accounts Assistant Cum Typist',
+          hi: 'स्नातक पद (सीईएन 06/2026): मान्यता प्राप्त विश्वविद्यालय से स्नातक उपाधि (गुड्स ट्रेन मैनेजर, मुख्य वाणिज्यिक सह टिकट पर्यवेक्षक, सीनियर क्लर्क एवं जूनियर एकाउंट्स असिस्टेंट)',
+        },
         {
           en: 'Undergraduate Posts: 12th (+2 Stage) or equivalent with not less than 50% marks in aggregate for UR/OBC',
           hi: 'अंडरग्रेजुएट पद: 12वीं (+2 चरण) या समकक्ष परीक्षा में न्यूनतम 50% अंकों के साथ उत्तीर्ण',
         },
-        {
-          en: 'Graduate Posts: University Degree or its equivalent from a recognized University',
-          hi: 'ग्रेजुएट पद: किसी मान्यता प्राप्त विश्वविद्यालय से स्नातक उपाधि (डिग्री) या समकक्ष',
-        },
       ],
-      feeGeneral: '₹500 (₹400 refundable on appearing in CBT-1)',
-      feeReserved: '₹250 (Fully refundable on appearing in CBT-1 for SC/ST/ESM/Female/PwBD/EBC)',
+      feeGeneral: '₹500 (₹400 refundable on appearing in 1st Stage CBT directly to Aadhaar-seeded bank account)',
+      feeReserved: '₹250 (₹250 fully refundable on appearing in 1st Stage CBT for SC/ST/ExSM/Female/PwBD/EBC)',
     },
     stages: [
       {
         id: 'cbt-1',
-        name: { en: 'CBT-1 (Screening Test - Common for All Posts)', hi: 'सीबीटी-1 (स्क्रीनिंग परीक्षा - सभी पदों के लिए सामान्य)' },
+        name: { en: 'CBT-1 (Screening Test - Common for All Posts: 100 Qs / 90 Mins)', hi: 'सीबीटी-1 (स्क्रीनिंग परीक्षा - 100 प्रश्न / 90 मिनट)' },
         questions: 100,
         marks: 100,
         durationMinutes: 90,
@@ -60,7 +60,7 @@ export const EXAMS_DATA: Record<string, ExamConfig> = {
       },
       {
         id: 'cbt-2',
-        name: { en: 'CBT-2 (Main Examination - Separate for Each Pay Level)', hi: 'सीबीटी-2 (मुख्य परीक्षा - प्रत्येक पे लेवल हेतु पृथक)' },
+        name: { en: 'CBT-2 (Main Examination: 120 Qs / 90 Mins - Separate per Pay Level)', hi: 'सीबीटी-2 (मुख्य परीक्षा: 120 प्रश्न / 90 मिनट)' },
         questions: 120,
         marks: 120,
         durationMinutes: 90,
@@ -89,13 +89,13 @@ export const EXAMS_DATA: Record<string, ExamConfig> = {
       {
         id: 'skill-test',
         name: {
-          en: 'CBAT / Typing Skill Test (Post Specific)',
-          hi: 'सीबीएटी (साइको) / टाइपिंग कौशल परीक्षा (पद अनुसार)',
+          en: 'Skill Stage Note (IMPORTANT: Typing Test DISPENSED WITH for CEN 06/2026 per Para 13.0(c))',
+          hi: 'कौशल परीक्षा सूचना (महत्वपूर्ण: सीईएन 06/2026 स्नातक पदों हेतु टाइपिंग परीक्षा समाप्त - पैरा 13.0(c))',
         },
         questions: 0,
         marks: 0,
-        durationMinutes: 10,
-        negativeMarking: 'Qualifying in nature; T-score of 42 minimum per battery for CBAT',
+        durationMinutes: 0,
+        negativeMarking: 'No Typing Test during recruitment for CEN 06/2026. Basic typing proficiency assessed on-the-job after joining.',
         sections: [],
       },
       {

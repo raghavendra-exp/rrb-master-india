@@ -2,6 +2,22 @@ import type { LiveNotification } from '../../types';
 
 export const LIVE_NOTIFICATIONS: LiveNotification[] = [
   {
+    id: 'NOTIF-2026-CEN-06-GRADUATE',
+    title: {
+      en: 'Centralised Employment Notification CEN No. 06/2026: Recruitment for Various Posts of NTPC (Graduate) — 3,548 Vacancies',
+      hi: 'केंद्रीकृत रोजगार अधिसूचना सीईएन सं. 06/2026: गैर-तकनीकी लोकप्रिय श्रेणियां (स्नातक) के विभिन्न पदों पर भर्ती — 3,548 रिक्तियां',
+    },
+    category: 'new',
+    date: '2026-10-08',
+    exam: 'rrb-ntpc',
+    officialPdfUrl: 'https://rrbapply.gov.in',
+    rrbCode: 'Ministry of Railways / All 21 RRBs',
+    summary: {
+      en: 'Official notification CEN 06/2026 released for 3,548 Graduate posts across 21 RRBs. Important Dates: Online Application Opening: 08.10.2026; Closing Date: 06.11.2026 (23:59 hrs); Fee payment last date: 08.11.2026; Modification window: 09.11.2026 to 18.11.2026 (₹250 fee). Posts notified: Goods Train Manager (2,750), Senior Clerk Cum Typist (371), Junior Accounts Assistant Cum Typist (300), and Chief Commercial Cum Ticket Supervisor (127). CRITICAL REFORM: Computer Based Typing Skill Test (CBTST) has been DISPENSED WITH for CEN 06/2026 (Para 13.0(c))! Selection via CBT-1 (100 Qs) -> CBT-2 (120 Qs) -> 1:1 DV & Medical. Live photo capture mandatory during application.',
+      hi: '21 आरआरबी में 3,548 स्नातक पदों हेतु आधिकारिक अधिसूचना सीईएन 06/2026 जारी। महत्वपूर्ण तिथियां: ऑनलाइन आवेदन प्रारंभ: 08.10.2026; अंतिम तिथि: 06.11.2026 (23:59 बजे); शुल्क भुगतान: 08.11.2026; संशोधन विंडो: 09.11.2026 से 18.11.2026 (₹250 शुल्क)। अधिसूचित पद: गुड्स ट्रेन मैनेजर (2,750), सीनियर क्लर्क कम टाइपिस्ट (371), जूनियर एकाउंट्स असिस्टेंट कम टाइपिस्ट (300) एवं चीफ कमर्शियल कम टिकट सुपरवाइजर (127)। ऐतिहासिक बदलाव: सीईएन 06/2026 हेतु टाइपिंग टेस्ट (CBTST) समाप्त (पैरा 13.0(c))! चयन केवल सीबीटी-1 -> सीबीटी-2 -> 1:1 डीवी एवं मेडिकल द्वारा होगा। वेबकैम/मोबाइल से लाइव फोटो कैप्चर अनिवार्य।',
+    },
+  },
+  {
     id: 'NOTIF-2026-CALENDAR',
     title: {
       en: 'Ministry of Railways Official Annual Calendar 2026–2027: Allotment of Nodal RRBs',
