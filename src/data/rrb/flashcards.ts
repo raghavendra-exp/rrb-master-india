@@ -129,4 +129,148 @@ export const FLASHCARD_ITEMS: Flashcard[] = [
       hi: 'एनएचएसआरसीएल द्वारा 508 किमी लंबे मार्ग पर जापानी शिंकानसेन E5 तकनीक से निर्मित।',
     },
   },
+  {
+    id: 'fc-09',
+    category: 'Railway GK',
+    front: {
+      en: 'What is the Safety Integrity Level (SIL) certification achieved by KAVACH ATP system?',
+      hi: 'कवच स्वचालित ट्रेन सुरक्षा प्रणाली को कौन सा संरक्षा प्रमाणन (SIL) प्राप्त है?',
+    },
+    back: {
+      en: 'SIL-4 (Safety Integrity Level 4)',
+      hi: 'SIL-4 (सर्वोच्च संरक्षा स्तर 4)',
+    },
+    notes: {
+      en: 'Guarantees probability of dangerous failure is less than 1 in 10,000 years. Highest railway automation standard.',
+      hi: 'यह 10,000 वर्षों में 1 से भी कम विफलता दर सुनिश्चित करता है।',
+    },
+  },
+  {
+    id: 'fc-10',
+    category: 'Railway GK',
+    front: {
+      en: 'What is the exact height of the Chenab Rail Arch Bridge above the river bed?',
+      hi: 'चिनाब रेलवे आर्च ब्रिज की नदी तल से सटीक ऊंचाई कितनी है?',
+    },
+    back: {
+      en: '359 meters (35 meters taller than the Eiffel Tower)',
+      hi: '359 मीटर (पेरिस के एफिल टॉवर से 35 मीटर ऊंचा)',
+    },
+    notes: {
+      en: 'Located in Reasi district of J&K on the Udhampur-Srinagar-Baramulla Rail Link (USBRL). World highest railway bridge.',
+      hi: 'जम्मू-कश्मीर के रियासी जिले में USBRL परियोजना के तहत निर्मित विश्व का सबसे ऊंचा रेलवे पुल।',
+    },
+  },
+  {
+    id: 'fc-11',
+    category: 'Railway GK',
+    front: {
+      en: 'What is the length of the world\'s longest railway platform at Hubballi Junction?',
+      hi: 'हुब्बल्लि जंक्शन पर स्थित विश्व के सबसे लंबे रेलवे प्लेटफॉर्म की लंबाई कितनी है?',
+    },
+    back: {
+      en: '1,507 meters (Platform No. 8)',
+      hi: '1,507 मीटर (प्लेटफॉर्म सं. 8)',
+    },
+    notes: {
+      en: 'Shree Siddharoodha Swamiji Hubballi Station (Karnataka, South Western Railway). Guinness World Record holder.',
+      hi: 'दक्षिण पश्चिम रेलवे के हुब्बल्लि स्टेशन का प्लेटफॉर्म सं. 8 गिनीज बुक रिकॉर्ड धारक है।',
+    },
+  },
+  {
+    id: 'fc-12',
+    category: 'Railway GK',
+    front: {
+      en: 'What is the horsepower rating of India\'s most powerful locomotive WAG-12B?',
+      hi: 'भारत के सबसे शक्तिशाली लोकोमोटिव WAG-12B की हॉर्सपावर क्षमता कितनी है?',
+    },
+    back: {
+      en: '12,000 Horsepower (Twin-section Electric Freight)',
+      hi: '12,000 हॉर्सपावर (ट्विन-सेक्शन विद्युत मालगाड़ी इंजन)',
+    },
+    notes: {
+      en: 'Manufactured by MELPL at Madhepura, Bihar in joint venture with Alstom France. Hauls 6,000-tonne freight trains at 120 km/h.',
+      hi: 'मधेपुरा (बिहार) में एल्सटॉम के साथ संयुक्त उद्यम द्वारा निर्मित।',
+    },
+  },
+  {
+    id: 'fc-13',
+    category: 'Railway GK',
+    front: {
+      en: 'Which manufacturing unit designed and built the first Vande Bharat Express (Train 18)?',
+      hi: 'किस विनिर्माण इकाई ने पहली वंदे भारत एक्सप्रेस (ट्रेन 18) को डिजाइन और निर्मित किया?',
+    },
+    back: {
+      en: 'Integral Coach Factory (ICF), Perambur, Chennai',
+      hi: 'इंटीग्रल कोच फैक्ट्री (ICF), पेरंबूर, चेन्नई',
+    },
+    notes: {
+      en: 'Inaugural service flagged off on 15 February 2019 between New Delhi and Varanasi.',
+      hi: 'पहली ट्रेन 15 फरवरी 2019 को नई दिल्ली से वाराणसी के बीच शुरू की गई थी।',
+    },
+  },
+  {
+    id: 'fc-14',
+    category: 'Railway GK',
+    front: {
+      en: 'What are the 4 aspects of modern Indian Railways colour light signalling and their meanings?',
+      hi: 'भारतीय रेलवे के आधुनिक 4-एस्पेक्ट कलर लाइट सिग्नल के रंग और उनके अर्थ क्या हैं?',
+    },
+    back: {
+      en: 'Green (Clear/Normal Speed), Double Yellow (Attention/30 km/h), Yellow (Caution/Be ready to stop), Red (Danger/Stop)',
+      hi: 'हरा (क्लीयर - पूर्ण गति), डबल पीला (अटेंशन - 30 किमी/घंटा), पीला (कॉशन - रुकने को तैयार), लाल (खतरा - पूर्ण स्टॉप)',
+    },
+    notes: {
+      en: 'Essential knowledge for Station Master CBAT and RRB JE S&T engineering.',
+      hi: 'स्टेशन मास्टर साइको एवं जेई एसएंडटी परीक्षा हेतु अनिवार्य।',
+    },
+  },
+  {
+    id: 'fc-15',
+    category: 'Current Affairs',
+    front: {
+      en: 'Who is the current Chairman and Chief Executive Officer (CEO) of the Railway Board?',
+      hi: 'वर्तमान में रेलवे बोर्ड के अध्यक्ष एवं मुख्य कार्यकारी अधिकारी (CEO) कौन हैं?',
+    },
+    back: {
+      en: 'Shri Satish Kumar (appointed 2024)',
+      hi: 'श्री सतीश कुमार (2024 में नियुक्त)',
+    },
+    notes: {
+      en: 'Distinguished 1986 batch IRSEE officer who succeeded Jaya Varma Sinha.',
+      hi: '1986 बैच के वरिष्ठ आईआरएसईई अधिकारी जिन्होंने जया वर्मा सिन्हा का स्थान लिया।',
+    },
+  },
+  {
+    id: 'fc-16',
+    category: 'Current Affairs',
+    front: {
+      en: 'At the 45th FIDE Chess Olympiad in Budapest, what historic milestone did India achieve?',
+      hi: 'बुडापेस्ट में 45वें शतरंज ओलंपियाड में भारत ने कौन सा ऐतिहासिक मील का पत्थर हासिल किया?',
+    },
+    back: {
+      en: 'Historic Double Gold: Won 1st place in BOTH Open and Women’s Categories',
+      hi: 'ऐतिहासिक दोहरा स्वर्ण: ओपन और महिला दोनों वर्गों में प्रथम स्थान (स्वर्ण पदक)',
+    },
+    notes: {
+      en: 'Led by D Gukesh, Arjun Erigaisi, Harika Dronavalli, and Divya Deshmukh.',
+      hi: 'डी गुकेश, अर्जुन एरिगैसी, हरिका द्रोणावल्ली और दिव्या देशमुख के नेतृत्व में।',
+    },
+  },
+  {
+    id: 'fc-17',
+    category: 'Current Affairs',
+    front: {
+      en: 'What is the monthly free electricity limit provided under PM-Surya Ghar: Muft Bijli Yojana?',
+      hi: 'पीएम-सूर्य घर: मुफ्त बिजली योजना के तहत प्रति माह कितनी मुफ्त बिजली प्रदान की जाती है?',
+    },
+    back: {
+      en: 'Up to 300 units of free electricity per month for 1 crore households',
+      hi: '1 करोड़ परिवारों को प्रति माह 300 यूनिट तक मुफ्त बिजली',
+    },
+    notes: {
+      en: 'Total scheme outlay of ₹75,021 crore with direct subsidies up to ₹78,000 for 3 kW solar plants.',
+      hi: 'कुल ₹75,021 करोड़ का परिव्यय और 3 किलोवाट तक के प्लांट हेतु ₹78,000 तक की प्रत्यक्ष सब्सिडी।',
+    },
+  },
 ];
