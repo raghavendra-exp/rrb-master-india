@@ -69,17 +69,37 @@ const MainApp: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleStartMockTest = (examId: ExamId, stage: string, customDuration?: number) => {
-    let testQuestions = QUESTIONS_DATABASE.filter((q) => q.exam === examId);
-    if (testQuestions.length === 0) {
-      testQuestions = QUESTIONS_DATABASE;
+  const handleStartMockTest = (
+    examId: ExamId,
+    stage: string,
+    customDuration?: number,
+    questionCount?: number
+  ) => {
+    let pool = QUESTIONS_DATABASE.filter((q) => q.exam === examId);
+    if (pool.length === 0) {
+      pool = QUESTIONS_DATABASE;
     }
+
+    // Determine target question count based on stage or explicit param
+    const targetCount =
+      questionCount ||
+      (stage === 'Mini Sprint'
+        ? 15
+        : stage === 'CBT-2' && examId === 'rrb-je'
+        ? 150
+        : stage === 'CBT-2' && examId === 'rrb-ntpc'
+        ? 120
+        : 100);
+
+    // Shuffle and pick targetCount questions for a fresh realistic CBT exam session
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
+    const testQuestions = shuffled.slice(0, Math.min(targetCount, shuffled.length));
 
     setActiveTestSession({
       examId,
       stage,
       duration: customDuration || (stage === 'CBT-2' && examId === 'rrb-je' ? 120 : 90),
-      title: `${examId.toUpperCase().replace('-', ' ')} ${stage} Official Simulation`,
+      title: `${examId.toUpperCase().replace('-', ' ')} ${stage} Official Simulation (${testQuestions.length} Qs)`,
       questions: testQuestions,
     });
   };

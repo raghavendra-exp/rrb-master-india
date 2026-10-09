@@ -10,6 +10,8 @@ import {
   ArrowRight,
   Sparkles,
   ChevronRight,
+  BookOpen,
+  Globe,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -285,6 +287,43 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             <h3 className="font-bold text-sm text-slate-900 dark:text-white">Calculation Speed Lab</h3>
             <p className="text-[11px] text-slate-500 mt-0.5">Rapid mental arithmetic & 30-sec GK recall sprints</p>
           </div>
+        </div>
+      </section>
+
+      {/* 5,000+ Question Bank & 43-Year PYQ Archive Highlight */}
+      <section className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-blue-900/40">
+        <div className="space-y-2 max-w-2xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
+            <Sparkles className="w-3.5 h-3.5" />
+            {language === 'hi' ? 'विशाल 5,200+ अभ्यास प्रश्नकोष' : 'Massive 5,200+ Practice Repository'}
+          </div>
+          <h2 className="text-xl sm:text-2xl font-black">
+            {language === 'hi'
+              ? '5,000+ अभ्यास प्रश्न एवं 43 वर्षों (1982–2026) का संपूर्ण PYQ महासंग्रह'
+              : '5,000+ Practice Questions & 43-Year (1982–2026) Official PYQ Archive'}
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            {language === 'hi'
+              ? 'रेलवे सेवा आयोग (1982) से लेकर नवीनतम टीसीएस ऑनलाइन सीबीटी (2026) तक के सभी प्रश्न, द्विभाषी व्याख्या, विस्तृत चरणबद्ध हल एवं निःशुल्क सरकारी शैक्षिक संसाधन।'
+              : 'Complete archive covering Railway Service Commissions (1982) up to TCS online CBTs (2026). Authentic bilingual step-by-step solutions with 1/3 negative marking calibration.'}
+          </p>
+        </div>
+
+        <div className="flex flex-wrap sm:flex-nowrap gap-3 shrink-0">
+          <button
+            onClick={() => onNavigate('questions')}
+            className="px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>{language === 'hi' ? '5,000+ प्रश्न बैंक खोलें' : 'Browse 5,000+ Questions'}</span>
+          </button>
+          <button
+            onClick={() => onNavigate('books')}
+            className="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-bold flex items-center gap-2 backdrop-blur-md border border-white/20 transition-all cursor-pointer"
+          >
+            <Globe className="w-4 h-4 text-emerald-400" />
+            <span>{language === 'hi' ? 'सरकारी पोर्टल एवं पुस्तकें' : 'Govt Portals & Books'}</span>
+          </button>
         </div>
       </section>
 

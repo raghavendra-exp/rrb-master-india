@@ -6,7 +6,12 @@ import { getStoredMockResults } from '../utils/storage';
 import type { ExamId } from '../types';
 
 interface MockTestPageProps {
-  onStartMock: (examId: ExamId, stage: string, customDuration?: number) => void;
+  onStartMock: (
+    examId: ExamId,
+    stage: string,
+    customDuration?: number,
+    questionCount?: number
+  ) => void;
   onNavigate: (tab: string) => void;
 }
 
@@ -148,7 +153,7 @@ export const MockTestPage: React.FC<MockTestPageProps> = ({ onStartMock, onNavig
               </div>
 
               <button
-                onClick={() => onStartMock(m.examId, m.stage, m.duration)}
+                onClick={() => onStartMock(m.examId, m.stage, m.duration, m.questions)}
                 className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
               >
                 <PlayCircle className="w-4 h-4" />
