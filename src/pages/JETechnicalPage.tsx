@@ -211,7 +211,7 @@ SEMICONDUCTOR CIRCUITS        DIGITAL & SYSTEMS             COMMUNICATION SYSTEM
 export const JETechnicalPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ onNavigate }) => {
   const { language } = useLanguage();
   const [selectedDiscipline, setSelectedDiscipline] = useState<string>('civil');
-  const [showImageModal, setShowImageModal] = useState<boolean>(false);
+  const [activeModalImage, setActiveModalImage] = useState<string | null>(null);
 
   const activeData = DISCIPLINES.find((d) => d.id === selectedDiscipline) || DISCIPLINES[0];
 
@@ -252,36 +252,68 @@ export const JETechnicalPage: React.FC<{ onNavigate: (tab: string) => void }> = 
               : 'Mapped directly to the official 150-mark syllabus of RRB JE CBT-2. Core 100-mark engineering specializations alongside the mandatory allied modules (Basics of Computers 15M & Environment Control 10M).'}
           </p>
 
-          <div className="flex items-center gap-2 pt-1">
-            <button
-              onClick={() => setShowImageModal(true)}
-              className="px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-white/10"
-            >
-              <ImageIcon className="w-3.5 h-3.5 text-amber-300" />
-              <span>{language === 'hi' ? 'प्रयोगशाला एवं फील्ड आरेख देखें' : 'View Engineering Laboratory Schematic'}</span>
-            </button>
+          {/* 4 Technical Blueprint Inspection Pills */}
+          <div className="space-y-1.5 pt-1">
+            <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">
+              {language === 'hi' ? 'आधिकारिक इंजीनियरिंग एवं फील्ड आरेख (Click to Inspect):' : 'Official Engineering Blueprints (Click to Zoom):'}
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                onClick={() => setActiveModalImage('./assets/rrb_railway_signals_track.jpg')}
+                className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-white/10"
+              >
+                <span>🚦 Civil: P-Way Track & MACLS Signals</span>
+              </button>
+              <button
+                onClick={() => setActiveModalImage('./assets/rrb_railway_loco_traction.jpg')}
+                className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-white/10"
+              >
+                <span>⚡ Elec/Mech: 25kV Traction & OHE</span>
+              </button>
+              <button
+                onClick={() => setActiveModalImage('./assets/rrb_railway_kavach_atp.jpg')}
+                className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-white/10"
+              >
+                <span>🛡️ S&T: KAVACH 4.0 Architecture</span>
+              </button>
+              <button
+                onClick={() => setActiveModalImage('./assets/rrb_science_engineering_lab.jpg')}
+                className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-white/10"
+              >
+                <ImageIcon className="w-3.5 h-3.5 text-amber-300" />
+                <span>⚙️ Applied Science Laboratory</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Engineering Laboratory Image Modal */}
-      {showImageModal && (
+      {/* Engineering Blueprint Modal */}
+      {activeModalImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-          onClick={() => setShowImageModal(false)}
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setActiveModalImage(null)}
         >
-          <div className="relative max-w-5xl w-full bg-slate-900 rounded-3xl overflow-hidden p-2 border border-slate-700 shadow-2xl">
+          <div
+            className="relative max-w-5xl w-full bg-slate-900 rounded-3xl overflow-hidden p-3 border border-slate-700 shadow-2xl space-y-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-2 pt-1 text-white">
+              <span className="text-xs font-bold uppercase tracking-wider text-purple-300">
+                {language === 'hi' ? 'आरआरबी जेई इंजीनियरिंग तकनीकी आरेख' : 'RRB JE Technical Engineering Blueprint'}
+              </span>
+              <button
+                onClick={() => setActiveModalImage(null)}
+                className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs cursor-pointer"
+              >
+                ✕ Close
+              </button>
+            </div>
             <img
-              src="./assets/rrb_science_engineering_lab.jpg"
-              alt="Engineering Laboratory Schematic"
-              className="w-full max-h-[85vh] object-contain rounded-2xl"
+              src={activeModalImage}
+              alt="Engineering Blueprint"
+              className="w-full max-h-[82vh] object-contain rounded-2xl bg-slate-950"
             />
-            <button
-              onClick={() => setShowImageModal(false)}
-              className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-black/60 text-white font-bold text-xs hover:bg-black/90 cursor-pointer"
-            >
-              ✕ Close
-            </button>
           </div>
         </div>
       )}

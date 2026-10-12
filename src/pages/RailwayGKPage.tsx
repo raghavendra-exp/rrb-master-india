@@ -7,16 +7,20 @@ import {
   CheckCircle2,
   Maximize2,
   X,
+  Layers,
+  Award,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Breadcrumb } from '../components/layout/Breadcrumb';
 import { RAILWAY_GK_TOPICS, type RailwayGkTopic } from '../data/rrb/railwayGk';
 import { CURRENT_AFFAIRS_ITEMS, type CurrentAffairItem } from '../data/rrb/currentAffairs';
+import { RAILWAY_BLUEPRINTS } from '../data/rrb/railwayBlueprints';
 
 export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ onNavigate }) => {
   const { t, language } = useLanguage();
   const [activeTab, setActiveTab] = useState<'knowledge_hub' | 'current_affairs'>('knowledge_hub');
   const [selectedImageModal, setSelectedImageModal] = useState<string | null>(null);
+  const [selectedBlueprintId, setSelectedBlueprintId] = useState<string>('signals-track');
 
   // Knowledge Hub Filters
   const [selectedLevel, setSelectedLevel] = useState<'ALL' | 'basic' | 'intermediate' | 'advance'>('ALL');
@@ -194,45 +198,189 @@ export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({
             </div>
           </div>
 
-          {/* Visual Technical Schematic Banner */}
-          <div className="bg-gradient-to-r from-blue-900/10 via-slate-900/10 to-indigo-900/10 dark:from-slate-800/40 dark:to-blue-950/40 p-4 sm:p-5 rounded-3xl border border-blue-200 dark:border-blue-900/60 flex flex-col md:flex-row items-center gap-5">
-            <div
-              className="relative group cursor-pointer shrink-0"
-              onClick={() => setSelectedImageModal('./assets/rrb_railway_operations.jpg')}
-            >
-              <img
-                src="./assets/rrb_railway_operations.jpg"
-                alt="Indian Railways Operational Infrastructure & KAVACH ATP System"
-                className="w-full md:w-80 h-44 object-cover rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md group-hover:scale-102 transition-transform"
-              />
-              <div className="absolute inset-0 bg-black/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-2xs">
-                <Maximize2 className="w-4 h-4" />
-                <span>{language === 'hi' ? 'बड़ा देखें' : 'Click to Zoom'}</span>
+          {/* Interactive Railway Visual Engineering & Operations Blueprint Studio */}
+          {(() => {
+            const activeBlueprint =
+              RAILWAY_BLUEPRINTS.find((b) => b.id === selectedBlueprintId) || RAILWAY_BLUEPRINTS[0];
+
+            return (
+              <div className="bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-950 text-white p-5 sm:p-7 rounded-3xl border border-blue-500/30 shadow-xl space-y-6">
+                {/* Header & Blueprint Selector Tabs */}
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="p-2 rounded-xl bg-blue-600 text-white">
+                        <Layers className="w-4 h-4" />
+                      </span>
+                      <div>
+                        <h2 className="text-base sm:text-lg font-black tracking-tight text-white">
+                          {language === 'hi'
+                            ? 'भारतीय रेल: आधिकारिक तकनीकी एवं परिचालन आरेख दीर्घा'
+                            : 'Indian Railways: Visual Engineering & Operations Blueprint Studio'}
+                        </h2>
+                        <p className="text-xs text-blue-200">
+                          {language === 'hi'
+                            ? 'आरआरबी परीक्षाओं के लिए सर्वाधिक महत्वपूर्ण 5 विस्तृत तकनीकी आरेख एवं अवधारणाएं'
+                            : 'Explore 5 high-yield explainable engineering blueprints with complete specifications and exam Q&A'}
+                        </p>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => setSelectedImageModal(activeBlueprint.src)}
+                      className="px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-blue-200 hover:text-white text-xs font-bold flex items-center gap-1.5 border border-white/20 transition-all cursor-pointer"
+                    >
+                      <Maximize2 className="w-3.5 h-3.5" />
+                      <span>{language === 'hi' ? 'बड़ा देखें' : 'Zoom Active Blueprint'}</span>
+                    </button>
+                  </div>
+
+                  {/* 5 Selector Tabs */}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 pt-1">
+                    {RAILWAY_BLUEPRINTS.map((bp) => {
+                      const isSelected = bp.id === activeBlueprint.id;
+                      return (
+                        <button
+                          key={bp.id}
+                          onClick={() => setSelectedBlueprintId(bp.id)}
+                          className={`p-2.5 rounded-2xl text-left border transition-all cursor-pointer flex flex-col justify-between gap-1 ${
+                            isSelected
+                              ? 'bg-blue-600 border-blue-400 text-white shadow-lg shadow-blue-600/30'
+                              : 'bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white'
+                          }`}
+                        >
+                          <span className="text-[10px] font-bold uppercase tracking-wider block truncate opacity-80">
+                            {bp.id === 'signals-track'
+                              ? '🚦 Track & Signals'
+                              : bp.id === 'loco-traction'
+                              ? '⚡ 25kV Traction'
+                              : bp.id === 'kavach-atp'
+                              ? '🛡️ Kavach 4.0 ATP'
+                              : bp.id === 'zones-dfc-map'
+                              ? '🗺️ 17 Zones & DFC'
+                              : '🚆 Fleet & Ops'}
+                          </span>
+                          <span className="text-xs font-bold line-clamp-1">
+                            {t(bp.badge)}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Main Blueprint Showcase Card */}
+                <div className="bg-slate-900/80 rounded-2xl p-4 sm:p-6 border border-white/10 space-y-5">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    {/* Left: Image with Zoom Overlay */}
+                    <div
+                      className="lg:col-span-5 relative group cursor-pointer overflow-hidden rounded-2xl border border-white/20 shadow-lg"
+                      onClick={() => setSelectedImageModal(activeBlueprint.src)}
+                    >
+                      <img
+                        src={activeBlueprint.src}
+                        alt={t(activeBlueprint.title)}
+                        className="w-full h-56 sm:h-64 object-cover group-hover:scale-103 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 backdrop-blur-2xs text-white">
+                        <Maximize2 className="w-6 h-6 text-blue-400 animate-pulse" />
+                        <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-600/90">
+                          {language === 'hi' ? 'पूर्ण आकार में खोलें (Click to Zoom)' : 'Click to View Full Blueprint'}
+                        </span>
+                      </div>
+                      <div className="absolute bottom-2 left-2 right-2 p-1.5 rounded-lg bg-black/70 backdrop-blur-md text-[10px] text-slate-300 text-center font-mono">
+                        {language === 'hi' ? 'उच्च रिज़ॉल्यूशन तकनीकी आरेख' : 'High-Resolution Engineering Diagram'}
+                      </div>
+                    </div>
+
+                    {/* Right: Technical Details & Specifications */}
+                    <div className="lg:col-span-7 space-y-4">
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                          <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-bold uppercase tracking-wider text-[10px] border border-blue-500/30">
+                            {t(activeBlueprint.badge)}
+                          </span>
+                          <span className="text-[11px] font-mono text-slate-400">
+                            ID: {activeBlueprint.id}
+                          </span>
+                        </div>
+                        <h3 className="text-lg sm:text-xl font-black text-white leading-snug">
+                          {t(activeBlueprint.title)}
+                        </h3>
+                        <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                          {t(activeBlueprint.shortDesc)}
+                        </p>
+                      </div>
+
+                      {/* Technical Specs Table */}
+                      <div className="space-y-1.5 pt-1">
+                        <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">
+                          {language === 'hi' ? 'मुख्य तकनीकी विनिर्देश (Technical Specs):' : 'Key Engineering Specifications:'}
+                        </span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                          {activeBlueprint.detailedSpecs.map((spec, sIdx) => (
+                            <div
+                              key={sIdx}
+                              className="p-2.5 rounded-xl bg-white/5 border border-white/10 space-y-0.5"
+                            >
+                              <span className="text-[10px] font-semibold text-slate-400 block">
+                                {t(spec.label)}
+                              </span>
+                              <span className="font-bold text-slate-100 text-[11px] block">
+                                {t(spec.value)}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Takeaways & Exam Q&A Strip */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-3 border-t border-white/10 text-xs">
+                    {/* Key Takeaways */}
+                    <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+                      <span className="font-bold text-blue-300 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                        {language === 'hi' ? 'महत्वपूर्ण अवधारणाएं (Core Takeaways):' : 'Core Conceptual Takeaways:'}
+                      </span>
+                      <ul className="space-y-1.5 text-slate-300 text-[11px] leading-relaxed">
+                        {activeBlueprint.keyTakeaways.map((takeaway, tIdx) => (
+                          <li key={tIdx} className="flex items-start gap-1.5">
+                            <span className="text-blue-400 font-bold">•</span>
+                            <span>{t(takeaway)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* High-Yield Exam Questions */}
+                    <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 space-y-2">
+                      <span className="font-bold text-amber-300 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                        <Award className="w-3.5 h-3.5 text-amber-400" />
+                        {language === 'hi' ? 'आरआरबी परीक्षा में पूछे जाने वाले प्रश्न:' : 'Frequently Tested in RRB Exams:'}
+                      </span>
+                      <div className="space-y-2 text-[11px]">
+                        {activeBlueprint.examQuestions.map((q, qIdx) => (
+                          <div key={qIdx} className="space-y-0.5 border-b border-amber-500/10 pb-1.5 last:border-0 last:pb-0">
+                            <div className="flex items-center justify-between text-[10px] text-amber-400 font-semibold">
+                              <span>Q{qIdx + 1}: {q.examTag}</span>
+                            </div>
+                            <p className="font-medium text-slate-200">
+                              {t(q.question)}
+                            </p>
+                            <p className="text-emerald-400 font-bold">
+                              Ans: {t(q.answer)}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="space-y-2 text-xs">
-              <span className="px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold uppercase tracking-wider text-[10px]">
-                {language === 'hi' ? 'आधिकारिक रेलवे तकनीकी आरेख' : 'Official Railway Technical Schematic'}
-              </span>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                {language === 'hi'
-                  ? 'भारतीय रेल: परिचालन अवसंरचना, ट्रैक गेज एवं कवच प्रणाली'
-                  : 'Indian Railways: Operational Infrastructure, Track Gauges & KAVACH ATP'}
-              </h3>
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                {language === 'hi'
-                  ? 'वंदे भारत (T-18) ट्रेनसेट, WAG-12B 12,000 HP इलेक्ट्रिक लोको, 1676 मिमी ब्रॉड गेज (BG) ट्रैक क्रॉस-सेक्शन, एवं आरडीएसओ द्वारा प्रमाणित कवच SIL-4 स्वचालित ट्रेन सुरक्षा प्रणाली (रेडियो टावर + ट्रैकसाइड RFID बलिसे)।'
-                  : 'Technical overview of Vande Bharat (T-18), WAG-12B 12,000 HP locomotive, Broad Gauge (1676 mm) track cross-section with PSC sleepers, and RDSO SIL-4 certified KAVACH ATP continuous supervision.'}
-              </p>
-              <button
-                onClick={() => setSelectedImageModal('./assets/rrb_railway_operations.jpg')}
-                className="text-blue-600 font-bold flex items-center gap-1 hover:underline pt-1 cursor-pointer"
-              >
-                <span>{language === 'hi' ? 'पूर्ण आकार में खोलें' : 'Open Full Blueprint'}</span>
-                <Maximize2 className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
+            );
+          })()}
 
           {/* Topics Grid */}
           <div className="space-y-6">

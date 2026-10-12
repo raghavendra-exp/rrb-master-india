@@ -361,30 +361,90 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
 
         {/* Visual Infographics Gallery Row */}
-        <div className="pt-2 border-t border-white/10">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
-              {language === 'hi' ? 'तकनीकी एवं प्रायोगिक इन्फोग्राफिक दीर्घा' : 'Official Technical & Laboratory Infographics Gallery'}
-            </span>
-            <span className="text-[11px] text-slate-400">Click any image to view in high resolution</span>
+        <div className="pt-2 border-t border-white/10 space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block">
+                {language === 'hi' ? 'भारतीय रेल एवं तकनीकी आरेख दीर्घा (8 विस्तृत ब्लूप्रिंट्स)' : 'Indian Railways & Technical Blueprint Studio (8 Schematics)'}
+              </span>
+              <span className="text-[11px] text-blue-300">
+                {language === 'hi' ? 'सिग्नलिंग, 25kV ओएचई, कवच 4.0, 17 ज़ोन, ट्रैक एवं लैब आरेखों पर क्लिक कर बड़ा देखें' : 'Click any blueprint to inspect in full-resolution zoom lightbox'}
+              </span>
+            </div>
+            <button
+              onClick={() => onNavigate('railway-gk')}
+              className="text-xs font-bold text-amber-300 hover:text-white flex items-center gap-1 transition-colors cursor-pointer"
+            >
+              <span>{language === 'hi' ? 'रेलवे ज्ञानकोष स्टूडियो खोलें →' : 'Explore All Railway Blueprints →'}</span>
+            </button>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {/* 1. Track & Signals */}
             <div
-              onClick={() => setActiveModalImage('./assets/rrb_master_curriculum.jpg')}
+              onClick={() => setActiveModalImage('./assets/rrb_railway_signals_track.jpg')}
               className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
             >
               <img
-                src="./assets/rrb_master_curriculum.jpg"
-                alt="Master Curriculum"
+                src="./assets/rrb_railway_signals_track.jpg"
+                alt="P-Way Track & Signals"
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
               <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
-                <span>Curriculum Blueprint</span>
+                <span>🚦 P-Way & MACLS Signals</span>
                 <span className="text-blue-400">🔍</span>
               </div>
             </div>
 
+            {/* 2. 25kV Traction & OHE */}
+            <div
+              onClick={() => setActiveModalImage('./assets/rrb_railway_loco_traction.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
+            >
+              <img
+                src="./assets/rrb_railway_loco_traction.jpg"
+                alt="25kV Traction & OHE"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>⚡ 25kV Traction & OHE</span>
+                <span className="text-blue-400">🔍</span>
+              </div>
+            </div>
+
+            {/* 3. Kavach 4.0 ATP */}
+            <div
+              onClick={() => setActiveModalImage('./assets/rrb_railway_kavach_atp.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
+            >
+              <img
+                src="./assets/rrb_railway_kavach_atp.jpg"
+                alt="Kavach 4.0 ATP Architecture"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>🛡️ Kavach 4.0 ATP System</span>
+                <span className="text-blue-400">🔍</span>
+              </div>
+            </div>
+
+            {/* 4. 17 Zones & DFCs Map */}
+            <div
+              onClick={() => setActiveModalImage('./assets/rrb_railway_zones_map.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
+            >
+              <img
+                src="./assets/rrb_railway_zones_map.jpg"
+                alt="17 Zones & DFC Corridors"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>🗺️ 17 Zones & DFC Map</span>
+                <span className="text-blue-400">🔍</span>
+              </div>
+            </div>
+
+            {/* 5. Railway Operations */}
             <div
               onClick={() => setActiveModalImage('./assets/rrb_railway_operations.jpg')}
               className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
@@ -395,11 +455,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
               <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
-                <span>Rail & KAVACH</span>
+                <span>🚆 Vande Bharat & WAG-12</span>
                 <span className="text-blue-400">🔍</span>
               </div>
             </div>
 
+            {/* 6. Physics Optics & Circuits */}
             <div
               onClick={() => setActiveModalImage('./assets/rrb_physics_optics_circuits.jpg')}
               className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
@@ -410,11 +471,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
               <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
-                <span>Optics & Circuits</span>
+                <span>🔬 Optics & Circuits (25M)</span>
                 <span className="text-blue-400">🔍</span>
               </div>
             </div>
 
+            {/* 7. Engineering Lab */}
             <div
               onClick={() => setActiveModalImage('./assets/rrb_science_engineering_lab.jpg')}
               className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
@@ -425,7 +487,23 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
               <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
-                <span>JE Blueprint</span>
+                <span>⚙️ JE Applied Science Lab</span>
+                <span className="text-blue-400">🔍</span>
+              </div>
+            </div>
+
+            {/* 8. Master Curriculum */}
+            <div
+              onClick={() => setActiveModalImage('./assets/rrb_master_curriculum.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
+            >
+              <img
+                src="./assets/rrb_master_curriculum.jpg"
+                alt="Master Curriculum"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>📚 Master Curriculum Blueprint</span>
                 <span className="text-blue-400">🔍</span>
               </div>
             </div>
