@@ -29,32 +29,6 @@ export const RRB_POSTS: PostDetails[] = [
     selectionStages: ['CBT-1', 'CBT-2 (Level 6)', 'CBAT (Aptitude Test)', 'Document Verification', 'Medical Exam (A-2)'],
   },
   {
-    id: 'ntpc-goods-train-manager',
-    postName: { en: 'Goods Train Manager (formerly Goods Guard)', hi: 'गुड्स ट्रेन मैनेजर (पूर्व नाम: मालगाड़ी गार्ड)' },
-    examId: 'rrb-ntpc',
-    level: 'Graduate',
-    payLevel: 'Level 5',
-    initialPay: '₹29,200',
-    department: { en: 'Operating Department', hi: 'परिचालन विभाग' },
-    qualification: {
-      en: 'Degree from a recognized University or equivalent',
-      hi: 'किसी मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री',
-    },
-    ageLimit: '18 - 36 Years',
-    medicalStandard: 'A-2 (Distant Vision: 6/9, 6/9 without glasses; Strict color vision)',
-    typingRequired: false,
-    cbatRequired: false,
-    jobDuties: {
-      en: 'In charge of the goods freight train, responsible for train integrity, safety tail lamp/LV board, brake power certificates, shunting supervision, and liaison with Loco Pilot.',
-      hi: 'मालगाड़ी का प्रभारी, ट्रेन की संरक्षा, टेल लैंप/एलवी बोर्ड, ब्रेक पावर प्रमाण पत्र (BPC), शंटिंग पर्यवेक्षण और लोको पायलट के साथ निरंतर समन्वय।',
-    },
-    careerProgression: {
-      en: 'Goods Train Manager → Passenger Train Manager → Mail/Express Train Manager → Chief Train Manager / Yard Master',
-      hi: 'गुड्स ट्रेन मैनेजर → पैसेंजर ट्रेन मैनेजर → मेल/एक्सप्रेस ट्रेन मैनेजर → चीफ ट्रेन मैनेजर / यार्ड मास्टर',
-    },
-    selectionStages: ['CBT-1', 'CBT-2 (Level 5)', 'Document Verification', 'Medical Exam (A-2)'],
-  },
-  {
     id: 'ntpc-chief-commercial-ticket-supervisor',
     postName: {
       en: 'Chief Commercial Cum Ticket Supervisor (CCCTS)',

@@ -73,7 +73,7 @@ export const FormulasShortcutsPage: React.FC<{ onNavigate: (tab: string) => void
         <div className="space-y-4">
           {/* Subject Filter */}
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
-            {['ALL', 'Arithmetic', 'Statistics', 'Mensuration', 'Physics', 'Engineering'].map((sub) => (
+            {['ALL', 'Arithmetic', 'Statistics', 'Mensuration', 'Physics', 'Chemistry', 'Biology', 'Engineering'].map((sub) => (
               <button
                 key={sub}
                 onClick={() => setSelectedSubject(sub)}
@@ -86,6 +86,31 @@ export const FormulasShortcutsPage: React.FC<{ onNavigate: (tab: string) => void
                 {sub}
               </button>
             ))}
+          </div>
+
+          {/* Visual Lab Infographic Preview */}
+          <div className="bg-gradient-to-r from-blue-900/10 via-indigo-900/10 to-slate-900/10 dark:from-slate-800/40 dark:to-blue-950/40 p-4 rounded-2xl border border-blue-200 dark:border-blue-900/50 flex flex-col sm:flex-row items-center gap-4">
+            <img
+              src="./assets/rrb_physics_optics_circuits.jpg"
+              alt="Ray Tracing, Circuits and pH Scale"
+              className="w-full sm:w-48 h-28 object-cover rounded-xl shadow-md border border-slate-200 dark:border-slate-700 cursor-pointer hover:scale-105 transition-transform"
+              onClick={() => window.open('./assets/rrb_physics_optics_circuits.jpg', '_blank')}
+            />
+            <div className="space-y-1 text-xs">
+              <span className="font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider text-[10px]">
+                {language === 'hi' ? 'आधिकारिक विज्ञान एवं सर्किट इन्फोग्राफिक' : 'Official Science Lab & Circuitry Infographic'}
+              </span>
+              <h4 className="font-bold text-slate-900 dark:text-white text-sm">
+                {language === 'hi'
+                  ? 'गोलीय दर्पण/लेंस किरण आरेख, ओम का नियम परिपथ एवं pH स्केल'
+                  : 'Spherical Optics Ray Tracing, Ohm’s Law Circuit & 0-14 pH Indicator Scale'}
+              </h4>
+              <p className="text-slate-600 dark:text-slate-400">
+                {language === 'hi'
+                  ? 'ग्रुप डी एवं एनटीपीसी सीबीटी-2 हेतु उच्च वेटेज भौतिकी एवं रसायन के आधिकारिक आरेख। बड़े आकार में देखने के लिए चित्र पर क्लिक करें।'
+                  : 'High-weightage Class 10 NCERT visual diagrams for Group D and NTPC CBT. Click the image to view in high resolution.'}
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

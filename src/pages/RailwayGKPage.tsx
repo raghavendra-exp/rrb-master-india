@@ -5,6 +5,8 @@ import {
   Search,
   Sparkles,
   CheckCircle2,
+  Maximize2,
+  X,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Breadcrumb } from '../components/layout/Breadcrumb';
@@ -14,6 +16,7 @@ import { CURRENT_AFFAIRS_ITEMS, type CurrentAffairItem } from '../data/rrb/curre
 export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ onNavigate }) => {
   const { t, language } = useLanguage();
   const [activeTab, setActiveTab] = useState<'knowledge_hub' | 'current_affairs'>('knowledge_hub');
+  const [selectedImageModal, setSelectedImageModal] = useState<string | null>(null);
 
   // Knowledge Hub Filters
   const [selectedLevel, setSelectedLevel] = useState<'ALL' | 'basic' | 'intermediate' | 'advance'>('ALL');
@@ -188,6 +191,46 @@ export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({
               <div className="text-xs font-semibold text-slate-400">
                 Showing {filteredGkTopics.length} of {RAILWAY_GK_TOPICS.length} Topics
               </div>
+            </div>
+          </div>
+
+          {/* Visual Technical Schematic Banner */}
+          <div className="bg-gradient-to-r from-blue-900/10 via-slate-900/10 to-indigo-900/10 dark:from-slate-800/40 dark:to-blue-950/40 p-4 sm:p-5 rounded-3xl border border-blue-200 dark:border-blue-900/60 flex flex-col md:flex-row items-center gap-5">
+            <div
+              className="relative group cursor-pointer shrink-0"
+              onClick={() => setSelectedImageModal('./assets/rrb_railway_operations.jpg')}
+            >
+              <img
+                src="./assets/rrb_railway_operations.jpg"
+                alt="Indian Railways Operational Infrastructure & KAVACH ATP System"
+                className="w-full md:w-80 h-44 object-cover rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md group-hover:scale-102 transition-transform"
+              />
+              <div className="absolute inset-0 bg-black/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-2xs">
+                <Maximize2 className="w-4 h-4" />
+                <span>{language === 'hi' ? 'बड़ा देखें' : 'Click to Zoom'}</span>
+              </div>
+            </div>
+            <div className="space-y-2 text-xs">
+              <span className="px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold uppercase tracking-wider text-[10px]">
+                {language === 'hi' ? 'आधिकारिक रेलवे तकनीकी आरेख' : 'Official Railway Technical Schematic'}
+              </span>
+              <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                {language === 'hi'
+                  ? 'भारतीय रेल: परिचालन अवसंरचना, ट्रैक गेज एवं कवच प्रणाली'
+                  : 'Indian Railways: Operational Infrastructure, Track Gauges & KAVACH ATP'}
+              </h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                {language === 'hi'
+                  ? 'वंदे भारत (T-18) ट्रेनसेट, WAG-12B 12,000 HP इलेक्ट्रिक लोको, 1676 मिमी ब्रॉड गेज (BG) ट्रैक क्रॉस-सेक्शन, एवं आरडीएसओ द्वारा प्रमाणित कवच SIL-4 स्वचालित ट्रेन सुरक्षा प्रणाली (रेडियो टावर + ट्रैकसाइड RFID बलिसे)।'
+                  : 'Technical overview of Vande Bharat (T-18), WAG-12B 12,000 HP locomotive, Broad Gauge (1676 mm) track cross-section with PSC sleepers, and RDSO SIL-4 certified KAVACH ATP continuous supervision.'}
+              </p>
+              <button
+                onClick={() => setSelectedImageModal('./assets/rrb_railway_operations.jpg')}
+                className="text-blue-600 font-bold flex items-center gap-1 hover:underline pt-1 cursor-pointer"
+              >
+                <span>{language === 'hi' ? 'पूर्ण आकार में खोलें' : 'Open Full Blueprint'}</span>
+                <Maximize2 className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
 
@@ -389,6 +432,39 @@ export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({
           </div>
         </div>
       )}
+
+      {/* Image Modal */}
+      {selectedImageModal && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setSelectedImageModal(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-4 bg-slate-800 border-b border-slate-700 text-white">
+              <span className="font-bold text-sm">
+                {language === 'hi' ? 'भारतीय रेल आधिकारिक तकनीकी आरेख' : 'Official Indian Railways Technical Schematic'}
+              </span>
+              <button
+                onClick={() => setSelectedImageModal(null)}
+                className="p-1 rounded-lg hover:bg-slate-700 text-slate-300 hover:text-white cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-2 overflow-auto max-h-[80vh]">
+              <img
+                src={selectedImageModal}
+                alt="Enlarged schematic"
+                className="w-full h-auto object-contain rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+

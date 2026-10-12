@@ -199,4 +199,113 @@ export const FORMULA_ITEMS: FormulaItem[] = [
     },
     examApplicability: ['rrb-je'],
   },
+  {
+    id: 'form-math-euler-totient-remainder',
+    subject: 'Arithmetic',
+    title: {
+      en: 'Euler’s Totient Theorem, Divisibility & Large Power Remainders',
+      hi: 'यूलर टोटिएंट प्रमेय, विभाज्यता एवं बड़ी घातों के शेषफल',
+    },
+    formula: 'a^φ(n) ≡ 1 (mod n)  |  φ(n) = n × ∏(1 - 1/p)  |  Divisibility 72 = 8 × 9, 88 = 8 × 11',
+    explanation: {
+      en: 'If a and n are coprime, dividing a^φ(n) by n leaves remainder 1. For prime p, φ(p) = p - 1 (Fermat’s Little Theorem). For composite divisibility, test coprime factors independently.',
+      hi: 'यदि a और n सह-अभाज्य हैं, तो a^φ(n) को n से भाग देने पर शेषफल 1 बचता है। अभाज्य संख्या p हेतु φ(p) = p - 1। संयुक्त संख्या (जैसे 72 या 88) के सह-अभाज्य गुणनखंडों की विभाज्यता जांचें।',
+    },
+    example: {
+      en: 'Find remainder of 3^100 divided by 7: φ(7) = 6. 100 = 6×16 + 4. So 3^100 ≡ 3^4 = 81 ≡ 4 (mod 7). Remainder = 4.',
+      hi: '3^100 को 7 से भाग देने पर शेषफल: φ(7) = 6। 100 = 6×16 + 4। अतः 3^100 ≡ 3^4 = 81 ≡ 4 (mod 7)। शेषफल = 4।',
+    },
+    examApplicability: ['rrb-ntpc', 'rrb-je'],
+  },
+  {
+    id: 'form-math-mensuration-frustum',
+    subject: 'Mensuration',
+    title: {
+      en: 'Frustum of a Right Circular Cone (Volume & Surface Area)',
+      hi: 'लंब वृत्तीय शंकु का छिन्नक (आयतन एवं पृष्ठीय क्षेत्रफल)',
+    },
+    formula: 'Vol V = (1/3)πh(r₁² + r₂² + r₁r₂)  |  CSA = π(r₁ + r₂)l  |  l = √(h² + (r₁ - r₂)²)  |  TSA = CSA + πr₁² + πr₂²',
+    explanation: {
+      en: 'r₁ and r₂ are top and bottom radii, h is vertical height, l is slant height. A standard RRB NTPC Graduate Level geometry favourite.',
+      hi: 'r₁ और r₂ ऊपरी व निचले आधार की त्रिज्याएं हैं, h ऊर्ध्वाधर ऊंचाई है, तथा l तिर्यक ऊंचाई है।',
+    },
+    example: {
+      en: 'Frustum with radii 4 cm & 1 cm, height 4 cm: l = √(4² + 3²) = 5 cm. CSA = π(4+1)×5 = 25π cm².',
+      hi: 'त्रिज्याएं 4 सेमी व 1 सेमी तथा ऊंचाई 4 सेमी: तिर्यक ऊंचाई l = √(16+9) = 5 सेमी। वक्र पृष्ठ = π(5)×5 = 25π सेमी²।',
+    },
+    examApplicability: ['rrb-ntpc', 'rrb-je'],
+  },
+  {
+    id: 'form-reason-clock-angle',
+    subject: 'Arithmetic',
+    title: {
+      en: 'Clock Hands Angle & Reflex Angle Calculation',
+      hi: 'घड़ी की सुइयों के बीच का कोण एवं प्रतिवर्ती कोण',
+    },
+    formula: 'Angle θ = |30H - 5.5M|°  =  |30H - (11/2)M|°  |  Reflex Angle = 360° - θ',
+    explanation: {
+      en: 'Where H is hours (1-12) and M is minutes (0-59). If calculated angle exceeds 180°, the inner angle is 360° - θ.',
+      hi: 'जहाँ H = घंटे और M = मिनट। यदि प्राप्त कोण 180° से अधिक हो, तो आंतरिक कोण = 360° - θ होता है।',
+    },
+    example: {
+      en: 'At 3:40 -> θ = |30(3) - 5.5(40)| = |90 - 220| = 130°.',
+      hi: '3:40 बजे -> θ = |30(3) - 5.5(40)| = |90 - 220| = 130°।',
+    },
+    examApplicability: ['rrb-ntpc', 'rrb-group-d'],
+  },
+  {
+    id: 'form-eng-railway-superelevation',
+    subject: 'Engineering',
+    title: {
+      en: 'Railway Track Equilibrium Super-elevation & Cant (Civil P-Way)',
+      hi: 'रेलवे ट्रैक संतुलन सुपर-एलिवेशन / कैंट सूत्र (सिविल पी-वे)',
+    },
+    formula: 'e = (G × V²) / (127 × R)  |  Broad Gauge: G = 1.676 m (1676 mm)  |  e = (1.676 × V²) / (127 × R)',
+    explanation: {
+      en: 'e = super-elevation in meters, G = dynamic gauge, V = equilibrium train speed in km/h, R = curve radius in meters. Essential for high-speed train stability.',
+      hi: 'e = सुपर-एलिवेशन (कैंट) मीटर में, G = गेज चौड़ाई, V = गाड़ी की चाल (किमी/घंटा), R = वक्र की त्रिज्या (मीटर)। ब्रॉड गेज हेतु G = 1.676 मीटर।',
+    },
+    example: {
+      en: 'Broad gauge curve R = 1000 m at speed V = 100 km/h: e = (1.676 × 100²) / (127 × 1000) = 16760 / 127000 ≈ 0.132 m = 132 mm.',
+      hi: 'ब्रॉड गेज पर R = 1000 मी तथा V = 100 किमी/घंटा हेतु कैंट: e ≈ 132 मिमी।',
+    },
+    examApplicability: ['rrb-je'],
+  },
+  {
+    id: 'form-eng-nyquist-pcm',
+    subject: 'Engineering',
+    title: {
+      en: 'Nyquist Sampling Theorem & Pulse Code Modulation (PCM) Bit Rate',
+      hi: 'नाइक्विस्ट सैंपलिंग प्रमेय एवं पीसीएम बिट दर सूत्र (इलेक्ट्रॉनिक्स व टेलीकॉम)',
+    },
+    formula: 'Sampling Rate: fs ≥ 2 × f_max  |  PCM Transmission Bit Rate: Rb = n × fs  |  Bandwidth BW ≥ Rb / 2',
+    explanation: {
+      en: 'fs is Nyquist sampling frequency, f_max is highest signal frequency to prevent aliasing. n is number of encoding bits per sample.',
+      hi: 'एलियासिंग से बचने के लिए सैंपलिंग दर fs न्यूनतम 2 × f_max होनी चाहिए। Rb = प्रति सेकंड प्रेषित बिट्स की संख्या।',
+    },
+    example: {
+      en: 'Voice band f_max = 3.4 kHz (sampled at 8 kHz) with 8-bit quantization: Bit Rate Rb = 8 × 8000 = 64 kbps (standard DS0 channel).',
+      hi: 'आवाज संकेत (8 kHz सैंपलिंग) 8 बिट क्वांटाइजेशन: बिट दर Rb = 64 kbps।',
+    },
+    examApplicability: ['rrb-je'],
+  },
+  {
+    id: 'form-sci-biology-genetics-trophic',
+    subject: 'Biology',
+    title: {
+      en: 'Mendel’s Hereditary Cross Ratios & Lindeman’s 10% Trophic Energy Law',
+      hi: 'मेंडल के आनुवंशिकी अनुपात एवं लिंडमैन का 10% ऊर्जा स्थानांतरण नियम',
+    },
+    formula: 'Monohybrid Phenotype = 3 : 1 (Genotype 1 : 2 : 1)  |  Dihybrid Phenotype = 9 : 3 : 3 : 1  |  Trophic Energy = 10% to next level',
+    explanation: {
+      en: 'Mendel discovered laws of segregation and independent assortment using Pisum sativum (garden pea). In food chains, only 10% of energy is passed from one trophic level to the next; 90% is lost as metabolic heat.',
+      hi: 'एकसंकर क्रॉस का लक्षणप्ररूपी अनुपात 3:1 तथा जीनप्ररूपी 1:2:1 होता है। द्विसंकर क्रॉस का लक्षणप्ररूपी 9:3:3:1 होता है। पारिस्थितिकी में प्रत्येक पोषण स्तर पर केवल 10% ऊर्जा ही अगले स्तर तक पहुंचती है।',
+    },
+    example: {
+      en: 'If producers store 10,000 J energy: Herbivores get 1,000 J (10%), Carnivores get 100 J (1%), Top carnivores get 10 J (0.1%).',
+      hi: 'यदि उत्पादक के पास 10,000 J ऊर्जा है, तो प्राथमिक उपभोक्ता को 1,000 J और द्वितीयक को 100 J प्राप्त होगी।',
+    },
+    examApplicability: ['rrb-group-d', 'rrb-ntpc'],
+  },
 ];
+

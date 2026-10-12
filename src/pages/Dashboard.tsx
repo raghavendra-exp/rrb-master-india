@@ -237,6 +237,177 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
       </section>
 
+      {/* 5-Section Master Curriculum & Technical Infrastructure Showcase */}
+      <section className="bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl space-y-6 border border-blue-900/50">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-500/30">
+              <Sparkles className="w-3.5 h-3.5" />
+              {language === 'hi' ? 'आधिकारिक 5-खंड पाठ्यक्रम एवं तकनीकी रूपरेखा' : 'Official 5-Section Master Curriculum & Blueprint'}
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black">
+              {language === 'hi'
+                ? 'रेलवे परीक्षा पाठ्यक्रम, विज्ञान प्रयोगशाला एवं तकनीकी कोर'
+                : 'Railway Master Curriculum, Science Lab & Technical Engineering Core'}
+            </h2>
+          </div>
+          <button
+            onClick={() => onNavigate('syllabus')}
+            className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-md"
+          >
+            <span>{language === 'hi' ? 'संपूर्ण पाठ्यक्रम एक्सप्लोरर' : 'Explore All 5 Sections'}</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* 4 Section Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Section 1 */}
+          <div
+            onClick={() => onNavigate('syllabus', { section: 1 })}
+            className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/50 transition-all cursor-pointer space-y-2 flex flex-col justify-between"
+          >
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 uppercase tracking-wider">
+                Section 1 • Levels 5 & 6
+              </span>
+              <h4 className="font-bold text-sm text-white">NTPC Graduate Level</h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Station Master, Goods Guard, Sr Clerk. Advanced Math (Euler totient, divisibility, grouped median), 7x7 matrix puzzles, Syllogisms.
+              </p>
+            </div>
+            <span className="text-xs font-bold text-blue-400 flex items-center gap-1 pt-1">
+              View Syllabus →
+            </span>
+          </div>
+
+          {/* Section 2 */}
+          <div
+            onClick={() => onNavigate('syllabus', { section: 2 })}
+            className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-indigo-400/50 transition-all cursor-pointer space-y-2 flex flex-col justify-between"
+          >
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 uppercase tracking-wider">
+                Section 2 • Levels 2 & 3
+              </span>
+              <h4 className="font-bold text-sm text-white">NTPC Undergrad Level</h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Junior Clerk, Trains Clerk, Commercial Clerk. Speed calculation, BODMAS, cross-multiplication, EJOTY, Class 10 Science facts.
+              </p>
+            </div>
+            <span className="text-xs font-bold text-indigo-400 flex items-center gap-1 pt-1">
+              View Syllabus →
+            </span>
+          </div>
+
+          {/* Section 3 */}
+          <div
+            onClick={() => onNavigate('syllabus', { section: 3 })}
+            className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-400/50 transition-all cursor-pointer space-y-2 flex flex-col justify-between"
+          >
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 uppercase tracking-wider">
+                Section 3 • Level 1
+              </span>
+              <h4 className="font-bold text-sm text-white">Group D Science Lab (25M)</h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                Optics ray tracing (1/f = 1/v + 1/u), Ohm’s law circuits, pH 0-14, POP at 373K, Mendel 9:3:3:1, Lindeman 10% trophic law.
+              </p>
+            </div>
+            <span className="text-xs font-bold text-emerald-400 flex items-center gap-1 pt-1">
+              View Science Lab →
+            </span>
+          </div>
+
+          {/* Section 4 */}
+          <div
+            onClick={() => onNavigate('je-technical')}
+            className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/50 transition-all cursor-pointer space-y-2 flex flex-col justify-between"
+          >
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 uppercase tracking-wider">
+                Section 4 • Level 6
+              </span>
+              <h4 className="font-bold text-sm text-white">RRB JE Technical (150M)</h4>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                100M Core Engineering (Civil, Mech, Elec, EC/S&T) + 15M Computers (OSI, CPU) + 10M Environment (ESP, BOD/COD).
+              </p>
+            </div>
+            <span className="text-xs font-bold text-purple-400 flex items-center gap-1 pt-1">
+              View Technical Hub →
+            </span>
+          </div>
+        </div>
+
+        {/* Visual Infographics Gallery Row */}
+        <div className="pt-2 border-t border-white/10">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+              {language === 'hi' ? 'तकनीकी एवं प्रायोगिक इन्फोग्राफिक दीर्घा' : 'Official Technical & Laboratory Infographics Gallery'}
+            </span>
+            <span className="text-[11px] text-slate-400">Click any image to enlarge</span>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div
+              onClick={() => onNavigate('syllabus')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+            >
+              <img
+                src="./assets/rrb_master_curriculum.jpg"
+                alt="Master Curriculum"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
+                Curriculum Architecture
+              </div>
+            </div>
+
+            <div
+              onClick={() => onNavigate('railway-gk')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+            >
+              <img
+                src="./assets/rrb_railway_operations.jpg"
+                alt="Railway Operations"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
+                Rail Infrastructure & KAVACH
+              </div>
+            </div>
+
+            <div
+              onClick={() => onNavigate('formulas')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+            >
+              <img
+                src="./assets/rrb_physics_optics_circuits.jpg"
+                alt="Physics Optics & Circuits"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
+                Optics, Circuits & pH Scale
+              </div>
+            </div>
+
+            <div
+              onClick={() => onNavigate('je-technical')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+            >
+              <img
+                src="./assets/rrb_science_engineering_lab.jpg"
+                alt="Engineering Lab"
+                className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
+                JE Engineering Blueprint
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Specialized Preparation Labs Section */}
       <section className="space-y-4">
         <h2 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
