@@ -124,7 +124,7 @@ const MainApp: React.FC = () => {
         />
 
         {/* Dynamic Page Content */}
-        <main className="flex-1 min-w-0 p-4 sm:p-6 lg:p-8">
+        <main className="flex-1 min-w-0 p-4 sm:p-6 lg:p-8 pb-24 lg:pb-8">
           {currentTab === 'dashboard' && <Dashboard onNavigate={handleNavigate} />}
           {currentTab === 'rrb-ntpc' && (
             <ExamDetailsPage

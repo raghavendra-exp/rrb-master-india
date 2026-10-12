@@ -188,7 +188,7 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
               }`}
             >
               <GraduationCap className="w-4 h-4" />
-              <span>Section 1: NTPC Graduate</span>
+              <span>{language === 'hi' ? 'खंड 1: एनटीपीसी स्नातक' : 'Section 1: NTPC Graduate'}</span>
             </button>
 
             <button
@@ -203,7 +203,7 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
               }`}
             >
               <FileText className="w-4 h-4" />
-              <span>Section 2: NTPC Undergrad</span>
+              <span>{language === 'hi' ? 'खंड 2: एनटीपीसी 12वीं स्तर' : 'Section 2: NTPC Undergrad'}</span>
             </button>
 
             <button
@@ -218,7 +218,7 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
               }`}
             >
               <FlaskConical className="w-4 h-4" />
-              <span>Section 3: Group D (Science 25M)</span>
+              <span>{language === 'hi' ? 'खंड 3: ग्रुप डी विज्ञान (25 अंक)' : 'Section 3: Group D (Science 25M)'}</span>
             </button>
 
             <button
@@ -233,7 +233,7 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
               }`}
             >
               <Wrench className="w-4 h-4" />
-              <span>Section 4: RRB JE (Tech 100M)</span>
+              <span>{language === 'hi' ? 'खंड 4: आरआरबी जेई (तकनीकी 100 अंक)' : 'Section 4: RRB JE (Tech 100M)'}</span>
             </button>
 
             <button
@@ -248,7 +248,7 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
               }`}
             >
               <Layers className="w-4 h-4" />
-              <span>Section 5: Cross-Tier Matrix</span>
+              <span>{language === 'hi' ? 'खंड 5: क्रॉस-टियर मैट्रिक्स' : 'Section 5: Cross-Tier Matrix'}</span>
             </button>
           </div>
         </div>
@@ -274,11 +274,11 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 cursor-pointer shadow-sm hover:shadow-md transition-all"
-              onClick={() => setCurrentImageModal('/assets/rrb_master_curriculum.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 cursor-pointer shadow-sm hover:shadow-md transition-all hover-card-lift"
+              onClick={() => setCurrentImageModal('./assets/rrb_master_curriculum.jpg')}
             >
               <img
-                src="/assets/rrb_master_curriculum.jpg"
+                src="./assets/rrb_master_curriculum.jpg"
                 alt="RRB Recruitment Curriculum Overview"
                 className="w-full h-48 sm:h-56 object-cover group-hover:scale-102 transition-transform duration-300"
               />
@@ -290,11 +290,11 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
             </div>
 
             <div
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 cursor-pointer shadow-sm hover:shadow-md transition-all"
-              onClick={() => setCurrentImageModal('/assets/rrb_science_engineering_lab.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 cursor-pointer shadow-sm hover:shadow-md transition-all hover-card-lift"
+              onClick={() => setCurrentImageModal('./assets/rrb_science_engineering_lab.jpg')}
             >
               <img
-                src="/assets/rrb_science_engineering_lab.jpg"
+                src="./assets/rrb_science_engineering_lab.jpg"
                 alt="Railway Group D & JE Technical Laboratory"
                 className="w-full h-48 sm:h-56 object-cover group-hover:scale-102 transition-transform duration-300"
               />

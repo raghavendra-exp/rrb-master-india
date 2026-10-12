@@ -7,6 +7,7 @@ import { RRB_ZONES } from '../../data/rrb/zones';
 import { FORMULA_ITEMS } from '../../data/rrb/formulas';
 import { QUESTIONS_DATABASE } from '../../data/rrb/questions';
 import { LIVE_NOTIFICATIONS } from '../../data/rrb/notifications';
+import { MASTER_SECTIONS_DATA } from '../../data/rrb/masterTopics';
 
 interface GlobalSearchModalProps {
   isOpen: boolean;
@@ -16,7 +17,7 @@ interface GlobalSearchModalProps {
 
 interface SearchResultItem {
   id: string;
-  category: 'exam' | 'post' | 'zone' | 'formula' | 'question' | 'notification';
+  category: 'exam' | 'post' | 'zone' | 'formula' | 'question' | 'notification' | 'syllabus';
   title: string;
   subtitle: string;
   tabTarget: string;
@@ -164,6 +165,28 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
       }
     });
 
+    // Search Syllabus Master Curriculum Topics
+    MASTER_SECTIONS_DATA.forEach((sec) => {
+      sec.modules.forEach((mod) => {
+        mod.subTopics.forEach((sub) => {
+          const enT = sub.title.en.toLowerCase();
+          const hiT = sub.title.hi.toLowerCase();
+          const enSum = sub.summary.en.toLowerCase();
+          const hiSum = sub.summary.hi.toLowerCase();
+          if (enT.includes(q) || hiT.includes(q) || enSum.includes(q) || hiSum.includes(q)) {
+            matches.push({
+              id: sub.id,
+              category: 'syllabus',
+              title: `${t(sub.title)} (Sec ${sec.sectionNumber})`,
+              subtitle: `${t(mod.title)} • ${t(sub.examRelevance)}`,
+              tabTarget: sec.sectionId === 'rrb-je' ? 'je-technical' : 'syllabus',
+              payload: { section: sec.sectionNumber },
+            });
+          }
+        });
+      });
+    });
+
     setResults(matches.slice(0, 15));
     setSelectedIndex(0);
   }, [query, language]);
@@ -198,6 +221,8 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
         return <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />;
       case 'formula':
         return <Calculator className="w-4 h-4 text-purple-600 dark:text-purple-400" />;
+      case 'syllabus':
+        return <BookOpen className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />;
       case 'question':
       case 'notification':
       default:

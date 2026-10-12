@@ -272,7 +272,7 @@ export const JETechnicalPage: React.FC<{ onNavigate: (tab: string) => void }> = 
         >
           <div className="relative max-w-5xl w-full bg-slate-900 rounded-3xl overflow-hidden p-2 border border-slate-700 shadow-2xl">
             <img
-              src="/assets/rrb_science_engineering_lab.jpg"
+              src="./assets/rrb_science_engineering_lab.jpg"
               alt="Engineering Laboratory Schematic"
               className="w-full max-h-[85vh] object-contain rounded-2xl"
             />

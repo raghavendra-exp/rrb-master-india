@@ -21,6 +21,7 @@ interface DashboardProps {
 
 export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
   const { language } = useLanguage();
+  const [activeModalImage, setActiveModalImage] = React.useState<string | null>(null);
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto pb-12">
@@ -42,11 +43,31 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
               : 'RRB NTPC (Graduate & Undergraduate) • Group D (Level-1) • RRB JE (Technical). Official CEN notifications, authentic TCS-pattern CBT mocks, 21 RRB zone directories, PET/CBAT/Typing speed labs, and comprehensive question banks.'}
           </p>
 
+          {/* Key Metrics Stats Pill Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 max-w-2xl">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 hover-card-lift">
+              <div className="text-base sm:text-lg font-black text-amber-400">5,200+</div>
+              <div className="text-[10px] text-slate-300 font-semibold">{language === 'hi' ? 'अभ्यास व PYQs' : 'Practice & PYQs'}</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 hover-card-lift">
+              <div className="text-base sm:text-lg font-black text-emerald-400">43 Years</div>
+              <div className="text-[10px] text-slate-300 font-semibold">{language === 'hi' ? '1982-2026 अभिलेखागार' : '1982–2026 Archive'}</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 hover-card-lift">
+              <div className="text-base sm:text-lg font-black text-blue-400">21 Zones</div>
+              <div className="text-[10px] text-slate-300 font-semibold">{language === 'hi' ? 'आधिकारिक आरआरबी' : 'Official Boards'}</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 hover-card-lift">
+              <div className="text-base sm:text-lg font-black text-purple-300">100% Free</div>
+              <div className="text-[10px] text-slate-300 font-semibold">{language === 'hi' ? 'पारदर्शी व सुरक्षित' : 'Anti-Piracy Open'}</div>
+            </div>
+          </div>
+
           {/* Quick CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-3 pt-3">
             <button
               onClick={() => onNavigate('mock-tests')}
-              className="py-3 px-6 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-500/30 transition-all cursor-pointer"
+              className="py-3 px-6 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-500/30 transition-all cursor-pointer hover-card-lift"
             >
               <PlayCircle className="w-4 h-4" />
               <span>{language === 'hi' ? 'लाइव सीबीटी मॉक शुरू करें' : 'Launch Real CBT Mock'}</span>
@@ -54,7 +75,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
             <button
               onClick={() => onNavigate('exam-discovery')}
-              className="py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-bold flex items-center gap-2 backdrop-blur-md border border-white/20 transition-all cursor-pointer"
+              className="py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-bold flex items-center gap-2 backdrop-blur-md border border-white/20 transition-all cursor-pointer hover-card-lift"
             >
               <Compass className="w-4 h-4 text-amber-400" />
               <span>{language === 'hi' ? 'पात्रता खोजक (Eligibility)' : 'Which RRB Exam Can I Apply For?'}</span>
@@ -119,7 +140,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* NTPC */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 border-t-4 border-t-blue-500 shadow-sm hover:shadow-xl transition-all hover-card-lift flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 uppercase tracking-wider">
@@ -150,7 +171,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             </div>
             <button
               onClick={() => onNavigate('rrb-ntpc')}
-              className="mt-6 w-full py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-blue-600 dark:hover:bg-blue-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+              className="mt-6 w-full py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-blue-600 dark:hover:bg-blue-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
             >
               <span>Explore NTPC Hub</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -158,7 +179,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           </div>
 
           {/* Group D */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 border-t-4 border-t-emerald-500 shadow-sm hover:shadow-xl transition-all hover-card-lift flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 uppercase tracking-wider">
@@ -189,7 +210,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             </div>
             <button
               onClick={() => onNavigate('rrb-group-d')}
-              className="mt-6 w-full py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-emerald-600 dark:hover:bg-emerald-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+              className="mt-6 w-full py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-emerald-600 dark:hover:bg-emerald-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
             >
               <span>Explore Group D Hub</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -197,7 +218,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           </div>
 
           {/* RRB JE */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 border-t-4 border-t-purple-500 shadow-sm hover:shadow-xl transition-all hover-card-lift flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 uppercase tracking-wider">
@@ -228,7 +249,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             </div>
             <button
               onClick={() => onNavigate('rrb-je')}
-              className="mt-6 w-full py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-purple-600 dark:hover:bg-purple-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+              className="mt-6 w-full py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-purple-600 dark:hover:bg-purple-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
             >
               <span>Explore JE Hub</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -345,63 +366,67 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
               {language === 'hi' ? 'तकनीकी एवं प्रायोगिक इन्फोग्राफिक दीर्घा' : 'Official Technical & Laboratory Infographics Gallery'}
             </span>
-            <span className="text-[11px] text-slate-400">Click any image to enlarge</span>
+            <span className="text-[11px] text-slate-400">Click any image to view in high resolution</span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div
-              onClick={() => onNavigate('syllabus')}
-              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+              onClick={() => setActiveModalImage('./assets/rrb_master_curriculum.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
             >
               <img
                 src="./assets/rrb_master_curriculum.jpg"
                 alt="Master Curriculum"
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
-              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
-                Curriculum Architecture
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>Curriculum Blueprint</span>
+                <span className="text-blue-400">🔍</span>
               </div>
             </div>
 
             <div
-              onClick={() => onNavigate('railway-gk')}
-              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+              onClick={() => setActiveModalImage('./assets/rrb_railway_operations.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
             >
               <img
                 src="./assets/rrb_railway_operations.jpg"
                 alt="Railway Operations"
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
-              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
-                Rail Infrastructure & KAVACH
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>Rail & KAVACH</span>
+                <span className="text-blue-400">🔍</span>
               </div>
             </div>
 
             <div
-              onClick={() => onNavigate('formulas')}
-              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+              onClick={() => setActiveModalImage('./assets/rrb_physics_optics_circuits.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
             >
               <img
                 src="./assets/rrb_physics_optics_circuits.jpg"
                 alt="Physics Optics & Circuits"
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
-              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
-                Optics, Circuits & pH Scale
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>Optics & Circuits</span>
+                <span className="text-blue-400">🔍</span>
               </div>
             </div>
 
             <div
-              onClick={() => onNavigate('je-technical')}
-              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer"
+              onClick={() => setActiveModalImage('./assets/rrb_science_engineering_lab.jpg')}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 cursor-pointer hover-card-lift shadow-md"
             >
               <img
                 src="./assets/rrb_science_engineering_lab.jpg"
                 alt="Engineering Lab"
                 className="w-full h-24 sm:h-28 object-cover group-hover:scale-105 transition-transform"
               />
-              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate">
-                JE Engineering Blueprint
+              <div className="p-2 bg-slate-900/90 text-[10px] font-bold text-slate-200 truncate flex items-center justify-between">
+                <span>JE Blueprint</span>
+                <span className="text-blue-400">🔍</span>
               </div>
             </div>
           </div>
@@ -417,7 +442,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div
             onClick={() => onNavigate('typing-lab')}
-            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 cursor-pointer shadow-xs transition-all group"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 cursor-pointer shadow-xs transition-all group hover-card-lift"
           >
             <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
               <Keyboard className="w-5 h-5" />
@@ -428,7 +453,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
           <div
             onClick={() => onNavigate('cbat-lab')}
-            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500 cursor-pointer shadow-xs transition-all group"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500 cursor-pointer shadow-xs transition-all group hover-card-lift"
           >
             <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
               <Layers className="w-5 h-5" />
@@ -439,7 +464,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
           <div
             onClick={() => onNavigate('pet-lab')}
-            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500 cursor-pointer shadow-xs transition-all group"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500 cursor-pointer shadow-xs transition-all group hover-card-lift"
           >
             <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
               <Activity className="w-5 h-5" />
@@ -450,7 +475,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
           <div
             onClick={() => onNavigate('speed-lab')}
-            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500 cursor-pointer shadow-xs transition-all group"
+            className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500 cursor-pointer shadow-xs transition-all group hover-card-lift"
           >
             <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
               <Zap className="w-5 h-5" />
@@ -560,6 +585,55 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           </table>
         </div>
       </section>
+
+      {/* High-Resolution Infographic Lightbox Modal */}
+      {activeModalImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setActiveModalImage(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full bg-slate-900 rounded-3xl overflow-hidden p-3 border border-slate-700 shadow-2xl space-y-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-2 pt-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                {language === 'hi' ? 'उच्च-रिज़ॉल्यूशन आधिकारिक तकनीकी आरेख' : 'High-Resolution Official Technical Schematic'}
+              </span>
+              <button
+                onClick={() => setActiveModalImage(null)}
+                className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors cursor-pointer"
+              >
+                ✕ Close
+              </button>
+            </div>
+            <img
+              src={activeModalImage}
+              alt="Official Schematic Diagram"
+              className="w-full max-h-[80vh] object-contain rounded-2xl bg-slate-950"
+            />
+            <div className="flex justify-between items-center px-2 pb-1 text-xs text-slate-400">
+              <span>{language === 'hi' ? 'आरआरबी मास्टर इंडिया प्रामाणिक सामग्री' : 'RRB Master India Official Blueprint'}</span>
+              <button
+                onClick={() => {
+                  const targetTab = activeModalImage.includes('curriculum')
+                    ? 'syllabus'
+                    : activeModalImage.includes('railway')
+                    ? 'railway-gk'
+                    : activeModalImage.includes('physics')
+                    ? 'formulas'
+                    : 'je-technical';
+                  setActiveModalImage(null);
+                  onNavigate(targetTab);
+                }}
+                className="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1 cursor-pointer"
+              >
+                <span>{language === 'hi' ? 'संबंधित खंड पर जाएं →' : 'Go to Corresponding Section →'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

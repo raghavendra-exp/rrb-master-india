@@ -47,7 +47,7 @@ export const ExamDetailsPage: React.FC<ExamDetailsPageProps> = ({
   let primaryMasterSection: ExamSectionData | undefined;
   if (examId === 'rrb-ntpc') {
     primaryMasterSection = MASTER_SECTIONS_DATA.find(
-      (s) => s.sectionId === (ntpcTier === 'graduate' ? 'ntpc-graduate' : 'ntpc-undergrad')
+      (s) => s.sectionId === (ntpcTier === 'graduate' ? 'ntpc-graduate' : 'ntpc-undergraduate')
     );
   } else if (examId === 'rrb-group-d') {
     primaryMasterSection = MASTER_SECTIONS_DATA.find((s) => s.sectionId === 'group-d');
