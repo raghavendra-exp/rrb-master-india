@@ -127,4 +127,76 @@ export const FORMULA_ITEMS: FormulaItem[] = [
     },
     examApplicability: ['rrb-je'],
   },
+  {
+    id: 'form-sci-optics-mirror-lens',
+    subject: 'Physics',
+    title: {
+      en: 'Mirror Formula, Lens Formula and Lens Power (Diopters)',
+      hi: 'दर्पण सूत्र, लेंस सूत्र एवं लेंस की क्षमता (डायोप्टर)',
+    },
+    formula: 'Mirror: 1/f = 1/v + 1/u  |  Lens: 1/f = 1/v - 1/u  |  Power P = 1 / f(m) Diopters (D)',
+    explanation: {
+      en: 'Where f = focal length, v = image distance, u = object distance. Convex lens has positive power, concave lens has negative power.',
+      hi: 'जहाँ f = फोकस दूरी, v = प्रतिबिम्ब दूरी, u = वस्तु दूरी। उत्तल लेंस की क्षमता धनात्मक तथा अवतल लेंस की क्षमता ऋणात्मक होती है।',
+    },
+    example: {
+      en: 'Focal length f = +0.5 m (convex): Power P = 1 / 0.5 = +2.0 Diopters (used for hypermetropia correction).',
+      hi: 'फोकस दूरी f = +0.5 मी (उत्तल लेंस): क्षमता P = 1 / 0.5 = +2 D (दूर दृष्टि दोष निवारण हेतु)।',
+    },
+    examApplicability: ['rrb-group-d', 'rrb-je', 'rrb-ntpc'],
+  },
+  {
+    id: 'form-sci-chemistry-ph-pop',
+    subject: 'Chemistry',
+    title: {
+      en: 'pH Scale Equation, Neutralization and Plaster of Paris Formula',
+      hi: 'pH पैमाना समीकरण, उदासीनीकरण एवं प्लास्टर ऑफ पेरिस सूत्र',
+    },
+    formula: 'pH = -log₁₀[H⁺]  |  pOH = -log₁₀[OH⁻]  |  pH + pOH = 14  |  POP: CaSO₄·½H₂O',
+    explanation: {
+      en: 'Acids have pH < 7, neutral water has pH = 7, bases have pH > 7. Plaster of Paris is Calcium Sulphate Hemihydrate made by heating Gypsum (CaSO₄·2H₂O) at 373 K.',
+      hi: 'अम्ल का pH < 7, उदासीन जल pH = 7, क्षार का pH > 7। जिप्सम को 373 K पर गर्म करने से प्लास्टर ऑफ पेरिस बनता है।',
+    },
+    example: {
+      en: 'If [H⁺] = 10⁻⁵ M, then pH = -log(10⁻⁵) = 5 (acidic solution).',
+      hi: 'यदि [H⁺] = 10⁻⁵ M हो तो pH = -log(10⁻⁵) = 5 (अम्लीय विलयन)।',
+    },
+    examApplicability: ['rrb-group-d', 'rrb-je'],
+  },
+  {
+    id: 'form-math-stats-grouped-median',
+    subject: 'Statistics',
+    title: {
+      en: 'Grouped Data Median and Discriminant Analysis',
+      hi: 'वर्गीकृत आंकड़ों की माध्यिका एवं द्विघात विविक्तकर',
+    },
+    formula: 'Median = L + [((N/2) - CF) / f] × h  |  Discriminant Δ = b² - 4ac',
+    explanation: {
+      en: 'L = lower boundary of median class, CF = cumulative frequency of preceding class, f = frequency, h = class width. Δ > 0 gives two real roots, Δ = 0 gives equal roots, Δ < 0 gives imaginary roots.',
+      hi: 'L = माध्यिका वर्ग की निम्न सीमा, CF = पूर्व वर्ग की संचयी बारंबारता, f = बारंबारता, h = वर्ग अंतराल। Δ = b² - 4ac मूलों की प्रकृति बताता है।',
+    },
+    example: {
+      en: 'Quadratic equation 2x² - 4x + 2 = 0: Δ = (-4)² - 4(2)(2) = 16 - 16 = 0 -> Two real and equal roots (x = 1, 1).',
+      hi: 'समीकरण 2x² - 4x + 2 = 0 में: Δ = 16 - 16 = 0 -> दो वास्तविक और समान मूल (x = 1, 1)।',
+    },
+    examApplicability: ['rrb-ntpc', 'rrb-je'],
+  },
+  {
+    id: 'form-eng-taylor-tool-life',
+    subject: 'Engineering',
+    title: {
+      en: 'Taylor’s Tool Life Equation and Darcy-Weisbach Pipe Loss',
+      hi: 'टेलर का टूल लाइफ समीकरण एवं डार्सी-वेसबैक पाइप शीर्ष हानि',
+    },
+    formula: 'Taylor: VTⁿ = C  |  Darcy-Weisbach Head Loss: h_f = (4fLv²) / (2gd)',
+    explanation: {
+      en: 'V = cutting speed, T = tool life in minutes, n = tool exponent. h_f = head loss due to friction in pipe of length L, diameter d, and fluid velocity v.',
+      hi: 'V = कर्तन गति, T = टूल लाइफ मिनट में, n = घातांक। h_f = पाइप में घर्षण के कारण शीर्ष हानि।',
+    },
+    example: {
+      en: 'If cutting speed V is doubled with n = 0.5, tool life drops to (1/2)^(1/0.5) = 1/4th.',
+      hi: 'यदि n = 0.5 के लिए कर्तन गति दोगुनी कर दी जाए, तो टूल लाइफ घटकर 1/4 रह जाती है।',
+    },
+    examApplicability: ['rrb-je'],
+  },
 ];

@@ -126,7 +126,7 @@ export interface BookItem {
 
 export interface FormulaItem {
   id: string;
-  subject: 'Arithmetic' | 'Algebra' | 'Geometry' | 'Mensuration' | 'Trigonometry' | 'Statistics' | 'Physics' | 'Engineering';
+  subject: 'Arithmetic' | 'Algebra' | 'Geometry' | 'Mensuration' | 'Trigonometry' | 'Statistics' | 'Physics' | 'Chemistry' | 'Biology' | 'Engineering';
   title: BilingualText;
   formula: string;
   explanation: BilingualText;
