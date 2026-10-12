@@ -70,7 +70,7 @@ export const PETLab: React.FC<{ onNavigate: (tab: string) => void }> = ({ onNavi
         <div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">
             <Activity className="w-3.5 h-3.5" />
-            Official CEN RRC 01/2019 & Level-1 PET Standards
+            Official CEN 08/2024, CEN 09/2025 & Level-1 PET Standards
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             {language === 'hi' ? 'आरआरबी ग्रुप डी शारीरिक तैयारी लैब' : 'RRB Group D Physical Preparation Lab'}

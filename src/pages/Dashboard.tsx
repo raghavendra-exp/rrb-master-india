@@ -119,12 +119,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           <div className="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900">
             <span className="font-bold text-blue-700 dark:text-blue-300 block">Q3: Jul - Sep</span>
             <span className="font-semibold text-blue-900 dark:text-blue-100 mt-1 block">NTPC (Grad & Undergrad)</span>
-            <span className="text-[11px] text-blue-600 dark:text-blue-400">CEN 05/2024 & 06/2024</span>
+            <span className="text-[11px] text-blue-600 dark:text-blue-400">CEN 06/2026 & 05/2024</span>
           </div>
           <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
             <span className="font-bold text-purple-600 dark:text-purple-400 block">Q4: Oct - Dec</span>
             <span className="font-semibold text-slate-800 dark:text-slate-200 mt-1 block">Level-1 (Group D) & JE</span>
-            <span className="text-[11px] text-slate-500">CEN 03/2024 & Level-1</span>
+            <span className="text-[11px] text-slate-500">CEN 04/2026, 03/2024 & Level-1</span>
           </div>
         </div>
       </section>
@@ -144,7 +144,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 uppercase tracking-wider">
-                  CEN 05/2024 & 06/2024
+                  CEN 06/2026 & 05/2024
                 </span>
                 <span className="text-xs font-semibold text-slate-400">Level 2 to 6</span>
               </div>
@@ -183,7 +183,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 uppercase tracking-wider">
-                  Level-1 Posts
+                  CEN 08/2024 & 09/2025
                 </span>
                 <span className="text-xs font-semibold text-slate-400">7th CPC Level 1</span>
               </div>
@@ -222,7 +222,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 uppercase tracking-wider">
-                  CEN 03/2024
+                  CEN 04/2026 & 03/2024
                 </span>
                 <span className="text-xs font-semibold text-slate-400">7th CPC Level 6</span>
               </div>

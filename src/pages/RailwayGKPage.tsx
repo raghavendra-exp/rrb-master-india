@@ -75,8 +75,8 @@ export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({
           {
             label:
               language === 'hi'
-                ? 'भारतीय रेल संपूर्ण ज्ञानकोष एवं 2025-2026 समसामयिकी'
-                : 'Indian Railways Complete Knowledge & 2025-2026 Current Affairs',
+                ? 'भारतीय रेल संपूर्ण ज्ञानकोष एवं 2026-2027 समसामयिकी'
+                : 'Indian Railways Complete Knowledge & 2026-2027 Current Affairs',
           },
         ]}
         onNavigate={onNavigate}
@@ -91,7 +91,7 @@ export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({
           </div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
             <Clock className="w-3.5 h-3.5" />
-            2025–2026 Up-to-Date Current Affairs
+            2026–2027 Up-to-Date Current Affairs
           </div>
         </div>
 
@@ -103,8 +103,8 @@ export const RailwayGKPage: React.FC<{ onNavigate: (tab: string) => void }> = ({
 
         <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
           {language === 'hi'
-            ? '1853 के प्रथम भाप इंजन से लेकर 19 ज़ोन, रोलिंग स्टॉक, कवच 4.0, 4-एस्पेक्ट सिग्नलिंग, 60 kg/m UIC-60 रेल, पश्चिमी व पूर्वी डीएफसी, बुलेट ट्रेन और 2025–2026 की संपूर्ण राष्ट्रीय, वैज्ञानिक, आर्थिक व खेल समसामयिकी।'
-            : 'From 1853 steam origins to 19 zonal headquarters, locomotive classes, SIL-4 Kavach 4.0 architecture, P-Way civil engineering, and exhaustive 2025–2026 current affairs with complete bilingual parity.'}
+            ? '1853 के प्रथम भाप इंजन से लेकर 19 ज़ोन, रोलिंग स्टॉक, कवच 4.0, 4-एस्पेक्ट सिग्नलिंग, 60 kg/m UIC-60 रेल, पश्चिमी व पूर्वी डीएफसी, बुलेट ट्रेन और 2026–2027 की संपूर्ण राष्ट्रीय, वैज्ञानिक, आर्थिक व खेल समसामयिकी।'
+            : 'From 1853 steam origins to 19 zonal headquarters, locomotive classes, SIL-4 Kavach 4.0 architecture, P-Way civil engineering, and exhaustive 2026–2027 current affairs with complete bilingual parity.'}
         </p>
 
         {/* Primary View Switcher */}

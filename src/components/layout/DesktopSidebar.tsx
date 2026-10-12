@@ -54,9 +54,9 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
       items: [
         { key: 'dashboard', label: t('dashboard'), icon: LayoutDashboard },
         { key: 'exam-discovery', label: t('examDiscovery'), icon: Compass, badge: 'Smart' },
-        { key: 'rrb-ntpc', label: t('ntpc'), icon: Train, badge: 'CEN 05/2024' },
+        { key: 'rrb-ntpc', label: t('ntpc'), icon: Train, badge: 'CEN 06/2026' },
         { key: 'rrb-group-d', label: t('groupD'), icon: Train, badge: 'Level-1' },
-        { key: 'rrb-je', label: t('je'), icon: Wrench, badge: 'Technical' },
+        { key: 'rrb-je', label: t('je'), icon: Wrench, badge: 'CEN 04/2026' },
       ],
     },
     {

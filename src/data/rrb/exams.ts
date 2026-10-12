@@ -142,7 +142,7 @@ export const EXAMS_DATA: Record<string, ExamConfig> = {
 
   'rrb-group-d': {
     id: 'rrb-group-d',
-    code: 'CEN RRC 01/2019 & CEN 08/2024',
+    code: 'CEN 08/2024 & CEN 09/2025 (Level-1)',
     title: {
       en: 'RRB Group D / Level-1 (Track Maintainer, Pointsman & Workshops)',
       hi: 'आरआरबी ग्रुप डी / लेवल-1 (ट्रैक मेंटेनर, प्वॉइंट्समैन एवं वर्कशॉप्स)',
@@ -151,8 +151,8 @@ export const EXAMS_DATA: Record<string, ExamConfig> = {
       en: '7th CPC Pay Level 1 Posts in Various Technical & Operational Departments of Indian Railways',
       hi: 'भारतीय रेल के विभिन्न तकनीकी एवं परिचालन विभागों में 7वें वेतन आयोग के लेवल 1 पद',
     },
-    currentCEN: 'CEN RRC 01/2019 / Level-1 2024-2025 Calendar',
-    officialNotificationUrl: 'https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,4,1244',
+    currentCEN: 'CEN 08/2024 & CEN 09/2025 (22,195+ Level-1 Vacancies)',
+    officialNotificationUrl: 'https://rrbapply.gov.in',
     eligibility: {
       ageRange: '18-33 Years (Normal) / Up to 36 with temporary relaxation + category benefits',
       qualifications: [
@@ -241,7 +241,7 @@ export const EXAMS_DATA: Record<string, ExamConfig> = {
 
   'rrb-je': {
     id: 'rrb-je',
-    code: 'CEN 03/2024',
+    code: 'CEN 04/2026 & CEN 03/2024',
     title: {
       en: 'RRB JE (Junior Engineer, DMS, CMA & Chemical Supervisor)',
       hi: 'आरआरबी जेई (कनिष्ठ अभियंता, डीएमएस एवं सीएमए भर्ती)',
@@ -250,8 +250,8 @@ export const EXAMS_DATA: Record<string, ExamConfig> = {
       en: 'Centralized Employment Notification for Technical Supervisory Cadres in Indian Railways',
       hi: 'भारतीय रेल के तकनीकी पर्यवेक्षी संवर्गों हेतु केंद्रीकृत रोजगार अधिसूचना',
     },
-    currentCEN: 'CEN 03/2024',
-    officialNotificationUrl: 'https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,4,1244',
+    currentCEN: 'CEN 04/2026 (3,993 Vacancies) & CEN 03/2024 (7,951 Vacancies)',
+    officialNotificationUrl: 'https://rrbapply.gov.in',
     eligibility: {
       ageRange: '18-36 Years (as per CEN 03/2024 with 3-year COVID age relaxation)',
       qualifications: [

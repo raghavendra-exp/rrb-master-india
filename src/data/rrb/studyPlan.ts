@@ -936,7 +936,7 @@ export const TOPPER_BENCHMARKS: TopperBenchmark[] = [
   },
   {
     examId: 'rrb-je',
-    examName: { en: 'RRB JE (Junior Engineer - CEN 03/2024)', hi: 'आरआरबी जेई (कनिष्ठ अभियंता - CEN 03/2024)' },
+    examName: { en: 'RRB JE (Junior Engineer - CEN 04/2026 & 03/2024)', hi: 'आरआरबी जेई (कनिष्ठ अभियंता - CEN 04/2026 व 03/2024)' },
     qualification: { en: 'Diploma / Degree in Engineering (Civil, Mech, Elec, ECE, CS/IT)', hi: 'इंजीनियरिंग में डिप्लोमा / डिग्री (सिविल, मैकेनिकल, इलेक्ट्रिकल, इलेक्ट्रॉनिक्स, आईटी)' },
     competitionContext: {
       en: 'Two distinct competitive filters: CBT-1 is 100% non-technical screening (100 marks), while CBT-2 final merit is heavily technical (100 marks technical core out of 150 total).',

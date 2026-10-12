@@ -243,7 +243,7 @@ export const StudyPlannerPage: React.FC<{ onNavigate: (tab: string) => void }> =
                 >
                   <option value="rrb-ntpc">RRB NTPC (CEN 05 & 06/2026)</option>
                   <option value="rrb-group-d">RRB Group D (Level-1)</option>
-                  <option value="rrb-je">RRB JE (Technical CEN 03/2024)</option>
+                  <option value="rrb-je">RRB JE (Technical CEN 04/2026 & 03/2024)</option>
                 </select>
               </div>
 

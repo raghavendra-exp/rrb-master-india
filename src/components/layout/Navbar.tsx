@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             Govt / RRB Source Grounded
           </span>
           <span className="text-blue-100 hidden sm:inline">
-            Official Indian Railways CEN 05/2024 (Graduate), 06/2024 (Undergraduate), 03/2024 (JE) & Level-1
+            Official Indian Railways CEN 06/2026 (NTPC Graduate: 3,548 Posts), CEN 04/2026 (JE: 3,993 Posts), CEN 05/2024 & Level-1
           </span>
         </div>
         <div className="flex items-center gap-3 shrink-0 text-xs">

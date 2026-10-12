@@ -287,7 +287,7 @@ export const ExamDiscoveryTool: React.FC<{ onNavigate: (tab: string) => void }> 
                   )}
                 </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  CEN 05/2024 • Age limit: 18-36 (UR)
+                  CEN 06/2026 & 05/2024 • Age limit: 18-36 (UR)
                 </p>
                 {isEligibleNTPCGraduate && (
                   <div className="mt-2 text-xs text-emerald-800 dark:text-emerald-300 space-y-1">
@@ -304,7 +304,7 @@ export const ExamDiscoveryTool: React.FC<{ onNavigate: (tab: string) => void }> 
                       </p>
                     )}
                     {canType && (
-                      <p>✓ Senior Clerk & Junior Account Assistant (Typing Required)</p>
+                      <p>✓ Senior Clerk & Junior Account Assistant (Typing test waived in CEN 06/2026)</p>
                     )}
                   </div>
                 )}
@@ -333,7 +333,7 @@ export const ExamDiscoveryTool: React.FC<{ onNavigate: (tab: string) => void }> 
                   )}
                 </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  CEN 06/2024 • Age limit: 18-33 (UR)
+                  CEN 06/2024 & CEN 07/2026 • Age limit: 18-33 (UR)
                 </p>
                 {isEligibleNTPCUndergrad && (
                   <div className="mt-2 text-xs text-emerald-800 dark:text-emerald-300 space-y-1">
@@ -366,7 +366,7 @@ export const ExamDiscoveryTool: React.FC<{ onNavigate: (tab: string) => void }> 
                   )}
                 </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  CEN RRC 01/2019 / Level-1 • Age: 18-36 (Relaxed)
+                  CEN 08/2024 & CEN 09/2025 / Level-1 • Age: 18-36 (Relaxed)
                 </p>
                 {isEligibleGroupD && (
                   <div className="mt-2 text-xs text-emerald-800 dark:text-emerald-300">
@@ -403,7 +403,7 @@ export const ExamDiscoveryTool: React.FC<{ onNavigate: (tab: string) => void }> 
                   )}
                 </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  CEN 03/2024 • Requires Engineering Diploma or B.Tech
+                  CEN 04/2026 & CEN 03/2024 • Requires Engineering Diploma or B.Tech
                 </p>
                 {isEligibleJE && (
                   <div className="mt-2 text-xs text-emerald-800 dark:text-emerald-300">

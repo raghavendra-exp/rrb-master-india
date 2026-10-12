@@ -154,11 +154,11 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-500/30">
               <BookOpen className="w-3.5 h-3.5" />
-              Official Railway Board Curriculum (CEN 2024–2026)
+              Official Railway Board Curriculum (CEN 2024–2027)
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">
               <Sparkles className="w-3 h-3" />
-              Graduate • Undergraduate • Group D • JE
+              Graduate (CEN 06/2026) • JE (CEN 04/2026) • Group D • NTPC Undergrad
             </span>
           </div>
 
@@ -170,8 +170,8 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
 
           <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
             {language === 'hi'
-              ? 'एनटीपीसी ग्रेजुएट, अंडरग्रेजुएट, ग्रुप डी और आरआरबी जेई के लिए आधिकारिक अधिसूचनाओं (CEN 05/2024, 06/2024, 03/2024, RRC 01/2019) के आधार पर निर्मित पूर्णतः विस्तृत पाठ्यक्रम।'
-              : 'Comprehensive topic-by-topic breakdown directly aligned with official Centralized Employment Notices. Includes post profiles, testing engines, core formulas, and engineering discipline trees.'}
+              ? 'एनटीपीसी ग्रेजुएट, अंडरग्रेजुएट, ग्रुप डी और आरआरबी जेई के लिए नवीनतम आधिकारिक अधिसूचनाओं (CEN 06/2026, 04/2026, 05/2024, 06/2024, 03/2024, Level-1) के आधार पर निर्मित पूर्णतः विस्तृत पाठ्यक्रम।'
+              : 'Comprehensive topic-by-topic breakdown directly aligned with latest official Centralized Employment Notices (CEN 06/2026, 04/2026, 05/2024 & Level-1). Includes post profiles, testing engines, core formulas, and engineering discipline trees.'}
           </p>
 
           {/* Section Selector Tabs */}

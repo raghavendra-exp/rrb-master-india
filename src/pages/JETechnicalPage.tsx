@@ -242,8 +242,8 @@ export const JETechnicalPage: React.FC<{ onNavigate: (tab: string) => void }> = 
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight">
             {language === 'hi'
-              ? 'आरआरबी जेई तकनीकी संकाय हब (CEN 03/2024)'
-              : 'RRB JE Technical Engineering Hub & Branch Curriculums'}
+              ? 'आरआरबी जेई तकनीकी संकाय हब (CEN 04/2026 & 03/2024)'
+              : 'RRB JE Technical Engineering Hub (CEN 04/2026 & 03/2024)'}
           </h1>
 
           <p className="text-xs sm:text-sm text-purple-200 max-w-3xl leading-relaxed">

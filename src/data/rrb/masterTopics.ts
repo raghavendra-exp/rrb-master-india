@@ -842,7 +842,7 @@ export const MASTER_SECTIONS_DATA: ExamSectionData[] = [
     sectionNumber: 4,
     sectionId: 'rrb-je',
     title: { en: 'SECTION 4: RRB JE (JUNIOR ENGINEER)', hi: 'खंड 4: आरआरबी जेई (कनिष्ठ अभियंता)' },
-    subtitle: { en: 'CEN 03/2024 & Technical Recruitments (Civil, Mech, Elec, ECE/IT, DMS, CMA)', hi: 'इंजीनियरिंग संकाय भर्ती (सिविल, मैकेनिकल, इलेक्ट्रिकल, इलेक्ट्रॉनिक्स/आईटी, डीएमएस, सीएमए)' },
+    subtitle: { en: 'CEN 04/2026 & CEN 03/2024 Technical Recruitments (Civil, Mech, Elec, ECE/IT, DMS, CMA)', hi: 'सीईएन 04/2026 व 03/2024 इंजीनियरिंग संकाय भर्ती (सिविल, मैकेनिकल, इलेक्ट्रिकल, इलेक्ट्रॉनिक्स/आईटी, डीएमएस, सीएमए)' },
     postProfiles: {
       designations: [
         { en: 'Junior Engineer / Civil (Track, Bridge, Works • ₹35,400 Basic)', hi: 'जूनियर इंजीनियर / सिविल (ट्रैक, ब्रिज, वर्क्स • ₹35,400 मूल वेतन)' },

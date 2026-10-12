@@ -200,7 +200,7 @@ export const DVChecklistPage: React.FC<{ onNavigate: (tab: string) => void }> = 
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 • <strong>Group D (Level-1):</strong> 20% horizontal reservation in total vacancies.<br />
                 • <strong>RRB NTPC:</strong> 10% horizontal reservation in Level 2, 3, 5, and 6 posts.<br />
-                • <strong>RRB JE:</strong> ESM quota applies strictly as notified in CEN 03/2024.
+                • <strong>RRB JE:</strong> ESM quota applies strictly as notified in CEN 04/2026 & 03/2024.
               </p>
             </div>
 
