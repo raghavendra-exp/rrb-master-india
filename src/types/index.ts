@@ -81,6 +81,7 @@ export interface Question {
   explanation: BilingualText;
   sourceType: 'verified_pyq' | 'pyq_style' | 'original';
   source: string;
+  bookCitation?: string;
   tags: string[];
 }
 

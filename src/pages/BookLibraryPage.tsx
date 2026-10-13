@@ -224,21 +224,30 @@ export const BookLibraryPage: React.FC<{ onNavigate: (tab: string) => void }> = 
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3 text-xs">
-                  <a
-                    href={book.publisherUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 font-medium hover:underline"
-                  >
-                    Publisher Details
-                  </a>
+                <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => onNavigate('questions')}
+                      className="py-2 px-3 rounded-xl bg-purple-600/10 hover:bg-purple-600/20 text-purple-700 dark:text-purple-300 font-bold flex items-center gap-1.5 transition-colors border border-purple-500/20 cursor-pointer text-xs"
+                    >
+                      <BookOpen className="w-3.5 h-3.5 text-purple-500" />
+                      <span>{language === 'hi' ? 'इस पुस्तक के वास्तविक PYQs' : 'Practice Book PYQs'}</span>
+                    </button>
+                    <a
+                      href={book.publisherUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 font-medium hover:underline text-[11px]"
+                    >
+                      Publisher
+                    </a>
+                  </div>
 
                   <a
                     href={book.legitimateBuyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer"
+                    className="py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer text-xs"
                   >
                     <span>
                       {book.isNcertOrGovt

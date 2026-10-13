@@ -31,6 +31,7 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
   const [selectedYear, setSelectedYear] = useState<string>('ALL');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('ALL');
   const [selectedSourceType, setSelectedSourceType] = useState<string>('ALL');
+  const [selectedBook, setSelectedBook] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Pagination
@@ -56,6 +57,19 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
       if (selectedDifficulty !== 'ALL' && q.difficulty !== selectedDifficulty) return false;
       if (selectedSourceType !== 'ALL' && q.sourceType !== selectedSourceType) return false;
 
+      // Book reference filter
+      if (selectedBook !== 'ALL') {
+        if (!q.bookCitation) return false;
+        const bc = q.bookCitation.toLowerCase();
+        if (selectedBook === 'yct' && !bc.includes('youth competition') && !bc.includes('yct')) return false;
+        if (selectedBook === 'kiran' && !bc.includes('kiran')) return false;
+        if (selectedBook === 'pinnacle' && !bc.includes('pinnacle')) return false;
+        if (selectedBook === 'ghatna-chakra' && !bc.includes('ghatna chakra')) return false;
+        if (selectedBook === 'platform' && !bc.includes('platform') && !bc.includes('rukmini')) return false;
+        if (selectedBook === 'lucent' && !bc.includes('lucent')) return false;
+        if (selectedBook === 'rs-aggarwal' && !bc.includes('aggarwal')) return false;
+      }
+
       // Year filter
       if (selectedYear !== 'ALL' && q.year !== selectedYear) return false;
 
@@ -79,7 +93,8 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
         const matchCh = q.chapter.toLowerCase().includes(query);
         const matchTopic = q.topic?.toLowerCase().includes(query) ?? false;
         const matchSrc = q.source.toLowerCase().includes(query);
-        if (!matchQ && !matchCh && !matchTopic && !matchSrc) return false;
+        const matchBook = q.bookCitation?.toLowerCase().includes(query) ?? false;
+        if (!matchQ && !matchCh && !matchTopic && !matchSrc && !matchBook) return false;
       }
       return true;
     });
@@ -88,6 +103,7 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
     selectedSubject,
     selectedDifficulty,
     selectedSourceType,
+    selectedBook,
     selectedYear,
     selectedEra,
     searchQuery,
@@ -107,6 +123,7 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
     selectedYear,
     selectedDifficulty,
     selectedSourceType,
+    selectedBook,
     searchQuery,
     pageSize,
   ]);
@@ -268,7 +285,7 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
         </div>
 
         {/* Primary Filter Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 text-xs font-medium">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2.5 text-xs font-medium">
           {/* Exam Filter */}
           <div>
             <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
@@ -302,6 +319,27 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
               <option value="General Science">General Science</option>
               <option value="General Awareness">General Awareness</option>
               <option value="Technical Engineering">Technical Engineering</option>
+            </select>
+          </div>
+
+          {/* Standard Book / Publication Filter */}
+          <div>
+            <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+              {language === 'hi' ? 'प्रामाणिक पुस्तक संदर्भ' : 'Book Reference'}
+            </label>
+            <select
+              value={selectedBook}
+              onChange={(e) => setSelectedBook(e.target.value)}
+              className="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-medium"
+            >
+              <option value="ALL">All Standard Books</option>
+              <option value="yct">Youth Competition Times (YCT)</option>
+              <option value="kiran">Kiran Institute (KICX)</option>
+              <option value="pinnacle">Pinnacle TCS Series</option>
+              <option value="ghatna-chakra">Ghatna Chakra (घटना चक्र)</option>
+              <option value="platform">Platform / Rukmini Prakashan</option>
+              <option value="lucent">Lucent’s Railway GK</option>
+              <option value="rs-aggarwal">R.S. Aggarwal / S. Chand</option>
             </select>
           </div>
 
@@ -498,6 +536,7 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
               setSelectedYear('ALL');
               setSelectedDifficulty('ALL');
               setSelectedSourceType('ALL');
+              setSelectedBook('ALL');
               setSearchQuery('');
             }}
             className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-sm cursor-pointer"
@@ -537,6 +576,12 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
                       {q.chapter}
                     </span>
+                    {q.bookCitation && (
+                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 flex items-center gap-1 font-sans">
+                        <BookOpen className="w-3 h-3 text-purple-500 shrink-0" />
+                        <span className="truncate max-w-[200px] sm:max-w-[320px]">{q.bookCitation}</span>
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex items-center gap-2">
@@ -638,14 +683,22 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
                         {q.explanation[language]}
                       </p>
                       <div className="text-[11px] text-slate-400 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
-                        <span>
-                          <strong className="text-slate-600 dark:text-slate-300">Official Source:</strong>{' '}
-                          {q.source}
-                        </span>
-                        <span>
+                        <div className="space-y-0.5">
+                          <div>
+                            <strong className="text-slate-600 dark:text-slate-300">Official Shift:</strong>{' '}
+                            {q.source}
+                          </div>
+                          {q.bookCitation && (
+                            <div className="text-purple-600 dark:text-purple-400 font-medium flex items-center gap-1">
+                              <BookOpen className="w-3 h-3 shrink-0" />
+                              <span>{q.bookCitation}</span>
+                            </div>
+                          )}
+                        </div>
+                        <div>
                           <strong className="text-slate-600 dark:text-slate-300">Exam:</strong>{' '}
                           {q.exam.toUpperCase()} • {q.stage}
-                        </span>
+                        </div>
                       </div>
                     </div>
                   </div>

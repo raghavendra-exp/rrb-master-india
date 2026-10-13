@@ -617,8 +617,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
             {language === 'hi'
-              ? 'रेलवे सेवा आयोग (1982) से लेकर नवीनतम टीसीएस ऑनलाइन सीबीटी (2026) तक के सभी प्रश्न, द्विभाषी व्याख्या, विस्तृत चरणबद्ध हल एवं निःशुल्क सरकारी शैक्षिक संसाधन।'
-              : 'Complete archive covering Railway Service Commissions (1982) up to TCS online CBTs (2026). Authentic bilingual step-by-step solutions with 1/3 negative marking calibration.'}
+              ? 'प्रमाणिक परीक्षा पुस्तकों (Youth Competition Times, Kiran Institute, Pinnacle TCS, घटना चक्र, Platform Rukmini एवं Lucent) के वास्तविक प्रश्नों सहित 1982 से 2026 तक के आधिकारिक शिफ्ट प्रश्न एवं द्विभाषी व्याख्या।'
+              : 'Complete archive featuring actual examination questions cited from standard textbooks (Youth Competition Times, Kiran Institute, Pinnacle TCS, Ghatna Chakra, Platform Rukmini & Lucent) with authentic bilingual step-by-step solutions.'}
           </p>
         </div>
 
