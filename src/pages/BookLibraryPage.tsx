@@ -7,6 +7,7 @@ import {
   Award,
   CheckCircle2,
   Sparkles,
+  ArrowRight,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Breadcrumb } from '../components/layout/Breadcrumb';
@@ -116,6 +117,33 @@ export const BookLibraryPage: React.FC<{ onNavigate: (tab: string) => void }> = 
             No unauthorized PDFs are stored or served on this platform.
           </p>
         </div>
+      </div>
+
+      {/* Zero-Books Master Textbook Reader Callout */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white border border-blue-800 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-start gap-3.5">
+          <div className="p-2.5 rounded-xl bg-amber-500/20 text-amber-400 shrink-0 mt-0.5">
+            <BookOpen className="w-5 h-5" />
+          </div>
+          <div className="space-y-0.5">
+            <h3 className="text-sm sm:text-base font-black flex items-center gap-2">
+              <span>{language === 'hi' ? '📖 भारी किताबें खरीदने की आवश्यकता नहीं: संपूर्ण पोर्टल-आधारित अध्ययन' : '📖 Don\'t Need Physical Books? Study 100% Online on This Portal'}</span>
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-white font-mono font-bold">Zero-Books</span>
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed max-w-2xl">
+              {language === 'hi'
+                ? 'हमारे मास्टर पाठ्यक्रम में प्रत्येक विषय की गहन थ्योरी, सूत्र, टीसीएस सीबीटी-1 व 2 के हल सहित उदाहरण और 10-सेकंड टॉपर स्पीड ट्रिक्स अंतर्निहित हैं।'
+                : 'All syllabus topics across Quantitative Math, Reasoning, Science (Physics/Chemistry/Biology), Railway GK, and Engineering branches are fully built into our Master Study Reader.'}
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={() => onNavigate('syllabus')}
+          className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer shrink-0"
+        >
+          <span>{language === 'hi' ? 'मास्टर स्टडी रीडर खोलें' : 'Open Master Study Reader'}</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
 
       {/* TAB 1: CURATED STANDARD TEXTBOOKS */}

@@ -66,7 +66,7 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
         { key: 'practice', label: t('practice'), icon: FileCheck },
         { key: 'questions', label: t('pyqs'), icon: HelpCircle },
         { key: 'speed-lab', label: t('speedLab'), icon: Zap },
-        { key: 'syllabus', label: t('syllabus'), icon: BookOpen },
+        { key: 'syllabus', label: t('syllabus'), icon: BookOpen, badge: 'Zero-Books' },
         { key: 'flashcards', label: t('flashcards'), icon: Sparkles },
         { key: 'formulas', label: t('formulaBook'), icon: Calculator },
         { key: 'shortcuts', label: t('shortcuts'), icon: Flame },

@@ -74,6 +74,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             </button>
 
             <button
+              onClick={() => onNavigate('syllabus')}
+              className="py-3 px-5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-black flex items-center gap-2 shadow-lg shadow-amber-500/20 transition-all cursor-pointer hover-card-lift"
+            >
+              <BookOpen className="w-4 h-4 text-slate-950" />
+              <span>{language === 'hi' ? '📖 मास्टर पाठ्यक्रम व अध्ययन (Zero-Books)' : '📖 Study Master Syllabus (Zero-Books)'}</span>
+            </button>
+
+            <button
               onClick={() => onNavigate('exam-discovery')}
               className="py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-bold flex items-center gap-2 backdrop-blur-md border border-white/20 transition-all cursor-pointer hover-card-lift"
             >
@@ -85,6 +93,37 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
         {/* Ambient Decorative background glow */}
         <div className="absolute right-0 bottom-0 w-64 sm:w-96 h-64 sm:h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none overflow-hidden" />
+      </section>
+
+      {/* Zero-Books Master Study Engine Spotlight */}
+      <section className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-3xl p-6 sm:p-7 text-white border border-blue-800 shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30 font-mono">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>100% Comprehensive • Zero External Books Needed</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black">
+              {language === 'hi'
+                ? 'शून्य-पुस्तक गारंटी: संपूर्ण अध्याय-वार अध्ययन पोर्टल'
+                : 'Zero-Books Curriculum: Complete In-Depth Study System'}
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+              {language === 'hi'
+                ? 'एनटीपीसी, ग्रुप डी एवं आरआरबी जेई के प्रत्येक अध्याय की विस्तृत थ्योरी, आधिकारिक गणितीय सूत्र, 10-सेकंड टॉपर स्पीड ट्रिक्स, टीसीएस सीबीटी-1 व 2 के हल सहित प्रश्न और इंजीनियरिंग आरेख सीधे इस पोर्टल पर उपलब्ध हैं।'
+                : 'Every single syllabus topic is fully unlocked with comprehensive theory, official formulas, step-by-step worked CBT examples, topper speed hacks, and engineering blueprints directly in the interactive study reader.'}
+            </p>
+          </div>
+          <button
+            onClick={() => onNavigate('syllabus')}
+            className="px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 transition-all cursor-pointer hover-card-lift shrink-0"
+          >
+            <BookOpen className="w-4 h-4 text-slate-950" />
+            <span>{language === 'hi' ? 'पाठ्यक्रम व अध्याय अध्ययन करें' : 'Open Master Study Reader'}</span>
+            <ArrowRight className="w-4 h-4 text-slate-950" />
+          </button>
+        </div>
       </section>
 
       {/* Live Cyclic Calendar Highlight */}

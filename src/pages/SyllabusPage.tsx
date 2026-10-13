@@ -29,7 +29,9 @@ import {
   CROSS_TIER_PROFILE_MATRIX,
   type ExamSectionData,
   type MasterSubjectModule,
+  type SubTopicDetail,
 } from '../data/rrb/masterTopics';
+import { TopicStudyReaderModal } from '../components/study/TopicStudyReaderModal';
 
 export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ onNavigate }) => {
   const { t, language } = useLanguage();
@@ -40,6 +42,12 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
   const [expandedTopics, setExpandedTopics] = useState<Record<string, boolean>>({});
   const [showImageBanner, setShowImageBanner] = useState<boolean>(true);
   const [currentImageModal, setCurrentImageModal] = useState<string | null>(null);
+
+  // Active reading modal for deep textbook-free study
+  const [readingSubTopic, setReadingSubTopic] = useState<{
+    subTopic: SubTopicDetail;
+    module: MasterSubjectModule;
+  } | null>(null);
 
   // Toggle topic expansion
   const toggleTopic = (id: string) => {
@@ -250,6 +258,28 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
               <Layers className="w-4 h-4" />
               <span>{language === 'hi' ? 'खंड 5: क्रॉस-टियर मैट्रिक्स' : 'Section 5: Cross-Tier Matrix'}</span>
             </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Zero-Books Feature Announcement Card */}
+      <div className="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-amber-500/15 via-blue-500/10 to-indigo-500/15 border border-amber-500/30 dark:border-amber-500/20 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-start gap-3.5">
+          <div className="p-2.5 rounded-2xl bg-amber-500/20 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5">
+            <Sparkles className="w-5 h-5" />
+          </div>
+          <div className="space-y-1">
+            <h3 className="text-sm sm:text-base font-black text-slate-900 dark:text-white flex items-center gap-2 flex-wrap">
+              <span>{language === 'hi' ? 'शून्य-पुस्तक गारंटी: संपूर्ण अध्याय-वार अध्ययन पोर्टल' : 'Zero-Books Guarantee: Complete Topic-Wise Learning Portal'}</span>
+              <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-600 text-white font-mono font-bold shadow-2xs">
+                100% Textbook-Free
+              </span>
+            </h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+              {language === 'hi'
+                ? 'प्रत्येक विषय पर "📖 पूरा अध्याय" बटन दबाएं और बिना किसी बाहरी गाइड के गहन सिद्धांत (Theory), सूत्र, टीसीएस सीबीटी-1 व 2 के चरणबद्ध हल, 10-सेकंड टॉपर स्पीड ट्रिक्स और इंजीनियरिंग आरेखों से संपूर्ण तैयारी करें।'
+                : 'Click "📖 Study Topic" on any syllabus chapter to read comprehensive theory, official formulas, step-by-step solved TCS CBT-1 & CBT-2 problems, and 10-second topper speed hacks without needing any external textbooks or coaching guides!'}
+            </p>
           </div>
         </div>
       </div>
@@ -570,8 +600,8 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
                             onClick={() => toggleTopic(st.id)}
                             className="p-4 flex items-center justify-between gap-3 cursor-pointer select-none hover:bg-slate-100/60 dark:hover:bg-slate-800/60 transition-colors"
                           >
-                            <div className="space-y-1">
-                              <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">
+                            <div className="space-y-1 min-w-0">
+                              <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2 flex-wrap">
                                 <span>{t(st.title)}</span>
                                 {st.formulas && st.formulas.length > 0 && (
                                   <span className="text-[10px] px-2 py-0.5 rounded-md bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 font-bold font-mono">
@@ -584,9 +614,22 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
                               </p>
                             </div>
 
-                            <button className="p-1 rounded-lg text-slate-400 shrink-0">
-                              {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                            </button>
+                            <div className="flex items-center gap-2 shrink-0">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setReadingSubTopic({ subTopic: st, module });
+                                }}
+                                className="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-xs flex items-center gap-1.5 transition-all cursor-pointer"
+                                title="Open full topic textbook study guide"
+                              >
+                                <BookOpen className="w-3.5 h-3.5" />
+                                <span>{language === 'hi' ? '📖 पूरा अध्याय' : '📖 Study Topic'}</span>
+                              </button>
+                              <button className="p-1 rounded-lg text-slate-400">
+                                {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                              </button>
+                            </div>
                           </div>
 
                           {/* Expanded Content */}
@@ -645,6 +688,25 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
                                   <strong>Weightage:</strong> {t(st.examRelevance)}
                                 </div>
                               </div>
+
+                              {/* Direct Deep Study Callout inside expanded drawer */}
+                              <div className="pt-2.5 border-t border-slate-200/60 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2">
+                                <button
+                                  onClick={() => setReadingSubTopic({ subTopic: st, module })}
+                                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-xs flex items-center gap-2 shadow-md shadow-blue-600/20 transition-all cursor-pointer"
+                                >
+                                  <BookOpen className="w-3.5 h-3.5" />
+                                  <span>
+                                    {language === 'hi'
+                                      ? '📖 मास्टर स्टडी गाइड खोलें (थ्योरी, सूत्र, हल सहित उदाहरण एवं ट्रिक्स)'
+                                      : '📖 Open Master Study Guide (Theory, Formulas, Worked Examples & Hacks)'}
+                                  </span>
+                                </button>
+                                <span className="text-[10px] text-amber-600 dark:text-amber-400 font-bold flex items-center gap-1">
+                                  <Sparkles className="w-3 h-3" />
+                                  <span>Zero-Books Edition: 100% Comprehensive</span>
+                                </span>
+                              </div>
                             </div>
                           )}
                         </div>
@@ -670,6 +732,27 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
             )}
           </div>
         </div>
+      )}
+
+      {/* Interactive Textbook Reader Modal */}
+      {readingSubTopic && activeSection && (
+        <TopicStudyReaderModal
+          subTopic={readingSubTopic.subTopic}
+          moduleTitle={readingSubTopic.module.title}
+          examTitle={activeSection.title}
+          onClose={() => setReadingSubTopic(null)}
+          onNavigateToPractice={() => {
+            setReadingSubTopic(null);
+            onNavigate('questions');
+          }}
+          onSelectSubTopic={(nextId) => {
+            const found = readingSubTopic.module.subTopics.find((s) => s.id === nextId);
+            if (found) {
+              setReadingSubTopic({ subTopic: found, module: readingSubTopic.module });
+            }
+          }}
+          allSubTopicsInModule={readingSubTopic.module.subTopics}
+        />
       )}
     </div>
   );
