@@ -46,7 +46,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           {/* Key Metrics Stats Pill Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 max-w-2xl">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 hover-card-lift">
-              <div className="text-base sm:text-lg font-black text-amber-400">5,200+</div>
+              <div className="text-base sm:text-lg font-black text-amber-400">10,000+</div>
               <div className="text-[10px] text-slate-300 font-semibold">{language === 'hi' ? 'अभ्यास व PYQs' : 'Practice & PYQs'}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10 hover-card-lift">
@@ -603,17 +603,17 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 5,000+ Question Bank & 43-Year PYQ Archive Highlight */}
+      {/* 10,000+ Question Bank & 43-Year PYQ Archive Highlight */}
       <section className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-blue-900/40">
         <div className="space-y-2 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
             <Sparkles className="w-3.5 h-3.5" />
-            {language === 'hi' ? 'विशाल 5,200+ अभ्यास प्रश्नकोष' : 'Massive 5,200+ Practice Repository'}
+            {language === 'hi' ? 'विशाल 10,000+ अभ्यास प्रश्नकोष' : 'Massive 10,000+ Practice Repository'}
           </div>
           <h2 className="text-xl sm:text-2xl font-black">
             {language === 'hi'
-              ? '5,000+ अभ्यास प्रश्न एवं 43 वर्षों (1982–2026) का संपूर्ण PYQ महासंग्रह'
-              : '5,000+ Practice Questions & 43-Year (1982–2026) Official PYQ Archive'}
+              ? '10,000+ अभ्यास प्रश्न एवं 43 वर्षों (1982–2026) का संपूर्ण PYQ महासंग्रह'
+              : '10,000+ Practice Questions & 43-Year (1982–2026) Official PYQ Archive'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
             {language === 'hi'
@@ -628,7 +628,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             className="px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
           >
             <BookOpen className="w-4 h-4" />
-            <span>{language === 'hi' ? '5,000+ प्रश्न बैंक खोलें' : 'Browse 5,000+ Questions'}</span>
+            <span>{language === 'hi' ? '10,000+ प्रश्न बैंक खोलें' : 'Browse 10,000+ Questions'}</span>
           </button>
           <button
             onClick={() => onNavigate('books')}

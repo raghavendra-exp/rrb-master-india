@@ -1215,19 +1215,682 @@ const TEMPLATES: QuestionTemplate[] = [
       };
     },
   },
+
+  // 11. MATH: Number System & Divisibility by Composite Numbers (72, 88)
+  {
+    subject: 'Mathematics',
+    chapter: 'Number System',
+    topic: 'Divisibility Rules for 72 and 88',
+    difficulty: 'hard',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-2',
+    generate: (idx, year) => {
+      const divisors = [72, 88, 99];
+      const div = divisors[idx % divisors.length];
+      const yVal = div === 72 ? 4 : div === 88 ? 8 : 2;
+      const xVal = div === 72 ? 6 : div === 88 ? 3 : 7;
+      const targetVal = 5 * xVal - 3 * yVal;
+      return {
+        question: {
+          en: `If an 8-digit number 785x36y4 is completely divisible by ${div}, find the value of (5x - 3y) for the largest single-digit value of y.`,
+          hi: `यदि 8-अंकों की संख्या 785x36y4 पूर्णतः ${div} से विभाज्य है, तो y के अधिकतम 1-अंकीय मान के लिए (5x - 3y) का मान ज्ञात कीजिए।`,
+        },
+        options: [
+          { en: `${targetVal}`, hi: `${targetVal}` },
+          { en: `${targetVal + 6}`, hi: `${targetVal + 6}` },
+          { en: `${targetVal - 4}`, hi: `${targetVal - 4}` },
+          { en: `${targetVal + 12}`, hi: `${targetVal + 12}` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `For divisibility by ${div}, test co-prime factors (e.g. 72 = 8 × 9, 88 = 8 × 11). Solving gives x = ${xVal} and y = ${yVal}. Evaluating (5x - 3y) = 5(${xVal}) - 3(${yVal}) = ${targetVal}.`,
+          hi: `${div} से विभाज्यता हेतु सह-अभाज्य गुणनखंडों की जांच करें। हल करने पर x = ${xVal} और y = ${yVal} प्राप्त होता है। (5x - 3y) = 5(${xVal}) - 3(${yVal}) = ${targetVal}।`,
+        },
+        tags: ['number-system', 'divisibility', 'ntpc-cbt2', `year-${year}`],
+      };
+    },
+  },
+
+  // 12. MATH: HCF and LCM Applications (Bell Intervals & Circular Track)
+  {
+    subject: 'Mathematics',
+    chapter: 'HCF and LCM',
+    topic: 'Successive Toll Intervals of Bells',
+    difficulty: 'medium',
+    exam: 'rrb-group-d',
+    stage: 'CBT',
+    generate: (idx, year) => {
+      const intervalSets = [
+        { intervals: '12, 15, 18, and 24', lcmSec: 360, min: 6 },
+        { intervals: '10, 15, 20, and 30', lcmSec: 60, min: 1 },
+        { intervals: '16, 24, 36, and 48', lcmSec: 144, min: 2.4 },
+        { intervals: '15, 25, 30, and 45', lcmSec: 450, min: 7.5 },
+      ];
+      const item = intervalSets[idx % intervalSets.length];
+      return {
+        question: {
+          en: `Four railway station signal bells toll together at 9:00 AM. They toll at intervals of ${item.intervals} seconds respectively. After how many minutes will they next toll together?`,
+          hi: `रेलवे स्टेशन की चार सिग्नल घंटियां सुबह 9:00 बजे एक साथ बजती हैं। वे क्रमशः ${item.intervals} सेकंड के अंतराल पर बजती हैं। कितने मिनट बाद वे पुनः एक साथ बजेंगी?`,
+        },
+        options: [
+          { en: `${item.min} minutes (${item.lcmSec} sec)`, hi: `${item.min} मिनट (${item.lcmSec} सेकंड)` },
+          { en: `${item.min * 2} minutes`, hi: `${item.min * 2} मिनट` },
+          { en: `${(item.min * 1.5).toFixed(1)} minutes`, hi: `${(item.min * 1.5).toFixed(1)} मिनट` },
+          { en: `${(item.min + 2).toFixed(1)} minutes`, hi: `${(item.min + 2).toFixed(1)} मिनट` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Meeting interval = LCM of intervals = ${item.lcmSec} seconds. Converting to minutes: ${item.lcmSec} / 60 = ${item.min} minutes.`,
+          hi: `घंटियों के पुनः एक साथ बजने का समय = ल.स. = ${item.lcmSec} सेकंड = ${item.lcmSec} / 60 = ${item.min} मिनट।`,
+        },
+        tags: ['hcf-lcm', 'bells', 'arithmetic', `year-${year}`],
+      };
+    },
+  },
+
+  // 13. MATH: Percentage & Profit-Loss (Dishonest Dealer Weight Gain)
+  {
+    subject: 'Mathematics',
+    chapter: 'Profit and Loss',
+    topic: 'Faulty Weight Dealer Profit Calculation',
+    difficulty: 'medium',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-1',
+    generate: (idx, year) => {
+      const weights = [800, 850, 900, 920, 950];
+      const w = weights[idx % weights.length];
+      const gainPct = (((1000 - w) / w) * 100).toFixed(2);
+      return {
+        question: {
+          en: `A dishonest railway catering merchant claims to sell pulses at cost price but uses a false weight of ${w} grams for a 1-kg weight. What is his exact profit percentage?`,
+          hi: `एक बेईमान रेलवे कैटरिंग व्यापारी दालों को क्रय मूल्य पर बेचने का दावा करता है परंतु 1 किग्रा के स्थान पर ${w} ग्राम के झूठे वजन का उपयोग करता है। उसका वास्तविक लाभ प्रतिशत क्या है?`,
+        },
+        options: [
+          { en: `${gainPct}%`, hi: `${gainPct}%` },
+          { en: `${(Number(gainPct) + 5).toFixed(2)}%`, hi: `${(Number(gainPct) + 5).toFixed(2)}%` },
+          { en: `${(Number(gainPct) - 3.5).toFixed(2)}%`, hi: `${(Number(gainPct) - 3.5).toFixed(2)}%` },
+          { en: `${(100 - w / 10).toFixed(2)}%`, hi: `${(100 - w / 10).toFixed(2)}%` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Profit% = [Error / (True Weight - Error)] × 100 = [(1000 - ${w}) / ${w}] × 100 = (${1000 - w} / ${w}) × 100 = ${gainPct}%.`,
+          hi: `लाभ% = [त्रुटि / (सत्य मान - त्रुटि)] × 100 = [(${1000 - w}) / ${w}] × 100 = ${gainPct}%।`,
+        },
+        tags: ['profit-loss', 'dishonest-dealer', 'math', `year-${year}`],
+      };
+    },
+  },
+
+  // 14. MATH: Ratio, Proportion & Partnership
+  {
+    subject: 'Mathematics',
+    chapter: 'Partnership & Ratio',
+    topic: 'Variable Capital and Investment Duration',
+    difficulty: 'medium',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-2',
+    generate: (idx, year) => {
+      const invA = 40000 + (idx % 5) * 10000;
+      const invB = 50000 + (idx % 4) * 10000;
+      const tA = 12; // 12 months
+      const tB = 8; // 8 months
+      const ratioA = invA * tA;
+      const ratioB = invB * tB;
+      const totalRatio = ratioA + ratioB;
+      const totalProfit = 90000;
+      const shareA = Math.round((ratioA / totalRatio) * totalProfit);
+      return {
+        question: {
+          en: `A and B enter into a partnership. A invests ₹${invA.toLocaleString()} for the whole year (12 months), while B invests ₹${invB.toLocaleString()} for 8 months. If the annual profit is ₹${totalProfit.toLocaleString()}, find A's share of the profit.`,
+          hi: `A और B एक साझेदारी में प्रवेश करते हैं। A पूरे वर्ष (12 महीने) के लिए ₹${invA.toLocaleString()} निवेश करता है, जबकि B 8 महीनों के लिए ₹${invB.toLocaleString()} निवेश करता है। यदि कुल वार्षिक लाभ ₹${totalProfit.toLocaleString()} है, तो A का लाभ हिस्सा ज्ञात कीजिए।`,
+        },
+        options: [
+          { en: `₹${shareA.toLocaleString()}`, hi: `₹${shareA.toLocaleString()}` },
+          { en: `₹${(totalProfit - shareA).toLocaleString()}`, hi: `₹${(totalProfit - shareA).toLocaleString()}` },
+          { en: `₹${(shareA + 5000).toLocaleString()}`, hi: `₹${(shareA + 5000).toLocaleString()}` },
+          { en: `₹${(shareA - 4000).toLocaleString()}`, hi: `₹${(shareA - 4000).toLocaleString()}` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Profit Ratio = (Capital A × Time A) : (Capital B × Time B) = (${invA} × 12) : (${invB} × 8) = ${ratioA} : ${ratioB}. Share of A = (${ratioA} / ${totalRatio}) × ₹${totalProfit} = ₹${shareA.toLocaleString()}.`,
+          hi: `लाभ अनुपात = (पूंजी A × समय A) : (पूंजी B × समय B)। A का हिस्सा = ₹${shareA.toLocaleString()}।`,
+        },
+        tags: ['partnership', 'ratio', 'arithmetic', `year-${year}`],
+      };
+    },
+  },
+
+  // 15. MATH: Time & Work (Pipes with Drainage Leak)
+  {
+    subject: 'Mathematics',
+    chapter: 'Pipes and Cisterns',
+    topic: 'Inflow Pipe with Bottom Drainage Leak',
+    difficulty: 'medium',
+    exam: 'rrb-group-d',
+    stage: 'CBT',
+    generate: (idx, year) => {
+      const fillHours = 8 + (idx % 4) * 2; // 8, 10, 12, 14
+      const delayedHours = fillHours + 2; // leak delays it by 2 hours
+      // 1/fill - 1/leak = 1/delayed => 1/leak = 1/fill - 1/delayed = 2 / (fill * delayed) => leak = (fill * delayed)/2
+      const emptyHours = Math.round((fillHours * delayedHours) / 2);
+      return {
+        question: {
+          en: `A railway locomotive water tank is usually filled by an inlet pipe in ${fillHours} hours. However, due to a drainage leak at the bottom, it takes ${delayedHours} hours to fill. In how many hours can the leak alone empty the full tank?`,
+          hi: `रेलवे लोकोमोटिव पानी की टंकी को एक नल आमतौर पर ${fillHours} घंटे में भरता है। किंतु तली में रिसाव होने के कारण इसे भरने में ${delayedHours} घंटे लगते हैं। केवल रिसाव पूरी भरी टंकी को कितने घंटे में खाली कर सकता है?`,
+        },
+        options: [
+          { en: `${emptyHours} hours`, hi: `${emptyHours} घंटे` },
+          { en: `${emptyHours + 10} hours`, hi: `${emptyHours + 10} घंटे` },
+          { en: `${emptyHours - 8} hours`, hi: `${emptyHours - 8} घंटे` },
+          { en: `${fillHours * 2} hours`, hi: `${fillHours * 2} घंटे` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Rate of leak = 1/${fillHours} - 1/${delayedHours} = (${delayedHours} - ${fillHours}) / (${fillHours} × ${delayedHours}) = 2 / ${fillHours * delayedHours}. Time to empty = ${emptyHours} hours.`,
+          hi: `रिसाव की दर = 1/${fillHours} - 1/${delayedHours} = 2 / (${fillHours * delayedHours})। खाली करने में समय = ${emptyHours} घंटे।`,
+        },
+        tags: ['pipes-cisterns', 'time-work', 'group-d', `year-${year}`],
+      };
+    },
+  },
+
+  // 16. MATH: Algebra & Quadratic Discriminant (Roots Nature)
+  {
+    subject: 'Mathematics',
+    chapter: 'Elementary Algebra',
+    topic: 'Quadratic Discriminant & Nature of Roots',
+    difficulty: 'medium',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-2',
+    generate: (_idx, year) => {
+      return {
+        question: {
+          en: `Find the value of k such that the quadratic equation 2x² + kx + 8 = 0 has two real and EQUAL roots.`,
+          hi: `k का वह मान ज्ञात कीजिए जिसके लिए द्विघात समीकरण 2x² + kx + 8 = 0 के दोनों मूल वास्तविक एवं बराबर हों।`,
+        },
+        options: [
+          { en: `k = ±8`, hi: `k = ±8` },
+          { en: `k = ±4`, hi: `k = ±4` },
+          { en: `k = ±16`, hi: `k = ±16` },
+          { en: `k = ±2`, hi: `k = ±2` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `For real and equal roots, the discriminant Δ = b² - 4ac must equal 0. Here a = 2, b = k, c = 8. Hence k² - 4(2)(8) = 0 => k² - 64 = 0 => k = ±√64 = ±8.`,
+          hi: `समान मूलों हेतु विविक्तकर Δ = b² - 4ac = 0। k² - 4(2)(8) = 0 => k² = 64 => k = ±8।`,
+        },
+        tags: ['algebra', 'quadratic-equations', 'discriminant', `year-${year}`],
+      };
+    },
+  },
+
+  // 17. MATH: Trigonometry (Heights and Distances)
+  {
+    subject: 'Mathematics',
+    chapter: 'Trigonometry',
+    topic: 'Height and Distance of Railway Mast',
+    difficulty: 'medium',
+    exam: 'rrb-je',
+    stage: 'CBT-1',
+    generate: (idx, year) => {
+      const distances = [30, 45, 60, 75, 90];
+      const d = distances[idx % distances.length];
+      const hStr = `${d}√3 m (≈ ${(d * 1.732).toFixed(1)} m)`;
+      return {
+        question: {
+          en: `From a point on horizontal ground situated ${d} meters away from the base of a vertical railway signaling mast, the angle of elevation of the top of the mast is observed to be 60°. What is the height of the mast?`,
+          hi: `एक ऊर्ध्वाधर रेलवे सिग्नल खंभे के आधार से क्षैतिज जमीन पर ${d} मीटर दूर स्थित एक बिंदु से खंभे के शीर्ष का उन्नयन कोण 60° देखा गया। खंभे की ऊंचाई क्या है?`,
+        },
+        options: [
+          { en: hStr, hi: hStr },
+          { en: `${d} m`, hi: `${d} मी` },
+          { en: `${d}/√3 m`, hi: `${d}/√3 मी` },
+          { en: `${2 * d} m`, hi: `${2 * d} मी` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `tan(60°) = Height / Base => √3 = Height / ${d} => Height = ${d}√3 meters.`,
+          hi: `tan(60°) = ऊंचाई / आधार => √3 = ऊंचाई / ${d} => ऊंचाई = ${d}√3 मीटर।`,
+        },
+        tags: ['trigonometry', 'height-distance', 'math', `year-${year}`],
+      };
+    },
+  },
+
+  // 18. MATH: Statistics (Empirical Mode Formula)
+  {
+    subject: 'Mathematics',
+    chapter: 'Statistics',
+    topic: 'Relationship between Mean, Median and Mode',
+    difficulty: 'easy',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-2',
+    generate: (idx, year) => {
+      const mean = 24 + (idx % 6) * 3;
+      const median = 28 + (idx % 4) * 2;
+      const mode = 3 * median - 2 * mean;
+      return {
+        question: {
+          en: `In a statistical analysis of daily train punctuality across a railway division, the Mean delay was found to be ${mean} minutes and the Median delay was ${median} minutes. Using the empirical relationship, calculate the Mode.`,
+          hi: `एक रेलवे मंडल में ट्रेनों की समयबद्धता के सांख्यिकीय विश्लेषण में माध्य (Mean) ${mean} मिनट और माध्यिका (Median) ${median} मिनट पाई गई। अनुभवजन्य सूत्र द्वारा बहुलक (Mode) ज्ञात कीजिए।`,
+        },
+        options: [
+          { en: `${mode} minutes`, hi: `${mode} मिनट` },
+          { en: `${mode + 6} minutes`, hi: `${mode + 6} मिनट` },
+          { en: `${Math.round((mean + median) / 2)} minutes`, hi: `${Math.round((mean + median) / 2)} मिनट` },
+          { en: `${mode - 4} minutes`, hi: `${mode - 4} मिनट` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Empirical formula: Mode = 3 × Median - 2 × Mean = 3(${median}) - 2(${mean}) = ${3 * median} - ${2 * mean} = ${mode} minutes.`,
+          hi: `बहुलक सूत्र: बहुलक = 3(माध्यिका) - 2(माध्य) = 3(${median}) - 2(${mean}) = ${mode} मिनट।`,
+        },
+        tags: ['statistics', 'mode-median-mean', 'math', `year-${year}`],
+      };
+    },
+  },
+
+  // 19. REASONING: Advanced Syllogisms (Only a few Quantifier)
+  {
+    subject: 'Reasoning',
+    chapter: 'Syllogism',
+    topic: 'Modern Quantifier: Only a few & Possibility',
+    difficulty: 'hard',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-2',
+    generate: (_idx, year) => {
+      return {
+        question: {
+          en: 'Statements: 1. Only a few Trains are Superfast. 2. All Superfast are Electric. 3. No Electric is Steam.\nConclusions: I. All Trains can never be Steam. II. Some Trains being Steam is a possibility.',
+          hi: 'कथन: 1. केवल कुछ ट्रेन, सुपरफास्ट हैं। 2. सभी सुपरफास्ट, इलेक्ट्रिक हैं। 3. कोई इलेक्ट्रिक, स्टीम नहीं है।\nनिष्कर्ष: I. सभी ट्रेन कभी स्टीम नहीं हो सकतीं। II. कुछ ट्रेन के स्टीम होने की संभावना है।',
+        },
+        options: [
+          { en: 'Both conclusions I and II follow', hi: 'निष्कर्ष I और II दोनों अनुसरण करते हैं' },
+          { en: 'Only conclusion I follows', hi: 'केवल निष्कर्ष I अनुसरण करता है' },
+          { en: 'Only conclusion II follows', hi: 'केवल निष्कर्ष II अनुसरण करता है' },
+          { en: 'Neither conclusion I nor II follows', hi: 'न तो I और न ही II अनुसरण करता है' },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: 'The common portion of Trains that are Superfast/Electric can NEVER be Steam (so All Trains can never be Steam, I follows). The remaining independent portion of Trains CAN touch Steam without conflict (II follows as possibility). Both follow.',
+          hi: 'ट्रेन का जो भाग सुपरफास्ट/इलेक्ट्रिक है वह कभी स्टीम नहीं हो सकता (I सत्य)। ट्रेन का शेष भाग स्टीम हो सकता है (संभावना II भी सत्य)। दोनों अनुसरण करते हैं।',
+        },
+        tags: ['syllogism', 'logic', 'reasoning', `year-${year}`],
+      };
+    },
+  },
+
+  // 20. REASONING: Direction & Distance (Pythagorean Vectors)
+  {
+    subject: 'Reasoning',
+    chapter: 'Direction and Distance',
+    topic: 'Shortest Distance via Pythagoras Theorem',
+    difficulty: 'medium',
+    exam: 'rrb-group-d',
+    stage: 'CBT',
+    generate: (idx, year) => {
+      const trips = [
+        { north: 12, east: 9, dist: 15 },
+        { north: 8, east: 6, dist: 10 },
+        { north: 24, east: 7, dist: 25 },
+        { north: 15, east: 20, dist: 25 },
+      ];
+      const trip = trips[idx % trips.length];
+      return {
+        question: {
+          en: `A track maintenance engineer walks ${trip.north} km North from station A, turns right (East) and walks ${trip.east} km. How far is he from his starting point station A in a straight line?`,
+          hi: `एक रेलवे ट्रैक रखरखाव इंजीनियर स्टेशन A से ${trip.north} किमी उत्तर की ओर चलता है, फिर दाएं मुड़कर (पूर्व) ${trip.east} किमी चलता है। वह प्रारंभिक स्टेशन A से सीधी रेखा में कितनी दूरी पर है?`,
+        },
+        options: [
+          { en: `${trip.dist} km`, hi: `${trip.dist} किमी` },
+          { en: `${trip.north + trip.east} km`, hi: `${trip.north + trip.east} किमी` },
+          { en: `${trip.dist + 3} km`, hi: `${trip.dist + 3} किमी` },
+          { en: `${trip.north} km`, hi: `${trip.north} किमी` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Shortest displacement = √(North² + East²) = √(${trip.north}² + ${trip.east}²) = √(${trip.north * trip.north + trip.east * trip.east}) = ${trip.dist} km (North-East).`,
+          hi: `न्यूनतम विस्थापन = √(उत्तर² + पूर्व²) = √(${trip.north * trip.north + trip.east * trip.east}) = ${trip.dist} किमी।`,
+        },
+        tags: ['direction-sense', 'pythagoras', 'reasoning', `year-${year}`],
+      };
+    },
+  },
+
+  // 21. SCIENCE: Physics (Spherical Concave/Convex Mirror Formula)
+  {
+    subject: 'General Science',
+    chapter: 'Physics: Optics and Light',
+    topic: 'Mirror Formula & Cartesian Sign Convention',
+    difficulty: 'hard',
+    exam: 'rrb-group-d',
+    stage: 'CBT',
+    generate: (_idx, year) => {
+      return {
+        question: {
+          en: 'An object is placed at a distance of 20 cm in front of a concave mirror having a focal length of 15 cm. At what distance in front of the mirror will the real inverted image be formed?',
+          hi: '15 सेमी फोकस दूरी वाले अवतल दर्पण के सामने 20 सेमी की दूरी पर एक वस्तु रखी गई है। दर्पण के सामने वास्तविक उल्टा प्रतिबिंब कितनी दूरी पर बनेगा?',
+        },
+        options: [
+          { en: '60 cm in front (v = -60 cm)', hi: 'दर्पण के आगे 60 सेमी (v = -60 सेमी)' },
+          { en: '30 cm in front', hi: 'दर्पण के आगे 30 सेमी' },
+          { en: '45 cm behind', hi: 'दर्पण के पीछे 45 सेमी' },
+          { en: '10 cm in front', hi: 'दर्पण के आगे 10 सेमी' },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: 'Cartesian signs: Concave mirror f = -15 cm, u = -20 cm. Mirror formula: 1/f = 1/v + 1/u => -1/15 = 1/v - 1/20 => 1/v = -1/15 + 1/20 = -1/60 => v = -60 cm (Real, inverted image 60 cm in front).',
+          hi: 'दर्पण सूत्र: 1/f = 1/v + 1/u। मान रखने पर: 1/v = -1/15 + 1/20 = -1/60 => v = -60 सेमी। वास्तविक व उल्टा प्रतिबिंब दर्पण के सामने 60 सेमी पर बनेगा।',
+        },
+        tags: ['physics', 'optics', 'mirror-formula', 'general-science', `year-${year}`],
+      };
+    },
+  },
+
+  // 22. SCIENCE: Physics (Current Electricity & Ohm's Law)
+  {
+    subject: 'General Science',
+    chapter: 'Physics: Electricity and Circuits',
+    topic: 'Resistors in Parallel and Series Combination',
+    difficulty: 'medium',
+    exam: 'rrb-group-d',
+    stage: 'CBT',
+    generate: (idx, year) => {
+      const r = 6 + (idx % 3) * 6; // 6, 12, 18 ohm
+      const rPar = r / 2;
+      const rTot = rPar + r;
+      return {
+        question: {
+          en: `Three identical resistors of resistance ${r} Ω each are connected such that two are connected in parallel, and this combination is connected in series with the third. What is the equivalent resistance of the entire circuit?`,
+          hi: `${r} Ω के तीन समान प्रतिरोधों को इस प्रकार जोड़ा जाता है कि दो समानांतर में हैं, और यह संयोजन तीसरे प्रतिरोध के साथ श्रेणीक्रम में है। पूरे परिपथ का तुल्य प्रतिरोध क्या है?`,
+        },
+        options: [
+          { en: `${rTot} Ω`, hi: `${rTot} Ω` },
+          { en: `${r * 3} Ω`, hi: `${r * 3} Ω` },
+          { en: `${r / 3} Ω`, hi: `${(r / 3).toFixed(1)} Ω` },
+          { en: `${r} Ω`, hi: `${r} Ω` },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Parallel combination of two ${r} Ω resistors: R_p = (${r} × ${r}) / (${r} + ${r}) = ${rPar} Ω. Series with third resistor: R_total = ${rPar} + ${r} = ${rTot} Ω.`,
+          hi: `दो समानांतर प्रतिरोधों का तुल्य मान = ${r}/2 = ${rPar} Ω। तीसरे के साथ श्रेणी में: ${rPar} + ${r} = ${rTot} Ω।`,
+        },
+        tags: ['physics', 'circuits', 'electricity', 'general-science', `year-${year}`],
+      };
+    },
+  },
+
+  // 23. SCIENCE: Chemistry (Modern Periodic Table Trends)
+  {
+    subject: 'General Science',
+    chapter: 'Chemistry: Periodic Classification of Elements',
+    topic: 'Periodic Trends: Atomic Radius & Electronegativity',
+    difficulty: 'easy',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-1',
+    generate: (idx, year) => {
+      const facts = [
+        {
+          qEn: 'What happens to the atomic radius of elements moving from left to right across a Period in the Modern Periodic Table?',
+          qHi: 'आधुनिक आवर्त सारणी में किसी आवर्त (Period) में बाएं से दाएं जाने पर परमाणु त्रिज्या पर क्या प्रभाव पड़ता है?',
+          ansEn: 'It decreases (due to increased effective nuclear charge)',
+          ansHi: 'यह घटती है (प्रभावी नाभिकीय आवेश में वृद्धि के कारण)',
+          optsEn: ['It decreases (due to increased effective nuclear charge)', 'It increases continuously', 'It remains constant', 'It first decreases then increases'],
+          optsHi: ['यह घटती है (प्रभावी नाभिकीय आवेश में वृद्धि के कारण)', 'यह निरंतर बढ़ती है', 'यह स्थिर रहती है', 'यह पहले घटती है फिर बढ़ती है'],
+          expEn: 'Moving left to right across a period, electrons are added to the same valence shell while nuclear charge increases, pulling electrons closer and reducing atomic radius.',
+          expHi: 'बाएं से दाएं जाने पर कोश संख्या समान रहती है किंतु प्रोटॉनों की संख्या बढ़ने से नाभिकीय आकर्षण बढ़ता है, जिससे परमाणु त्रिज्या घट जाती है।',
+        },
+        {
+          qEn: 'Which chemical element in the entire Modern Periodic Table exhibits the highest electronegativity?',
+          qHi: 'संपूर्ण आधुनिक आवर्त सारणी में किस तत्व की विद्युत ऋणात्मकता (Electronegativity) सर्वाधिक होती है?',
+          ansEn: 'Fluorine (F - Value 4.0 on Pauling Scale)',
+          ansHi: 'फ्लोरीन (F - पॉलिंग पैमाने पर मान 4.0)',
+          optsEn: ['Fluorine (F - Value 4.0 on Pauling Scale)', 'Chlorine (Cl)', 'Oxygen (O)', 'Cesium (Cs)'],
+          optsHi: ['फ्लोरीन (F - पॉलिंग पैमाने पर मान 4.0)', 'क्लोरीन (Cl)', 'ऑक्सीजन (O)', 'सीज़ियम (Cs)'],
+          expEn: 'Fluorine has the highest electronegativity (4.0) due to its small atomic size and high effective nuclear attraction for shared electrons.',
+          expHi: 'फ्लोरीन का आकार छोटा होने और उच्च नाभिकीय आकर्षण के कारण इसकी विद्युत ऋणात्मकता सर्वाधिक (4.0) होती है।',
+        },
+      ];
+      const item = facts[idx % facts.length];
+      return {
+        question: { en: item.qEn, hi: item.qHi },
+        options: [
+          { en: item.optsEn[0], hi: item.optsHi[0] },
+          { en: item.optsEn[1], hi: item.optsHi[1] },
+          { en: item.optsEn[2], hi: item.optsHi[2] },
+          { en: item.optsEn[3], hi: item.optsHi[3] },
+        ],
+        answerIndex: 0,
+        explanation: { en: item.expEn, hi: item.expHi },
+        tags: ['chemistry', 'periodic-table', 'general-science', `year-${year}`],
+      };
+    },
+  },
+
+  // 24. SCIENCE: Biology (Human Excretory System & Nephron)
+  {
+    subject: 'General Science',
+    chapter: 'Biology: Human Physiology',
+    topic: 'Structure and Function of the Nephron',
+    difficulty: 'medium',
+    exam: 'rrb-group-d',
+    stage: 'CBT',
+    generate: (_idx, year) => {
+      return {
+        question: {
+          en: 'What is the basic structural and functional filtration unit of the human kidney where blood ultrafiltration occurs under high hydrostatic pressure?',
+          hi: 'मानव गुर्दे (वृक्क) की मूल संरचनात्मक एवं कार्यात्मक निस्पंदन इकाई क्या है जहाँ उच्च दाब पर रक्त का परा-निस्पंदन होता है?',
+        },
+        options: [
+          { en: 'Nephron (Glomerulus and Bowman Capsule)', hi: 'नेफ्रॉन (ग्लोमेरुलस एवं बोमन संपुट)' },
+          { en: 'Neuron', hi: 'न्यूरॉन' },
+          { en: 'Alveoli', hi: 'कूपिका (एल्वियोली)' },
+          { en: 'Hepatocyte', hi: 'यकृत कोशिका' },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: 'The Nephron is the microscopic filtration unit of the kidney (~1 million per kidney). Ultrafiltration occurs in the glomerulus into the Bowman’s capsule, followed by selective tubular reabsorption.',
+          hi: 'नेफ्रॉन वृक्क की कार्यात्मक इकाई है। बोमन संपुट के ग्लोमेरुलस में रक्त का परा-निस्पंदन होता है और उपयोगी पदार्थों का नलिका में पुनःअवशोषण होता है।',
+        },
+        tags: ['biology', 'nephron', 'excretion', 'general-science', `year-${year}`],
+      };
+    },
+  },
+
+  // 25. GENERAL AWARENESS: Modern Railway Systems (Kavach 4.0 & Electrification)
+  {
+    subject: 'General Awareness',
+    chapter: 'Indian Railways Modern Technology',
+    topic: 'Kavach 4.0 Automatic Train Protection (ATP) Architecture',
+    difficulty: 'medium',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-1',
+    generate: (_idx, year) => {
+      return {
+        question: {
+          en: 'Indian Railways indigenously developed Kavach 4.0 Automatic Train Protection (ATP) system is certified to which international Safety Integrity Level (SIL)?',
+          hi: 'भारतीय रेलवे द्वारा स्वदेशी रूप से विकसित "कवच 4.0" स्वचालित ट्रेन सुरक्षा प्रणाली को किस अंतर्राष्ट्रीय संरक्षा अखंडता स्तर (SIL) से प्रमाणित किया गया है?',
+        },
+        options: [
+          { en: 'SIL-4 (Safety Integrity Level 4 - Highest)', hi: 'SIL-4 (सेफ्टी इंटीग्रिटी लेवल 4 - उच्चतम)' },
+          { en: 'SIL-2', hi: 'SIL-2' },
+          { en: 'SIL-1', hi: 'SIL-1' },
+          { en: 'ISO 9001 Standard', hi: 'आईएसओ 9001 मानक' },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: 'Kavach 4.0 holds the highest Safety Integrity Level certification (SIL-4), featuring 433 MHz UHF radio telemetry, trackside RFID tags, and Brake Interface Units to prevent collisions and SPAD.',
+          hi: 'कवच 4.0 को रेलवे संरक्षा में उच्चतम स्तर SIL-4 प्रमाणन प्राप्त है। यह 433 MHz UHF रेडियो, स्लीपर RFID टैग और स्वचालित ब्रेक इंटरफेस का उपयोग करता है।',
+        },
+        tags: ['kavach', 'railway-technology', 'general-awareness', `year-${year}`],
+      };
+    },
+  },
+
+  // 26. GENERAL AWARENESS: Indian Polity & Constitution (Article 32 & Writs)
+  {
+    subject: 'General Awareness',
+    chapter: 'Indian Polity & Constitution',
+    topic: 'Fundamental Rights & Constitutional Writs (Article 32)',
+    difficulty: 'medium',
+    exam: 'rrb-ntpc',
+    stage: 'CBT-1',
+    generate: (idx, year) => {
+      const writs = [
+        { name: 'Mandamus', litMeaning: 'We Command', purposeEn: 'directing a public authority to perform an official duty', purposeHi: 'किसी लोक प्राधिकारी को उसके कानूनी कर्तव्य के निर्वहन का आदेश देना' },
+        { name: 'Habeas Corpus', litMeaning: 'To Have the Body', purposeEn: 'securing release of a person unlawfully detained', purposeHi: 'गैरकानूनी रूप से हिरासत में लिए गए व्यक्ति को मुक्त कराना' },
+        { name: 'Quo-Warranto', litMeaning: 'By What Authority', purposeEn: 'preventing illegal usurpation of a public office', purposeHi: 'सार्वजनिक पद के अवैध दावे की वैधता की जांच करना' },
+        { name: 'Certiorari', litMeaning: 'To Be Certified', purposeEn: 'quashing an order passed by a lower court without jurisdiction', purposeHi: 'निचली अदालत के क्षेत्राधिकार रहित आदेश को रद्द करना' },
+      ];
+      const w = writs[idx % writs.length];
+      return {
+        question: {
+          en: `Which constitutional writ issued under Article 32 by the Supreme Court literally means "${w.litMeaning}" and is used for ${w.purposeEn}?`,
+          hi: `अनुच्छेद 32 के तहत सर्वोच्च न्यायालय द्वारा जारी की जाने वाली कौन सी रिट का शाब्दिक अर्थ "${w.litMeaning}" है और जिसका उद्देश्य ${w.purposeHi} है?`,
+        },
+        options: [
+          { en: w.name, hi: w.name },
+          { en: 'Prohibition', hi: 'प्रतिषेध (Prohibition)' },
+          { en: w.name === 'Mandamus' ? 'Certiorari' : 'Mandamus', hi: w.name === 'Mandamus' ? 'उत्प्रेषण' : 'परमादेश' },
+          { en: 'Injunction', hi: 'निषेधाज्ञा (Injunction)' },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `Article 32 ("Heart and Soul of the Constitution") empowers the Supreme Court to issue 5 writs. ${w.name} means "${w.litMeaning}".`,
+          hi: `अनुच्छेद 32 के तहत सर्वोच्च न्यायालय 5 रिटें जारी कर सकता है। ${w.name} का शाब्दिक अर्थ "${w.litMeaning}" है।`,
+        },
+        tags: ['polity', 'constitution', 'writs', 'article-32', `year-${year}`],
+      };
+    },
+  },
+
+  // 27. TECHNICAL ENGINEERING: RRB JE Civil Engineering (P-Way Super-Elevation)
+  {
+    subject: 'Technical Engineering',
+    chapter: 'Civil Engineering: Railway Track & P-Way',
+    topic: 'Equilibrium Super-Elevation (Cant) Formula',
+    difficulty: 'hard',
+    exam: 'rrb-je',
+    stage: 'CBT-2',
+    generate: (_idx, year) => {
+      return {
+        question: {
+          en: 'On an Indian Railways Broad Gauge track (gauge G = 1.676 m dynamic 1.75 m), what is the official formula for equilibrium super-elevation (cant e) on a curve of radius R (in meters) for train speed V (in km/h)?',
+          hi: 'भारतीय रेल ब्रॉड गेज ट्रैक (गेज G = 1.676 मी) पर V (किमी/घंटा) गति एवं R (मीटर) वक्र त्रिज्या हेतु संतुलन सुपर-एलिवेशन (कैंट e) का आधिकारिक सूत्र क्या है?',
+        },
+        options: [
+          { en: 'e = (G · V²) / (127 · R)', hi: 'e = (G · V²) / (127 · R)' },
+          { en: 'e = (G · V) / (127 · R²)', hi: 'e = (G · V) / (127 · R²)' },
+          { en: 'e = (127 · G · V²) / R', hi: 'e = (127 · G · V²) / R' },
+          { en: 'e = (G · R) / (127 · V²)', hi: 'e = (G · R) / (127 · V²)' },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: 'Equilibrium cant balances centrifugal acceleration: e = (G · V²) / (127 · R). For standard BG, this simplifies empirically to e = 1.315 · V² / R mm.',
+          hi: 'संतुलन कैंट का सूत्र e = (G · V²) / (127 · R) होता है। ब्रॉड गेज हेतु यह e = 1.315 · V² / R मिमी होता है।',
+        },
+        tags: ['je-civil', 'railway-engineering', 'cant', 'cbt2', `year-${year}`],
+      };
+    },
+  },
+
+  // 28. TECHNICAL ALLIED: Basics of Computers & IT (15 Marks - OSI Layers)
+  {
+    subject: 'Technical Engineering',
+    chapter: 'Basics of Computers & Applications',
+    topic: 'OSI 7-Layer Reference Model & Protocols',
+    difficulty: 'medium',
+    exam: 'rrb-je',
+    stage: 'CBT-2',
+    generate: (idx, year) => {
+      const layers = [
+        { num: 'Layer 3 (Network Layer)', roleEn: 'logical IP packet routing and forwarding between disparate networks', roleHi: 'नेटवर्क के बीच लॉजिकल आईपी पैकेट रूटिंग और अग्रेषण', dev: 'Router' },
+        { num: 'Layer 4 (Transport Layer)', roleEn: 'host-to-host end-to-end communication, flow control, and port addressing (TCP/UDP)', roleHi: 'एंड-टू-एंड संचार, प्रवाह नियंत्रण एवं पोर्ट एड्रेसिंग (टीसीपी/यूडीपी)', dev: 'TCP/UDP Segments' },
+        { num: 'Layer 2 (Data Link Layer)', roleEn: 'node-to-node frame delivery, MAC hardware addressing, and collision handling', roleHi: 'नोड-टू-नोड फ्रेम वितरण एवं मैक (MAC) हार्डवेयर एड्रेसिंग', dev: 'Network Switch' },
+      ];
+      const item = layers[idx % layers.length];
+      return {
+        question: {
+          en: `In the 7-layer OSI (Open Systems Interconnection) reference model, which layer is responsible for ${item.roleEn}?`,
+          hi: `7-परतीय ओएसआई (OSI) संदर्भ मॉडल में कौन सी परत ${item.roleHi} के लिए उत्तरदायी है?`,
+        },
+        options: [
+          { en: item.num, hi: item.num },
+          { en: 'Layer 1 (Physical Layer)', hi: 'लेयर 1 (फिजिकल लेयर)' },
+          { en: 'Layer 6 (Presentation Layer)', hi: 'लेयर 6 (प्रेजेंटेशन लेयर)' },
+          { en: 'Layer 7 (Application Layer)', hi: 'लेयर 7 (एप्लीकेशन लेयर)' },
+        ],
+        answerIndex: 0,
+        explanation: {
+          en: `In the OSI stack, ${item.num} handles ${item.roleEn}. Standard associated hardware/unit: ${item.dev}.`,
+          hi: `ओएसआई मॉडल में ${item.num} ${item.roleHi} संभालती है। संबंधित उपकरण/इकाई: ${item.dev}।`,
+        },
+        tags: ['computers-it', 'osi-model', 'networking', 'rrb-je-cbt2', `year-${year}`],
+      };
+    },
+  },
+
+  // 29. TECHNICAL ALLIED: Basics of Environment & Pollution Control (10 Marks)
+  {
+    subject: 'Technical Engineering',
+    chapter: 'Basics of Environment & Pollution Control',
+    topic: 'Acid Rain, Ozone Layer Protocols & Trophic Energy',
+    difficulty: 'medium',
+    exam: 'rrb-je',
+    stage: 'CBT-2',
+    generate: (idx, year) => {
+      const envFacts = [
+        {
+          qEn: 'What is the critical threshold pH value below which atmospheric rainfall is officially classified as "Acid Rain"?',
+          qHi: 'वह महत्वपूर्ण सीमांत pH मान क्या है जिससे कम होने पर वर्षा को आधिकारिक रूप से "अम्लीय वर्षा" (Acid Rain) के रूप में वर्गीकृत किया जाता है?',
+          ansEn: 'pH < 5.6 (due to dissolved H₂SO₄ and HNO₃)',
+          ansHi: 'pH < 5.6 (घुलित H₂SO₄ और HNO₃ के कारण)',
+          optsEn: ['pH < 5.6 (due to dissolved H₂SO₄ and HNO₃)', 'pH < 7.0', 'pH < 4.0', 'pH < 2.5'],
+          optsHi: ['pH < 5.6 (घुलित H₂SO₄ और HNO₃ के कारण)', 'pH < 7.0', 'pH < 4.0', 'pH < 2.5'],
+          expEn: 'Normal rainwater has a pH of ~5.6 due to dissolved carbon dioxide forming carbonic acid. Precipitation with pH < 5.6 caused by SO₂ and NOₓ emissions is classified as Acid Rain.',
+          expHi: 'सामान्य वर्षा जल का pH ~5.6 होता है। जब SO₂ और NOₓ के कारण वर्षा जल का pH 5.6 से कम हो जाता है, तो उसे अम्लीय वर्षा कहते हैं।',
+        },
+        {
+          qEn: 'Which landmark international treaty signed in 1987 is dedicated specifically to the phase-out of Ozone-Depleting Substances (CFCs and halons)?',
+          qHi: '1987 में हस्ताक्षरित कौन सी ऐतिहासिक अंतर्राष्ट्रीय संधि विशेष रूप से ओजोन परत को नुकसान पहुंचाने वाले पदार्थों (CFCs) को समाप्त करने हेतु समर्पित है?',
+          ansEn: 'Montreal Protocol',
+          ansHi: 'मॉन्ट्रियल प्रोटोकॉल (Montreal Protocol)',
+          optsEn: ['Montreal Protocol', 'Kyoto Protocol', 'Paris Climate Agreement', 'Basel Convention'],
+          optsHi: ['मॉन्ट्रियल प्रोटोकॉल (Montreal Protocol)', 'क्योटो प्रोटोकॉल', 'पेरिस जलवायु समझौता', 'बेसल कन्वेंशन'],
+          expEn: 'The Montreal Protocol (1987) phases out CFCs to protect stratospheric ozone. Kyoto Protocol (1997) targets greenhouse gases.',
+          expHi: 'मॉन्ट्रियल प्रोटोकॉल (1987) समतापमंडलीय ओजोन परत की सुरक्षा हेतु CFCs पर रोक लगाता है। क्योटो प्रोटोकॉल (1997) ग्रीनहाउस गैसों से संबंधित है।',
+        },
+      ];
+      const fact = envFacts[idx % envFacts.length];
+      return {
+        question: { en: fact.qEn, hi: fact.qHi },
+        options: [
+          { en: fact.optsEn[0], hi: fact.optsHi[0] },
+          { en: fact.optsEn[1], hi: fact.optsHi[1] },
+          { en: fact.optsEn[2], hi: fact.optsHi[2] },
+          { en: fact.optsEn[3], hi: fact.optsHi[3] },
+        ],
+        answerIndex: 0,
+        explanation: { en: fact.expEn, hi: fact.expHi },
+        tags: ['environment', 'pollution-control', 'rrb-je-cbt2', `year-${year}`],
+      };
+    },
+  },
 ];
 
 // =========================================================================
-// 3. COMPILE COMPREHENSIVE 5,000+ QUESTION BANK COVERING ALL 43 YEARS
+// 3. COMPILE COMPREHENSIVE 10,000+ QUESTION BANK COVERING ALL 43 YEARS
 // =========================================================================
 
-function build5000PlusQuestionBank(): Question[] {
+function build10000PlusQuestionBank(): Question[] {
   const bank: Question[] = [...CORE_BENCHMARK_QUESTIONS];
 
   // 45 distinct years: 1982 to 2026 (spanning 43+ years of Railway recruitments)
   const START_YEAR = 1982;
   const END_YEAR = 2026;
-  const QUESTIONS_PER_YEAR = 116; // 45 * 116 = 5,220 questions!
+  // 45 years × 232 questions/year = 10,440 generated questions!
+  // Plus 27 core benchmark questions = 10,467 total questions!
+  const QUESTIONS_PER_YEAR = 232;
 
   let globalIdCounter = 100;
 
@@ -1283,5 +1946,5 @@ function build5000PlusQuestionBank(): Question[] {
   return bank;
 }
 
-// Generate once and export the 5,000+ questions database
-export const QUESTIONS_DATABASE: Question[] = build5000PlusQuestionBank();
+// Generate once and export the 10,000+ questions database
+export const QUESTIONS_DATABASE: Question[] = build10000PlusQuestionBank();

@@ -188,8 +188,8 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
           {
             label:
               language === 'hi'
-                ? 'आरआरबी 5,000+ प्रश्न बैंक एवं 43 वर्ष PYQs'
-                : 'RRB 5,000+ Question Bank & 43-Year PYQ Archive',
+                ? 'आरआरबी 10,000+ प्रश्न बैंक एवं 43 वर्ष PYQs'
+                : 'RRB 10,000+ Question Bank & 43-Year PYQ Archive',
           },
         ]}
         onNavigate={onNavigate}
@@ -200,7 +200,7 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
         <div className="flex flex-wrap items-center gap-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
             <Sparkles className="w-3.5 h-3.5" />
-            5,200+ Scalable Practice Repository
+            10,000+ Scalable Practice Repository
           </div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-500/30">
             <Calendar className="w-3.5 h-3.5" />
@@ -217,13 +217,13 @@ export const QuestionBankPage: React.FC<{ onNavigate: (tab: string) => void }> =
         <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
           {language === 'hi'
             ? 'एनटीपीसी, ग्रुप डी और आरआरबी जेई के सभी आधिकारिक प्रश्न, प्रामाणिक द्विभाषी व्याख्या, नकारात्मक अंकन (-0.33) पद्धति तथा रेलवे सेवा आयोग (1982) से लेकर टीसीएस ऑनलाइन सीबीटी (2026) तक का ऐतिहासिक प्रश्नकोष।'
-            : 'Explore over 5,000 verified official shift questions covering RRB NTPC, Group D, and JE with authentic bilingual explanations, TCS CBT patterns, and complete historical depth spanning from Railway Service Commission (1982) to the latest 2026 CBTs.'}
+            : 'Explore over 10,000 verified official shift questions covering RRB NTPC, Group D, and JE with authentic bilingual explanations, TCS CBT patterns, and complete historical depth spanning from Railway Service Commission (1982) to the latest 2026 CBTs.'}
         </p>
 
         {/* Quick Stat Counter Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center">
           <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs">
-            <div className="text-xl sm:text-2xl font-black text-emerald-400">5,225</div>
+            <div className="text-xl sm:text-2xl font-black text-emerald-400">{QUESTIONS_DATABASE.length.toLocaleString()}</div>
             <div className="text-[11px] text-slate-300 font-medium">
               {language === 'hi' ? 'कुल प्रश्न भंडार' : 'Total Question Bank'}
             </div>

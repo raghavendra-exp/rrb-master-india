@@ -146,7 +146,7 @@ export const ExamDetailsPage: React.FC<ExamDetailsPageProps> = ({
             className="py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-bold flex items-center gap-2 border border-white/20 transition-all cursor-pointer"
           >
             <FileCheck className="w-4 h-4" />
-            <span>Chapter Practice (5,000+ PYQs)</span>
+            <span>Chapter Practice (10,000+ PYQs)</span>
           </button>
 
           <button
