@@ -34,6 +34,7 @@ import { SyllabusPage } from './pages/SyllabusPage';
 import { CBTTestEngine } from './components/cbt/CBTTestEngine';
 
 import { QUESTIONS_DATABASE } from './data/rrb/questions';
+import { EXAMS_DATA } from './data/rrb/exams';
 import type { ExamId, Question } from './types';
 
 const MainApp: React.FC = () => {
@@ -126,23 +127,9 @@ const MainApp: React.FC = () => {
         {/* Dynamic Page Content */}
         <main className="flex-1 min-w-0 p-4 sm:p-6 lg:p-8 pb-24 lg:pb-8">
           {currentTab === 'dashboard' && <Dashboard onNavigate={handleNavigate} />}
-          {currentTab === 'rrb-ntpc' && (
+          {Boolean(EXAMS_DATA[currentTab]) && (
             <ExamDetailsPage
-              examId="rrb-ntpc"
-              onNavigate={handleNavigate}
-              onStartMock={handleStartMockTest}
-            />
-          )}
-          {currentTab === 'rrb-group-d' && (
-            <ExamDetailsPage
-              examId="rrb-group-d"
-              onNavigate={handleNavigate}
-              onStartMock={handleStartMockTest}
-            />
-          )}
-          {currentTab === 'rrb-je' && (
-            <ExamDetailsPage
-              examId="rrb-je"
+              examId={currentTab as ExamId}
               onNavigate={handleNavigate}
               onStartMock={handleStartMockTest}
             />

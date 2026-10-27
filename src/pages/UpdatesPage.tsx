@@ -249,6 +249,156 @@ export const UpdatesPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ o
         </div>
       </div>
 
+      {/* SYNCHRONIZED CBT EXAM SCHEDULE & ADVISORY DASHBOARD */}
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span className="p-2 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
+              <Calendar className="w-5 h-5" />
+            </span>
+            <div>
+              <h2 className="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
+                <span>{language === 'hi' ? 'आधिकारिक सीबीटी परीक्षा तिथियां एवं समय सारिणी' : 'Official CBT Examination Schedule & Timeline'}</span>
+                <span className="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase">
+                  ACTIVE SCHEDULE
+                </span>
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                {language === 'hi'
+                  ? 'रेलवे भर्ती नियंत्रण बोर्ड (RRCB) द्वारा जारी समकालिक परीक्षा तिथियां एवं शहर पर्ची नियम'
+                  : 'Synchronized CBT schedule released by Railway Recruitment Control Board (RRCB) across all 21 RRBs'}
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => onNavigate('mock-test')}
+            className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+          >
+            <span>{language === 'hi' ? 'परीक्षा अनुरूप मॉक टेस्ट दें' : 'Launch Exam-Ready CBT Mock'}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        {/* 4 Exam Scheduled Date Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50/50 dark:from-amber-950/20 dark:to-orange-950/10 border border-amber-200 dark:border-amber-900/50 space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-300 font-mono">
+                CEN 04/2026 & 03/2024
+              </span>
+              <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400 uppercase">CBT-1</span>
+            </div>
+            <h3 className="font-extrabold text-slate-900 dark:text-white text-sm">
+              RRB Junior Engineer (JE / DMS / CMA)
+            </h3>
+            <div className="space-y-0.5 pt-1 border-t border-amber-200/60 dark:border-amber-900/40">
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Scheduled Exam Dates:</span>
+              <span className="text-sm font-black text-amber-600 dark:text-amber-400 font-mono block">
+                27 & 28 October 2026
+              </span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400">100 Qs • 90 Mins • Screening</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50/50 dark:from-emerald-950/20 dark:to-teal-950/10 border border-emerald-200 dark:border-emerald-900/50 space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-mono">
+                CEN 01/2026 & 01/2024
+              </span>
+              <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase">CBT-1</span>
+            </div>
+            <h3 className="font-extrabold text-slate-900 dark:text-white text-sm">
+              RRB Assistant Loco Pilot (ALP)
+            </h3>
+            <div className="space-y-0.5 pt-1 border-t border-emerald-200/60 dark:border-emerald-900/40">
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Scheduled Exam Dates:</span>
+              <span className="text-sm font-black text-emerald-600 dark:text-emerald-400 font-mono block">
+                03 to 05 November 2026
+              </span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400">75 Qs • 60 Mins • Running Cadre</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-50/50 dark:from-purple-950/20 dark:to-indigo-950/10 border border-purple-200 dark:border-purple-900/50 space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-700 dark:text-purple-300 font-mono">
+                CEN 05/2026 & 04/2024
+              </span>
+              <span className="text-[10px] font-bold text-purple-600 dark:text-purple-400 uppercase">Single CBT</span>
+            </div>
+            <h3 className="font-extrabold text-slate-900 dark:text-white text-sm">
+              RRB Paramedical Staff
+            </h3>
+            <div className="space-y-0.5 pt-1 border-t border-purple-200/60 dark:border-purple-900/40">
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Scheduled Exam Dates:</span>
+              <span className="text-sm font-black text-purple-600 dark:text-purple-400 font-mono block">
+                23 & 25 November 2026
+              </span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400">100 Qs • 90 Mins • Professional 70M</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50/50 dark:from-blue-950/20 dark:to-cyan-950/10 border border-blue-200 dark:border-blue-900/50 space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-700 dark:text-blue-300 font-mono">
+                CEN 06/2026 & 07/2026
+              </span>
+              <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase">CBT-1</span>
+            </div>
+            <h3 className="font-extrabold text-slate-900 dark:text-white text-sm">
+              RRB NTPC (Grad & Undergrad)
+            </h3>
+            <div className="space-y-0.5 pt-1 border-t border-blue-200/60 dark:border-blue-900/40">
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Tentative Timeline:</span>
+              <span className="text-sm font-black text-blue-600 dark:text-blue-400 font-mono block">
+                4th Week of December 2026
+              </span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400">100 Qs • 90 Mins • All RRBs</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 3 Critical Official Candidate Instructions */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+          <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 space-y-1">
+            <span className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-blue-600" />
+              <span>City Intimation: 10 Days Prior</span>
+            </span>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
+              {language === 'hi'
+                ? 'परीक्षा शहर, तिथि एवं शिफ्ट की पर्ची परीक्षा से ठीक 10 दिन पहले आधिकारिक पोर्टल पर लाइव होती है।'
+                : 'Exam City and Date intimation slip link becomes active exactly 10 days before the scheduled exam date on regional RRB sites.'}
+            </p>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 space-y-1">
+            <span className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+              <FileText className="w-3.5 h-3.5 text-emerald-600" />
+              <span>e-Call Letter: 4 Days Prior</span>
+            </span>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
+              {language === 'hi'
+                ? 'एडमिट कार्ड (ई-कॉल लेटर) डाउनलोड परीक्षा तिथि से ठीक 4 दिन पहले प्रारंभ होता है। एससी/एसटी अभ्यर्थियों को स्लीपर पास संलग्न मिलता है।'
+                : 'e-Call letter download begins strictly 4 days before individual exam dates. Free sleeper railway travel authority is provided for SC/ST candidates.'}
+            </p>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 space-y-1">
+            <span className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-purple-600" />
+              <span>Mandatory Aadhaar Biometric</span>
+            </span>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
+              {language === 'hi'
+                ? 'परीक्षा हॉल में प्रवेश के लिए आधार-लिंक्ड बायोमेट्रिक फिंगरप्रिंट अनिवार्य है। मूल आधार कार्ड अवश्य साथ लाएं।'
+                : 'Aadhaar-linked biometric authentication is mandatory at test centers. Candidates must bring their original Aadhaar card for entry.'}
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Filter Tabs for Other Notifications */}
       <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
         {['ALL', 'new', 'important', 'deadline', 'info'].map((cat) => (

@@ -50,13 +50,18 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
 
   const navGroups = [
     {
-      label: language === 'hi' ? 'मुख्य एवं परीक्षाएं' : 'Core & Examinations',
+      label: language === 'hi' ? 'मुख्य एवं 2026 भर्ती परीक्षाएं' : 'Core & 2026 CEN Examinations',
       items: [
         { key: 'dashboard', label: t('dashboard'), icon: LayoutDashboard },
         { key: 'exam-discovery', label: t('examDiscovery'), icon: Compass, badge: 'Smart' },
-        { key: 'rrb-ntpc', label: t('ntpc'), icon: Train, badge: 'CEN 06/2026' },
-        { key: 'rrb-group-d', label: t('groupD'), icon: Train, badge: 'Level-1' },
+        { key: 'updates', label: language === 'hi' ? '2026 CEN अधिसूचनाएं' : '2026 CEN Notices', icon: Bell, badge: 'Live' },
+        { key: 'rrb-alp', label: language === 'hi' ? 'एएलपी (ALP)' : 'RRB ALP', icon: Train, badge: 'CEN 01/2026' },
+        { key: 'rrb-technician', label: language === 'hi' ? 'तकनीशियन' : 'Technicians', icon: Wrench, badge: 'CEN 02/2026' },
         { key: 'rrb-je', label: t('je'), icon: Wrench, badge: 'CEN 04/2026' },
+        { key: 'rrb-ntpc', label: t('ntpc'), icon: Train, badge: 'CEN 06/2026' },
+        { key: 'rrb-station-master', label: language === 'hi' ? 'स्टेशन मास्टर' : 'Station Master', icon: Layers, badge: 'CEN 08/2026' },
+        { key: 'rrb-group-d', label: t('groupD'), icon: Train, badge: 'CEN 09/2026' },
+        { key: 'rrb-rpf', label: language === 'hi' ? 'आरपीएफ (RPF)' : 'RPF SI / Const', icon: ShieldCheck, badge: 'Active' },
       ],
     },
     {

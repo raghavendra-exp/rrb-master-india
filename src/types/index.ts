@@ -5,7 +5,17 @@ export interface BilingualText {
   hi: string;
 }
 
-export type ExamId = 'rrb-ntpc' | 'rrb-group-d' | 'rrb-je';
+export type ExamId =
+  | 'rrb-ntpc'
+  | 'rrb-group-d'
+  | 'rrb-je'
+  | 'rrb-alp'
+  | 'rrb-technician'
+  | 'rrb-section-controller'
+  | 'rrb-paramedical'
+  | 'rrb-station-master'
+  | 'rrb-ministerial'
+  | 'rrb-rpf';
 
 export interface OfficialSource {
   title: string;

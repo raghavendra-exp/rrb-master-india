@@ -1103,4 +1103,192 @@ SEMICONDUCTOR CIRCUITS        DIGITAL & SYSTEMS             COMMUNICATION SYSTEM
       },
     ],
   },
+
+  // =========================================================================
+  // SECTION 6: RRB ALP & TECHNICIAN (CEN 01/2026 & CEN 02/2026)
+  // =========================================================================
+  {
+    sectionNumber: 6,
+    sectionId: 'rrb-alp',
+    title: {
+      en: 'Section 6: RRB ALP & Technicians (CEN 01/2026 & CEN 02/2026)',
+      hi: 'खंड 6: आरआरबी एएलपी एवं तकनीशियन (सीईएन 01/2026 व 02/2026)',
+    },
+    subtitle: {
+      en: 'Assistant Loco Pilot & Technician Grade I Signal / Grade III Trades (40 Marks Basic Science & Engg)',
+      hi: 'सहायक लोको पायलट एवं तकनीशियन ग्रेड I सिग्नल / ग्रेड III ट्रेड्स (40 अंक बेसिक साइंस एंड इंजीनियरिंग)',
+    },
+    postProfiles: {
+      designations: [
+        { en: 'Assistant Loco Pilot (Electric Traction)', hi: 'सहायक लोको पायलट (विद्युत कर्षण)' },
+        { en: 'Assistant Loco Pilot (Diesel Traction)', hi: 'सहायक लोको पायलट (डीजल कर्षण)' },
+        { en: 'Technician Grade I Signal (Pay Level 5)', hi: 'तकनीशियन ग्रेड I सिग्नल (पे लेवल 5)' },
+        { en: 'Technician Grade III (Workshop, Fitter, Electrician, P-Way)', hi: 'तकनीशियन ग्रेड III (वर्कशॉप, फिटर, इलेक्ट्रीशियन, पी-वे)' },
+      ],
+      testingEngine: {
+        en: 'CBT-1 (75 Qs / 60m) ➔ CBT-2 Part A (100 Qs / 90m merit) + Part B (75 Qs Trade qualifying 35%) ➔ RDSO CBAT (5 Batteries, min T-Score 42) ➔ A-1 Medical (6/6 vision without glasses)',
+        hi: 'सीबीटी-1 (75 प्रश्न) ➔ सीबीटी-2 भाग A (100 प्रश्न मेरिट) + भाग B (75 प्रश्न ट्रेड क्वालीफाइंग 35%) ➔ सीबीएटी साइको (5 बैटरियां, न्यूनतम 42 T-स्कोर) ➔ A-1 मेडिकल (बिना चश्मे के 6/6 दृष्टि)',
+      },
+      evaluationCore: {
+        en: 'Heavy loading on Basic Science & Engineering (40 Marks in Part A), ITI/Diploma Trade Curriculum (Part B), and Psychometric Concentration/Depth Perception.',
+        hi: 'बेसिक साइंस एंड इंजीनियरिंग (भाग A में 40 अंक), ट्रेड पाठ्यक्रम (भाग B में 35% क्वालीफाइंग) तथा साइको परीक्षण पर विशेष बल।',
+      },
+    },
+    modules: [
+      {
+        id: 'alp-basic-science-engg',
+        title: { en: 'Basic Science & Engineering (Core 40 Marks in CBT-2 Part A)', hi: 'बेसिक साइंस एंड इंजीनियरिंग (सीबीटी-2 भाग A में 40 अंक)' },
+        subtitle: { en: 'Engineering Drawing, Projections, Levers, Work-Power, Heat, Electricity & Safety', hi: 'इंजीनियरिंग ड्राइंग, प्रक्षेप, उत्तोलक, कार्य-ऊर्जा, ऊष्मा, विद्युत एवं सुरक्षा' },
+        iconType: 'wrench',
+        weightage: { cbt1: '20 Qs Science in CBT-1', cbt2: '40 Questions (40 Marks in CBT-2 Part A)' },
+        subTopics: [
+          {
+            id: 'alp-basic-science-drawing',
+            title: { en: 'Engineering Projections, Simple Machines (Levers) & Safety Standards', hi: 'इंजीनियरिंग प्रक्षेप, सरल मशीनें (उत्तोलक) एवं सुरक्षा मानक' },
+            summary: {
+              en: 'Engineering Drawing Fundamentals: ISO drawing sheet standard sizes (A0: 841 × 1189 mm, area 1 m² down to A4: 210 × 297 mm); First Angle Projection (top view below front view) vs Third Angle Projection (top view above front view); line styles (continuous thick for visible outlines, dashed for hidden details, chain thin for axes/centers);\nSimple Machines & Levers: Mechanical Advantage (MA = Load / Effort), Velocity Ratio (VR = d_E / d_L), Efficiency η = (MA / VR) × 100%; Class 1 Levers (Fulcrum in center: scissors, crowbar, semaphore signal wire lever), Class 2 Levers (Load in center: wheelbarrow, nutcracker, brake lever, MA > 1 always), Class 3 Levers (Effort in center: tongs, tweezers, human forearm, MA < 1 always);\nWork, Power, Energy & Friction: Kinetic energy (KE = 1/2 mv²), Potential energy (PE = mgh), Power = Work / Time = F · v; Coefficient of friction (μ = tan φ);\nHeat & Temperature: Sensible heat (Q = mcΔT) vs Latent heat of fusion/vaporization; Thermal expansions (linear α, superficial β = 2α, cubical γ = 3α);\nOccupational Safety & Fire Classification: Class A (wood/paper - water), Class B (flammable liquids - foam), Class C (gases/electrical equipment - CO₂ or dry chemical powder; NEVER use water on live electrical fires), Class D (combustible metals).',
+              hi: 'इंजीनियरिंग ड्राइंग: ड्राइंग शीट मानक (A0: 841 × 1189 मिमी, क्षेत्रफल 1 वर्ग मीटर से A4: 210 × 297 मिमी); प्रथम कोण प्रक्षेप (टॉप व्यू नीचे) बनाम तृतीय कोण प्रक्षेप (टॉप व्यू ऊपर); रेखाओं के प्रकार;\nसरल मशीनें एवं उत्तोलक: यांत्रिक लाभ MA = भार / प्रयास, वेग अनुपात VR = प्रयास दूरी / भार दूरी, दक्षता η = MA / VR; प्रथम श्रेणी उत्तोलक (आलंब बीच में: कैंची, सिग्नल वायर लीवर), द्वितीय श्रेणी (भार बीच में: पहिया ठेला, सरोता, MA > 1 हमेशा), तृतीय श्रेणी (प्रयास बीच में: चिमटा, MA < 1 हमेशा);\nकार्य, शक्ति, ऊर्जा: KE = 1/2 mv², PE = mgh, शक्ति = कार्य / समय; घर्षण गुणांक μ = tan φ;\nऊष्मा एवं तापमान: Q = mcΔT, गुप्त ऊष्मा; तापीय प्रसार (α : β : γ = 1 : 2 : 3);\nअग्नि वर्गीकरण एवं सुरक्षा: वर्ग A (लकड़ी/कागज - पानी), वर्ग B (पेट्रोल/डीजल - फोम), वर्ग C (गैस/विद्युत उपकरण - CO₂ या सूखा पाउडर; विद्युत आग पर पानी कभी न डालें), वर्ग D (धातु आग)।',
+            },
+            bulletPoints: [
+              { en: 'FLE Mnemonic for 3 Orders of Levers: 1-2-3 = F-L-E. Class 1: Fulcrum in middle; Class 2: Load in middle; Class 3: Effort in middle.', hi: 'उत्तोलक FLE नियम: 1-2-3 = F-L-E। प्रथम श्रेणी = Fulcrum, द्वितीय = Load, तृतीय = Effort।' },
+              { en: 'A0 Drawing Sheet dimensions: 841 mm × 1189 mm (Area = exactly 1.0 m²).', hi: 'A0 ड्राइंग शीट का आकार: 841 × 1189 मिमी (क्षेत्रफल = ठीक 1.0 वर्ग मीटर)।' },
+              { en: 'Electrical fire safety: Use CO₂ or Dry Powder extinguisher. Never use water on live electrical circuits.', hi: 'विद्युत आग पर CO₂ या सूखे चूर्ण का प्रयोग करें। पानी कभी न डालें।' },
+            ],
+            formulas: [
+              'MA = Load / Effort  |  VR = d_Effort / d_Load  |  Efficiency = MA / VR',
+              'A0 Sheet Area = 841 mm × 1189 mm = 1.0 m²',
+              'Kinetic Energy = (1/2)mv²  |  Potential Energy = mgh',
+              'Heat Transfer: Q = m × c × ΔT  |  Latent Heat: Q = m × L',
+            ],
+            examRelevance: { en: 'Guaranteed 40 marks in ALP CBT-2 Part A and Tech Grade 1', hi: 'एएलपी सीबीटी-2 भाग A एवं तकनीशियन ग्रेड 1 में 40 अंक' },
+            keyTerms: ['Class 1 2 3 Levers', 'First Angle Projection', 'A0 Drawing Sheet', 'Class C Fire CO2', 'Mechanical Advantage MA'],
+          },
+        ],
+      },
+    ],
+  },
+
+  // =========================================================================
+  // SECTION 7: RRB STATION MASTER & SECTION CONTROLLER (CEN 08 & 03/2026)
+  // =========================================================================
+  {
+    sectionNumber: 7,
+    sectionId: 'station-master-operations',
+    title: {
+      en: 'Section 7: Station Master & Section Controller (CEN 08/2026 & CEN 03/2026)',
+      hi: 'खंड 7: स्टेशन मास्टर एवं सेक्शन कंट्रोलर (सीईएन 08/2026 व 03/2026)',
+    },
+    subtitle: {
+      en: 'Station Working Rules, Electronic Interlocking, Block Working Systems & RDSO CBAT',
+      hi: 'स्टेशन वर्किंग रूल्स, इलेक्ट्रॉनिक इंटरलॉकिंग, ब्लॉक संचालन प्रणालियां एवं साइको परीक्षा',
+    },
+    postProfiles: {
+      designations: [
+        { en: 'Station Master (Pay Level 6 - Special Drive CEN 08/2026 & CEN 06/2026)', hi: 'स्टेशन मास्टर (पे लेवल 6 - विशेष अभियान)' },
+        { en: 'Section Controller (CEN 03/2026 - Traffic Operations Control Rooms)', hi: 'सेक्शन कंट्रोलर (मंडल नियंत्रण कक्ष रेल संचालन)' },
+        { en: 'Traffic Assistant (Metro & Suburban Corridors)', hi: 'ट्रैफिक असिस्टेंट (मेट्रो एवं उपनगरीय गलियारे)' },
+      ],
+      testingEngine: {
+        en: 'CBT-1 Screening (100 Qs) ➔ CBT-2 Level 6 Core (120 Qs) ➔ RDSO CBAT Psycho Test (5 Batteries, 70:30 composite merit) ➔ A-2 Medical Standard',
+        hi: 'सीबीटी-1 स्क्रीनिंग (100 प्रश्न) ➔ सीबीटी-2 लेवल 6 कोर (120 प्रश्न) ➔ आरडीएसओ सीबीएटी साइको टेस्ट (70:30 मेरिट अनुपात) ➔ A-2 मेडिकल मानक',
+      },
+      evaluationCore: {
+        en: 'Rigorous cognitive alertness, selective attention, spatial tracking, electronic interlocking protocols, block clearance, and train graph optimization.',
+        hi: 'संज्ञानात्मक सतर्कता, चयनात्मक ध्यान, इलेक्ट्रॉनिक इंटरलॉकिंग, ब्लॉक क्लीयरेंस एवं ट्रेन ग्राफ अनुकूलन।',
+      },
+    },
+    modules: [
+      {
+        id: 'station-master-traffic-core',
+        title: { en: 'Railway Traffic Operations, Interlocking & Safety Rules', hi: 'रेलवे यातायात परिचालन, इंटरलॉकिंग एवं सुरक्षा नियम' },
+        subtitle: { en: 'Absolute/Automatic Block, SWR, CSR 715m, Points & Crossings, Caution Orders', hi: 'एब्सोल्यूट/ऑटोमैटिक ब्लॉक, SWR, CSR 715 मी, पॉइंट्स व क्रॉसिंग, कॉशन ऑर्डर' },
+        iconType: 'train',
+        weightage: { cbt1: 'Integrated in GA (15 Qs)', cbt2: '50 Questions in Operations' },
+        subTopics: [
+          {
+            id: 'station-master-operations',
+            title: { en: 'Station Working Rules (SWR), Block Working Systems & Interlocking', hi: 'स्टेशन वर्किंग रूल्स (SWR), ब्लॉक संचालन प्रणालियां एवं इंटरलॉकिंग' },
+            summary: {
+              en: 'Station Master Operations & Traffic Control:\n• Block Working Systems: Absolute Block System (only one train allowed inside block section at a time) vs Automatic Block System (continuous track-circuiting with automated multi-aspect signals allows multiple trains to follow safely);\n• Electronic Interlocking (EI): Failsafe logic ensuring signals cannot turn Green unless all points are clamped and locked, and the route is verified unoccupied by axle counters/track circuits;\n• Station Working Rules (SWR): Station layout, loop lines, Clear Standing Room (standard CSR 715 meters for full rake), gradient protections, and shunting authorities;\n• Operating Forms: T/369(3b) (Authority to pass defective signal at Danger), Caution Order T/409 (Notifies speed restrictions on track), Working Timetable (WTT);\n• RDSO CBAT Psychometric Mastery: 5 battery tests (Intelligence, Selective Attention, Spatial, Following Directions, and Personality) requiring minimum 42 T-score in EACH battery.',
+              hi: 'स्टेशन मास्टर परिचालन एवं यातायात नियंत्रण:\n• ब्लॉक संचालन प्रणालियां: एब्सोल्यूट ब्लॉक सिस्टम (एक समय में ब्लॉक में केवल 1 ट्रेन) बनाम ऑटोमैटिक ब्लॉक सिस्टम (स्वचालित सिग्नलों द्वारा कई ट्रेनें सुरक्षित दूरी पर);\n• इलेक्ट्रॉनिक इंटरलॉकिंग (EI): सिग्नल तभी हरा होगा जब पूरे रूट के पॉइंट्स लॉक हों तथा ट्रैक सर्किट द्वारा ट्रैक खाली प्रमाणित हो;\n• स्टेशन वर्किंग रूल्स (SWR): लूप लाइन की मानक लंबाई 715 मीटर (CSR), ढलान सुरक्षा एवं शंटिंग नियम;\n• परिचालन फॉर्म: T/369(3b) (खराब सिग्नल पार करने का प्राधिकार), T/409 (कॉशन ऑर्डर - गति सीमा आदेश), वर्किंग टाइम टेबल (WTT);\n• आरडीएसओ सीबीएटी साइको परीक्षा: 5 बैटरियां (बुद्धिमत्ता, चयनात्मक ध्यान, स्थानिक दिशा, निर्देश पालन, व्यक्तित्व) - प्रत्येक में न्यूनतम 42 T-स्कोर अनिवार्य।',
+            },
+            bulletPoints: [
+              { en: 'Standard Loop Line CSR (Clear Standing Room) on Broad Gauge is 715 meters.', hi: 'ब्रॉड गेज पर लूप लाइन की मानक लंबाई (CSR) 715 मीटर होती है।' },
+              { en: 'Form T/409 is the official Caution Order notifying speed restrictions on track.', hi: 'फॉर्म T/409 आधिकारिक कॉशन ऑर्डर (सावधानी आदेश) होता है।' },
+              { en: 'CBAT minimum qualifying bar: T-score of 42 in EACH of the 5 battery tests.', hi: 'साइको टेस्ट पास करने हेतु सभी 5 बैटरियों में से प्रत्येक में न्यूनतम 42 T-स्कोर अनिवार्य।' },
+            ],
+            formulas: [
+              'T-Score = 50 + 10 × [(Score - Mean) / Standard_Deviation]',
+              'Loop Line Standard CSR = 715 meters',
+              'Permissible Turnout Speed: 1 in 8.5 = 15 km/h  |  1 in 12 = 30 km/h',
+            ],
+            examRelevance: { en: 'Directly tested in Level 6 CBT-2 and mandatory for CBAT', hi: 'लेवल 6 सीबीटी-2 एवं सीबीएटी साइको में अनिवार्य' },
+            keyTerms: ['Electronic Interlocking EI', 'CSR 715m', 'Form T409', 'T-Score 42', 'Absolute Block System'],
+          },
+        ],
+      },
+    ],
+  },
+
+  // =========================================================================
+  // SECTION 8: RRB RPF SUB-INSPECTOR & CONSTABLE (CEN RPF 01 & 02/2024)
+  // =========================================================================
+  {
+    sectionNumber: 8,
+    sectionId: 'rrb-rpf',
+    title: {
+      en: 'Section 8: RRB RPF (Sub-Inspector & Constable — CEN RPF 01 & 02/2024)',
+      hi: 'खंड 8: आरआरबी आरपीएफ (सब-इंस्पेक्टर एवं कांस्टेबल — सीईएन आरपीएफ 01 व 02/2024)',
+    },
+    subtitle: {
+      en: '4,660 Security Cadres (GA 50 Marks, Arithmetic 35 Marks, Reasoning 35 Marks & PET Standards)',
+      hi: '4,660 सुरक्षा संवर्ग (सामान्य जागरूकता 50 अंक, अंकगणित 35 अंक, रीजनिंग 35 अंक एवं पीईटी मानक)',
+    },
+    postProfiles: {
+      designations: [
+        { en: 'Sub-Inspector (SI - Pay Level 6: 452 Posts)', hi: 'सब-इंस्पेक्टर (पे लेवल 6: 452 पद)' },
+        { en: 'Constable (Executive - Pay Level 3: 4,208 Posts)', hi: 'कांस्टेबल (कार्यकारी - पे लेवल 3: 4,208 पद)' },
+      ],
+      testingEngine: {
+        en: 'Single Stage CBT (120 Qs / 90 Mins: GA 50, Arithmetic 35, Reasoning 35, 1/3rd negative marking) ➔ PET/PMT (1600m in 5m 45s, LJ 14ft, HJ 4ft for Constable Male) ➔ DV & B-1 Medical',
+        hi: 'एकल सीबीटी (120 प्रश्न / 90 मिनट: जीए 50, अंकगणित 35, रीजनिंग 35) ➔ पीईटी/पीएमटी (1600 मी दौड़ 5 मिनट 45 सेकंड, 14 फीट लंबी कूद, 4 फीट ऊंची कूद) ➔ डीवी व B-1 मेडिकल',
+      },
+      evaluationCore: {
+        en: 'High-speed numerical problem solving, spatial/analytical reasoning, Constitution & Railway Acts awareness, and elite physical endurance.',
+        hi: 'तीव्र गणना, स्थानिक तर्कशक्ति, संविधान व रेलवे अधिनियम ज्ञान, तथा उत्कृष्ट शारीरिक सहनशीलता।',
+      },
+    },
+    modules: [
+      {
+        id: 'rpf-security-core',
+        title: { en: 'RPF Security Aptitude, Railway Acts & Physical Standards', hi: 'आरपीएफ सुरक्षा अभिरुचि, रेलवे अधिनियम एवं शारीरिक मानक' },
+        subtitle: { en: 'RP(UP) Act 1966, Railways Act 1989 Sections 137, 141, 144, 156 & PET Protocol', hi: 'RP(UP) एक्ट 1966, रेल अधिनियम 1989 धाराएं 137, 141, 144, 156 एवं पीईटी मानक' },
+        iconType: 'globe',
+        weightage: { cbt1: '50 Qs General Awareness', cbt2: 'Part of 120-Mark Single CBT' },
+        subTopics: [
+          {
+            id: 'rpf-security-aptitude',
+            title: { en: 'Railway Property (Unlawful Possession) Act & Penal Railway Offences', hi: 'रेलवे संपत्ति (विधि विरुद्ध कब्जा) अधिनियम एवं प्रमुख दंडात्मक धाराएं' },
+            summary: {
+              en: 'RPF Statutory Enforcement & Railway Security Legislation:\n• Railway Protection Force Act, 1957: RPF constituted as an armed force of the Union for protection of railway property, passenger areas, and passengers;\n• Railway Property (Unlawful Possession) Act, 1966 [RP(UP) Act]: Section 3 (Punishment for unlawful possession of railway property up to 5 years imprisonment), Section 6 (Power of RPF officers to arrest without warrant on reasonable suspicion);\n• The Railways Act, 1989 Key Penal Provisions:\n  - Section 137: Fraudulent travel without ticket or pass (criminal offense);\n  - Section 141: Unauthorized Alarm Chain Pulling (ACP) without sufficient reason (up to 1 year jail or ₹1,000 fine);\n  - Section 144: Prohibition on unauthorized hawking and vending;\n  - Section 145: Drunkenness or creating nuisance on railway premises;\n  - Section 156: Traveling on the roof, step, or engine of a train (up to 3 months jail or ₹500 fine);\n• Physical Endurance Standards: Male Constable (1600m run in 5m 45s, Long Jump 14 ft, High Jump 4 ft); Female Constable (800m run in 3m 40s, Long Jump 9 ft, High Jump 3 ft).',
+              hi: 'आरपीएफ वैधानिक प्रवर्तन एवं रेलवे सुरक्षा कानून:\n• रेलवे सुरक्षा बल अधिनियम, 1957: संघ के एक सशस्त्र बल के रूप में गठन;\n• रेलवे संपत्ति (विधि विरुद्ध कब्जा) अधिनियम, 1966: धारा 3 (रेलवे संपत्ति के अवैध कब्जे पर 5 वर्ष तक जेल), धारा 6 (बिना वारंट गिरफ्तारी की शक्ति);\n• रेल अधिनियम, 1989 की प्रमुख धाराएं:\n  - धारा 137: धोखाधड़ी से बिना टिकट यात्रा;\n  - धारा 141: बिना उचित कारण अलार्म चेन खींचना (1 वर्ष तक जेल या ₹1,000 जुर्माना);\n  - धारा 144: अनधिकृत हॉकिंग व फेरी लगाना;\n  - धारा 145: नशा या उपद्रव करना;\n  - धारा 156: ट्रेन की छत, पायदान या इंजन पर यात्रा (3 माह तक जेल या ₹500 जुर्माना);\n• शारीरिक मानक (PET): पुरुष कांस्टेबल (1600 मी दौड़ 5 मिनट 45 सेकंड, 14 फीट लंबी कूद, 4 फीट ऊंची कूद); महिला कांस्टेबल (800 मी दौड़ 3 मिनट 40 सेकंड, 9 फीट लंबी कूद, 3 फीट ऊंची कूद)।',
+            },
+            bulletPoints: [
+              { en: 'Section 141 of Railways Act 1989: Unauthorized alarm chain pulling penalized with up to 1 year imprisonment or ₹1,000 fine.', hi: 'धारा 141: बिना उचित कारण जंजीर खींचने पर 1 वर्ष तक की जेल या ₹1,000 जुर्माना।' },
+              { en: 'Section 156 of Railways Act 1989: Prohibits traveling on roof, footboard, or engine.', hi: 'धारा 156: ट्रेन की छत, पायदान या इंजन पर यात्रा करना प्रतिबंधित है।' },
+              { en: 'RPF Constable Male 1600m PET timing requirement: Strictly 5 minutes 45 seconds.', hi: 'पुरुष कांस्टेबल हेतु 1600 मीटर दौड़ का समय: 5 मिनट 45 सेकंड।' },
+            ],
+            formulas: [
+              'Section 141 ACP Penalty: Up to 1 Year Imprisonment or ₹1,000 Fine',
+              'Section 156 Roof Riding Penalty: Up to 3 Months Jail or ₹500 Fine',
+              'Constable Male PET: 1600m in 5m 45s  |  Long Jump 14ft  |  High Jump 4ft',
+              'Constable Female PET: 800m in 3m 40s  |  Long Jump 9ft  |  High Jump 3ft',
+            ],
+            examRelevance: { en: 'Core syllabus for RPF SI & Constable CBT and PET screening', hi: 'आरपीएफ एसआई एवं कांस्टेबल सीबीटी व पीईटी हेतु अनिवार्य' },
+            keyTerms: ['Section 141 ACP', 'RP(UP) Act 1966', 'Section 156 Roof', '1600m 5m45s', 'RPF Act 1957'],
+          },
+        ],
+      },
+    ],
+  },
 ];

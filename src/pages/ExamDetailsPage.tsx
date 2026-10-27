@@ -45,35 +45,63 @@ export const ExamDetailsPage: React.FC<ExamDetailsPageProps> = ({
 
   // Match master section
   let primaryMasterSection: ExamSectionData | undefined;
-  if (examId === 'rrb-ntpc') {
+  if (examId === 'rrb-ntpc' || examId === 'rrb-station-master' || examId === 'rrb-section-controller') {
     primaryMasterSection = MASTER_SECTIONS_DATA.find(
       (s) => s.sectionId === (ntpcTier === 'graduate' ? 'ntpc-graduate' : 'ntpc-undergraduate')
     );
   } else if (examId === 'rrb-group-d') {
     primaryMasterSection = MASTER_SECTIONS_DATA.find((s) => s.sectionId === 'group-d');
-  } else if (examId === 'rrb-je') {
+  } else if (examId === 'rrb-je' || examId === 'rrb-technician') {
     primaryMasterSection = MASTER_SECTIONS_DATA.find((s) => s.sectionId === 'rrb-je');
+  } else {
+    primaryMasterSection = MASTER_SECTIONS_DATA[0];
   }
 
   // Get matching infographic
-  const examInfographic =
-    examId === 'rrb-ntpc'
-      ? {
-          src: './assets/rrb_railway_operations.jpg',
-          title: language === 'hi' ? 'भारतीय रेल संचालन, ट्रैक एवं कवच इन्फोग्राफिक' : 'Indian Railways Operations, Track & KAVACH Infographic',
-          desc: language === 'hi' ? 'वंदे भारत, WAG-12 लोकोमोटिव, 1676 मिमी ब्रॉड गेज एवं कवच 4.0 प्रणाली' : 'Vande Bharat, WAG-12 Loco, 1676mm Broad Gauge & KAVACH 4.0 System',
-        }
-      : examId === 'rrb-group-d'
-      ? {
-          src: './assets/rrb_physics_optics_circuits.jpg',
-          title: language === 'hi' ? 'ग्रुप डी उच्च वेटेज सामान्य विज्ञान (25 अंक) आरेख' : 'Group D High-Weightage General Science (25 Marks) Schematic',
-          desc: language === 'hi' ? 'गोलीय दर्पण/लेंस किरण आरेख, ओम का नियम एवं 0-14 pH पैमाना' : 'Spherical Mirrors/Lenses Ray Tracing, Ohm’s Law & 0-14 pH Scale',
-        }
-      : {
+  const getExamInfographic = () => {
+    switch (examId) {
+      case 'rrb-alp':
+        return {
+          src: './assets/rrb_railway_loco_traction.jpg',
+          title: language === 'hi' ? '25 kV एसी विद्युत कर्षण एवं लोकोमोटिव ब्लूप्रिंट' : '25 kV AC Electric Traction & Locomotive Propulsion Blueprint',
+          desc: language === 'hi' ? 'WAP-7/WAG-12 लोको, पेंटोग्राफ, ओएचई कैटेनरी एवं एयर ब्रेक प्रणाली' : 'WAP-7 & WAG-12 Locos, Pantograph, OHE Catenary & Air Brake Systems',
+        };
+      case 'rrb-technician':
+        return {
+          src: './assets/rrb_railway_signals_track.jpg',
+          title: language === 'hi' ? 'रेलवे ट्रैक इंजीनियरिंग एवं चार-आस्पेक्ट कलर लाइट सिग्नलिंग' : 'Permanent Way Track & Four-Aspect Color Light Signaling (MACLS)',
+          desc: language === 'hi' ? '1676 मिमी ब्रॉड गेज, यूआईसी 60 किग्रा रेल, पीएससी स्लीपर एवं सिग्नल आस्पेक्ट' : '1676mm Broad Gauge, UIC 60kg Rail, PSC Sleepers & Signal Aspects',
+        };
+      case 'rrb-section-controller':
+      case 'rrb-station-master':
+        return {
+          src: './assets/rrb_railway_kavach_atp.jpg',
+          title: language === 'hi' ? 'कवच 4.0 स्वचालित ट्रेन सुरक्षा (ATP) एवं स्टेशन इंटरलॉकिंग' : 'KAVACH 4.0 Automatic Train Protection (ATP) & Station Interlocking',
+          desc: language === 'hi' ? 'ट्रेन टक्कर रोधी प्रणाली, आरएफआईडी स्लीपर टैग, ईआई इंटरलॉकिंग व यूएचएफ रेडियो' : 'SIL-4 Collision Avoidance, RFID Sleeper Tags, EI Interlocking & Radio Towers',
+        };
+      case 'rrb-je':
+        return {
           src: './assets/rrb_science_engineering_lab.jpg',
           title: language === 'hi' ? 'आरआरबी जेई इंजीनियरिंग एवं तकनीकी विज्ञान लैब' : 'RRB JE Technical Engineering & Applied Science Blueprint',
           desc: language === 'hi' ? 'सिविल, मैकेनिकल, इलेक्ट्रिकल एवं इलेक्ट्रॉनिक्स कोर अनुशासन' : 'Civil, Mechanical, Electrical, and Electronics Core Disciplines',
         };
+      case 'rrb-group-d':
+        return {
+          src: './assets/rrb_physics_optics_circuits.jpg',
+          title: language === 'hi' ? 'ग्रुप डी उच्च वेटेज सामान्य विज्ञान (25 अंक) आरेख' : 'Group D High-Weightage General Science (25 Marks) Schematic',
+          desc: language === 'hi' ? 'गोलीय दर्पण/लेंस किरण आरेख, ओम का नियम एवं 0-14 pH पैमाना' : 'Spherical Mirrors/Lenses Ray Tracing, Ohm’s Law & 0-14 pH Scale',
+        };
+      case 'rrb-ntpc':
+      default:
+        return {
+          src: './assets/rrb_railway_operations.jpg',
+          title: language === 'hi' ? 'भारतीय रेल संचालन, ट्रैक एवं रोलिंग स्टॉक इन्फोग्राफिक' : 'Indian Railways Operations, Track & Rolling Stock Infographic',
+          desc: language === 'hi' ? 'वंदे भारत, WAG-12 लोकोमोटिव, 1676 मिमी ब्रॉड गेज एवं कवच 4.0 प्रणाली' : 'Vande Bharat, WAG-12 Loco, 1676mm Broad Gauge & KAVACH 4.0 System',
+        };
+    }
+  };
+
+  const examInfographic = getExamInfographic();
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">

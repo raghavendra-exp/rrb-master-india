@@ -21,6 +21,7 @@ import {
   ChevronDown,
   ChevronUp,
   Image as ImageIcon,
+  ShieldCheck,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Breadcrumb } from '../components/layout/Breadcrumb';
@@ -257,6 +258,51 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
             >
               <Layers className="w-4 h-4" />
               <span>{language === 'hi' ? 'खंड 5: क्रॉस-टियर मैट्रिक्स' : 'Section 5: Cross-Tier Matrix'}</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setActiveSectionId('rrb-alp');
+                setSearchQuery('');
+              }}
+              className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+                activeSectionId === 'rrb-alp'
+                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30'
+                  : 'bg-white/10 text-slate-300 hover:bg-white/15'
+              }`}
+            >
+              <Wrench className="w-4 h-4" />
+              <span>{language === 'hi' ? 'खंड 6: एएलपी व तकनीशियन (CEN 01 व 02)' : 'Section 6: ALP & Tech (CEN 01 & 02)'}</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setActiveSectionId('station-master-operations');
+                setSearchQuery('');
+              }}
+              className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+                activeSectionId === 'station-master-operations'
+                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
+                  : 'bg-white/10 text-slate-300 hover:bg-white/15'
+              }`}
+            >
+              <Train className="w-4 h-4" />
+              <span>{language === 'hi' ? 'खंड 7: स्टेशन मास्टर व कंट्रोलर (CEN 08 व 03)' : 'Section 7: Station Master & Ops'}</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setActiveSectionId('rrb-rpf');
+                setSearchQuery('');
+              }}
+              className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+                activeSectionId === 'rrb-rpf'
+                  ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/30'
+                  : 'bg-white/10 text-slate-300 hover:bg-white/15'
+              }`}
+            >
+              <ShieldCheck className="w-4 h-4" />
+              <span>{language === 'hi' ? 'खंड 8: आरपीएफ एसआई व कांस्टेबल' : 'Section 8: RPF SI & Constable'}</span>
             </button>
           </div>
         </div>

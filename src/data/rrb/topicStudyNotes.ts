@@ -1,4 +1,10 @@
 import type { BilingualText } from '../../types';
+import { MATH_TOPIC_STUDY_GUIDES } from './topicStudyNotesMath';
+import { REASONING_TOPIC_STUDY_GUIDES } from './topicStudyNotesReasoning';
+import { GK_RAILWAY_TOPIC_STUDY_GUIDES } from './topicStudyNotesGK';
+import { ENGINEERING_TOPIC_STUDY_GUIDES } from './topicStudyNotesEngineering';
+import { ALP_TECH_TOPIC_STUDY_GUIDES } from './topicStudyNotesALP';
+import { UG_AND_GROUP_D_TOPIC_STUDY_GUIDES } from './topicStudyNotesUGAndGroupD';
 
 export interface SolvedWorkedExample {
   id: string;
@@ -35,7 +41,7 @@ export interface TopicStudyGuide {
   relatedPracticeCategory: string;
 }
 
-export const TOPIC_STUDY_GUIDES: Record<string, TopicStudyGuide> = {
+const CORE_TOPIC_STUDY_GUIDES: Record<string, TopicStudyGuide> = {
   // =========================================================================
   // 1. NUMBER SYSTEM & ADVANCED SIMPLIFICATION (NTPC Graduate / Undergrad)
   // =========================================================================
@@ -1330,4 +1336,14 @@ export const TOPIC_STUDY_GUIDES: Record<string, TopicStudyGuide> = {
     ],
     relatedPracticeCategory: 'General Awareness',
   },
+};
+
+export const TOPIC_STUDY_GUIDES: Record<string, TopicStudyGuide> = {
+  ...CORE_TOPIC_STUDY_GUIDES,
+  ...MATH_TOPIC_STUDY_GUIDES,
+  ...REASONING_TOPIC_STUDY_GUIDES,
+  ...GK_RAILWAY_TOPIC_STUDY_GUIDES,
+  ...ENGINEERING_TOPIC_STUDY_GUIDES,
+  ...ALP_TECH_TOPIC_STUDY_GUIDES,
+  ...UG_AND_GROUP_D_TOPIC_STUDY_GUIDES,
 };

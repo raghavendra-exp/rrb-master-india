@@ -25,6 +25,11 @@ export const ExamDiscoveryTool: React.FC<{ onNavigate: (tab: string) => void }> 
   const isEligibleGroupD = (has10th || hasITI) && age >= 18 && age <= (category === 'SC' || category === 'ST' ? 41 : category === 'OBC' ? 39 : 36);
   const isTechnicalDegreeOrDiploma = hasDiploma || (hasGraduation && graduationDiscipline === 'engineering');
   const isEligibleJE = isTechnicalDegreeOrDiploma && age >= 18 && age <= (category === 'SC' || category === 'ST' ? 41 : category === 'OBC' ? 39 : 36);
+  const hasTechnicalTrades = hasITI || hasDiploma || (hasGraduation && graduationDiscipline === 'engineering');
+  const canDoA1 = distantVision === '6/6' && !hasColorBlindness;
+  const isEligibleALP = (has10th && hasTechnicalTrades) && canDoA1 && age >= 18 && age <= (category === 'SC' || category === 'ST' ? 38 : category === 'OBC' ? 36 : 33);
+  const isEligibleTech = (hasITI || hasDiploma || (hasGraduation && (graduationDiscipline === 'engineering' || graduationDiscipline === 'science_physics_chem'))) && age >= 18 && age <= (category === 'SC' || category === 'ST' ? 41 : category === 'OBC' ? 39 : 36);
+  const isEligibleRPF = (has10th || hasGraduation) && age >= 18 && age <= (category === 'SC' || category === 'ST' ? 33 : category === 'OBC' ? 31 : 28);
 
   // Medical viability checks
   const canDoA2 = (distantVision === '6/6' || distantVision === '6/9') && !hasColorBlindness;
@@ -415,6 +420,93 @@ export const ExamDiscoveryTool: React.FC<{ onNavigate: (tab: string) => void }> 
                     )}
                   </div>
                 )}
+              </div>
+
+              {/* RRB ALP */}
+              <div
+                className={`p-3.5 rounded-xl border transition-all ${
+                  isEligibleALP
+                    ? 'border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/20'
+                    : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 opacity-75'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">
+                    RRB Assistant Loco Pilot (ALP - CEN 01/2026)
+                  </span>
+                  {isEligibleALP ? (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600 text-white">
+                      ELIGIBLE
+                    </span>
+                  ) : (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-400 text-white">
+                      NOT ELIGIBLE
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  CEN 01/2026 • 10th + ITI / Diploma / Engg • Strict A-1 Medical (6/6 No Glasses)
+                </p>
+                {isEligibleALP && (
+                  <div className="mt-2 text-xs text-emerald-800 dark:text-emerald-300">
+                    <p className="font-medium">✓ Assistant Loco Pilot (Diesel & Electric Traction)</p>
+                    <p className="text-[11px] text-emerald-600 dark:text-emerald-400">✓ A-1 Medical criteria satisfied</p>
+                  </div>
+                )}
+              </div>
+
+              {/* RRB Technician */}
+              <div
+                className={`p-3.5 rounded-xl border transition-all ${
+                  isEligibleTech
+                    ? 'border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/20'
+                    : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 opacity-75'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">
+                    RRB Technician (Grade I Signal & Grade III - CEN 02/2026)
+                  </span>
+                  {isEligibleTech ? (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600 text-white">
+                      ELIGIBLE
+                    </span>
+                  ) : (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-400 text-white">
+                      NOT ELIGIBLE
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  CEN 02/2026 • Grade I Signal (B.Sc/Diploma/BE) & Grade III (10th + ITI Trades)
+                </p>
+              </div>
+
+              {/* RRB RPF */}
+              <div
+                className={`p-3.5 rounded-xl border transition-all ${
+                  isEligibleRPF
+                    ? 'border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/20'
+                    : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 opacity-75'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">
+                    RPF Sub-Inspector & Constable
+                  </span>
+                  {isEligibleRPF ? (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600 text-white">
+                      ELIGIBLE
+                    </span>
+                  ) : (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-400 text-white">
+                      NOT ELIGIBLE
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  CEN RPF 01/2024 & 02/2024 • SI (Degree) & Constable (10th Pass) • PET/PMT Required
+                </p>
               </div>
             </div>
 
