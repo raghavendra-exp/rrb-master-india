@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import {
   BookOpen,
+  Book,
   ArrowRight,
   GraduationCap,
   FileText,
@@ -182,6 +183,16 @@ export const SyllabusPage: React.FC<{ onNavigate: (tab: string) => void }> = ({ 
               ? 'एनटीपीसी ग्रेजुएट, अंडरग्रेजुएट, ग्रुप डी और आरआरबी जेई के लिए नवीनतम आधिकारिक अधिसूचनाओं (CEN 06/2026, 04/2026, 05/2024, 06/2024, 03/2024, Level-1) के आधार पर निर्मित पूर्णतः विस्तृत पाठ्यक्रम।'
               : 'Comprehensive topic-by-topic breakdown directly aligned with latest official Centralized Employment Notices (CEN 06/2026, 04/2026, 05/2024 & Level-1). Includes post profiles, testing engines, core formulas, and engineering discipline trees.'}
           </p>
+
+          <div className="flex flex-wrap items-center gap-3 pt-1">
+            <button
+              onClick={() => onNavigate('book-tutorials')}
+              className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-black flex items-center gap-2 shadow-lg shadow-amber-500/20 transition-all cursor-pointer"
+            >
+              <Book className="w-4 h-4" />
+              <span>{language === 'hi' ? '📖 सम्पूर्ण डिजिटल पाठ्यपुस्तक खोलें (46 अध्याय)' : '📖 Open Digital Textbook (46 Chapters)'}</span>
+            </button>
+          </div>
 
           {/* Section Selector Tabs */}
           <div className="flex flex-wrap gap-2 pt-2">

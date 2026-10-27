@@ -31,6 +31,7 @@ import { StudyPlannerPage } from './pages/StudyPlannerPage';
 import { JETechnicalPage } from './pages/JETechnicalPage';
 import { RailwayGKPage } from './pages/RailwayGKPage';
 import { SyllabusPage } from './pages/SyllabusPage';
+import { BookTutorialsPage } from './pages/BookTutorialsPage';
 import { CBTTestEngine } from './components/cbt/CBTTestEngine';
 
 import { QUESTIONS_DATABASE } from './data/rrb/questions';
@@ -165,6 +166,7 @@ const MainApp: React.FC = () => {
             <RailwayGKPage onNavigate={handleNavigate} />
           )}
           {currentTab === 'syllabus' && <SyllabusPage onNavigate={handleNavigate} />}
+          {currentTab === 'book-tutorials' && <BookTutorialsPage onNavigate={handleNavigate} />}
 
           {/* Site Footer */}
           <Footer onNavigate={handleNavigate} />

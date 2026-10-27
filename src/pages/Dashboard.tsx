@@ -11,6 +11,7 @@ import {
   Sparkles,
   ChevronRight,
   BookOpen,
+  Book,
   Globe,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -115,14 +116,23 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 : 'Every single syllabus topic is fully unlocked with comprehensive theory, official formulas, step-by-step worked CBT examples, topper speed hacks, and engineering blueprints directly in the interactive study reader.'}
             </p>
           </div>
-          <button
-            onClick={() => onNavigate('syllabus')}
-            className="px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 transition-all cursor-pointer hover-card-lift shrink-0"
-          >
-            <BookOpen className="w-4 h-4 text-slate-950" />
-            <span>{language === 'hi' ? 'पाठ्यक्रम व अध्याय अध्ययन करें' : 'Open Master Study Reader'}</span>
-            <ArrowRight className="w-4 h-4 text-slate-950" />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <button
+              onClick={() => onNavigate('book-tutorials')}
+              className="px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 transition-all cursor-pointer hover-card-lift"
+            >
+              <Book className="w-4 h-4 text-slate-950" />
+              <span>{language === 'hi' ? '📖 डिजिटल पाठ्यपुस्तक (46 Ch)' : '📖 Digital Textbook (46 Ch)'}</span>
+              <ArrowRight className="w-4 h-4 text-slate-950" />
+            </button>
+            <button
+              onClick={() => onNavigate('syllabus')}
+              className="px-5 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm flex items-center justify-center gap-2 border border-white/20 transition-all cursor-pointer hover-card-lift"
+            >
+              <BookOpen className="w-4 h-4" />
+              <span>{language === 'hi' ? 'पाठ्यक्रम संरचना' : 'Curriculum Grid'}</span>
+            </button>
+          </div>
         </div>
       </section>
 

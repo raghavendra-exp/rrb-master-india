@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   X,
   BookOpen,
+  Book,
   Calculator,
   Zap,
   AlertTriangle,
@@ -168,6 +169,17 @@ export const TopicStudyReaderModal: React.FC<TopicStudyReaderModalProps> = ({
           </div>
 
           <div className="flex items-center gap-1.5 shrink-0">
+            <button
+              onClick={() => {
+                onClose();
+                window.location.hash = `#/book-tutorials`;
+              }}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 hover:bg-blue-600 hover:text-white text-xs font-bold transition-all cursor-pointer"
+              title="Open in Full Digital Textbook"
+            >
+              <Book className="w-3.5 h-3.5" />
+              <span>{language === 'hi' ? 'पाठ्यपुस्तक मोड' : 'Book Mode'}</span>
+            </button>
             <button
               onClick={() => setIsFullScreen(!isFullScreen)}
               className="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors cursor-pointer"

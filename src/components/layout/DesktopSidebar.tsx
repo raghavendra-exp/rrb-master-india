@@ -3,6 +3,7 @@ import {
   LayoutDashboard,
   Train,
   BookOpen,
+  Book,
   HelpCircle,
   PlayCircle,
   FileCheck,
@@ -67,11 +68,12 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
     {
       label: language === 'hi' ? 'तैयारी एवं परीक्षण' : 'Preparation & Testing',
       items: [
+        { key: 'book-tutorials', label: language === 'hi' ? 'डिजिटल पाठ्यपुस्तक (46 Ch)' : 'Book Tutorials (46 Ch)', icon: Book, badge: 'Zero-Books' },
         { key: 'mock-tests', label: t('mockTests'), icon: PlayCircle, badge: 'CBT Live' },
         { key: 'practice', label: t('practice'), icon: FileCheck },
         { key: 'questions', label: t('pyqs'), icon: HelpCircle },
         { key: 'speed-lab', label: t('speedLab'), icon: Zap },
-        { key: 'syllabus', label: t('syllabus'), icon: BookOpen, badge: 'Zero-Books' },
+        { key: 'syllabus', label: t('syllabus'), icon: BookOpen, badge: 'Curriculum' },
         { key: 'flashcards', label: t('flashcards'), icon: Sparkles },
         { key: 'formulas', label: t('formulaBook'), icon: Calculator },
         { key: 'shortcuts', label: t('shortcuts'), icon: Flame },
